@@ -122,3 +122,34 @@ To https://github.com/BrunoVilela/Blog.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add .
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git commint [K[K[Kt - [Km : [K[K"cleani ng the site [K"
+[master d09d5f6] cleaning the site
+ 32 files changed, 535 insertions(+), 218 deletions(-)
+ create mode 100644 .Rproj.user/125B4295/sources/prop/8E1BC73F
+ create mode 100644 .Rproj.user/125B4295/sources/prop/B2873E2
+ create mode 100644 .Rproj.user/125B4295/sources/prop/C55DC9AC
+ create mode 100644 .Rproj.user/125B4295/sources/s-496492AB/5F543E4
+ create mode 100644 .Rproj.user/125B4295/sources/s-496492AB/5F543E4-contents
+ rename content/post/2015-01-01-lorem-ipsum.md => .Rproj.user/125B4295/sources/s-496492AB/6815CAD1-contents (100%)
+ create mode 100644 .Rproj.user/125B4295/sources/s-496492AB/C9E80044-contents
+ create mode 100644 .Rproj.user/shared/notebooks/61A2911B-2018-01-23-a-comprehensible-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid/1/125B4295496492AB/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/paths
+ delete mode 100644 content/post/2016-12-30-hello-markdown.md
+ create mode 100644 content/post/2018-01-23-a-comprehensible-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid.Rmd
+ create mode 100644 content/post/2018-01-23-a-comprehensible-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid.html
+ create mode 100644 public/2018/01/23/a-comprehensible-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid/index.html
+ create mode 100644 public/categories/macroecology/index.html
+ create mode 100644 public/categories/macroecology/index.xml
+ create mode 100644 public/images/bruno_trans.png
+ rewrite public/index.xml (67%)
+ rewrite public/post/index.xml (81%)
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git push origin maste r
+Counting objects: 54, done.
+Delta compression using up to 12 threads.
+Compressing objects:   2% (1/45)   Compressing objects:   4% (2/45)   Compressing objects:   6% (3/45)   Compressing objects:   8% (4/45)   Compressing objects:  11% (5/45)   Compressing objects:  13% (6/45)   Compressing objects:  15% (7/45)   Compressing objects:  17% (8/45)   Compressing objects:  20% (9/45)   Compressing objects:  22% (10/45)   Compressing objects:  24% (11/45)   Compressing objects:  26% (12/45)   Compressing objects:  28% (13/45)   Compressing objects:  31% (14/45)   Compressing objects:  33% (15/45)   Compressing objects:  35% (16/45)   Compressing objects:  37% (17/45)   Compressing objects:  40% (18/45)   Compressing objects:  42% (19/45)   Compressing objects:  44% (20/45)   Compressing objects:  46% (21/45)   Compressing objects:  48% (22/45)   Compressing objects:  51% (23/45)   Compressing objects:  53% (24/45)   Compressing objects:  55% (25/45)   Compressing objects:  57% (26/45)   Compressing objects:  60% (27/45)   Compressing objects:  62% (28/45)   Compressing objects:  64% (29/45)   Compressing objects:  66% (30/45)   Compressing objects:  68% (31/45)   Compressing objects:  71% (32/45)   Compressing objects:  73% (33/45)   Compressing objects:  75% (34/45)   Compressing objects:  77% (35/45)   Compressing objects:  80% (36/45)   Compressing objects:  82% (37/45)   Compressing objects:  84% (38/45)   Compressing objects:  86% (39/45)   Compressing objects:  88% (40/45)   Compressing objects:  91% (41/45)   Compressing objects:  93% (42/45)   Compressing objects:  95% (43/45)   Compressing objects:  97% (44/45)   Compressing objects: 100% (45/45)   Compressing objects: 100% (45/45), done.
+Writing objects:   1% (1/54)   Writing objects:   3% (2/54)   Writing objects:   5% (3/54)   Writing objects:   7% (4/54)   Writing objects:   9% (5/54)   Writing objects:  11% (6/54)   Writing objects:  12% (7/54)   Writing objects:  14% (8/54)   Writing objects:  16% (9/54)   Writing objects:  18% (10/54)   Writing objects:  20% (11/54)   Writing objects:  22% (12/54)   Writing objects:  24% (13/54)   Writing objects:  25% (14/54)   Writing objects:  27% (15/54)   Writing objects:  29% (16/54)   Writing objects:  31% (17/54)   Writing objects:  33% (18/54)   Writing objects:  35% (19/54)   Writing objects:  37% (20/54)   Writing objects:  38% (21/54)   Writing objects:  40% (22/54)   Writing objects:  42% (23/54)   Writing objects:  44% (24/54)   Writing objects:  46% (25/54)   Writing objects:  48% (26/54)   Writing objects:  50% (27/54)   Writing objects:  51% (28/54)   Writing objects:  53% (29/54)   Writing objects:  55% (30/54)   Writing objects:  57% (31/54)   Writing objects:  59% (32/54)   Writing objects:  61% (33/54)   Writing objects:  62% (34/54)   Writing objects:  66% (36/54)   Writing objects:  68% (37/54)   Writing objects:  70% (38/54)   Writing objects:  72% (39/54)   Writing objects:  74% (40/54)   Writing objects:  77% (42/54)   Writing objects:  79% (43/54)   Writing objects:  81% (44/54)   Writing objects:  83% (45/54)   Writing objects:  87% (47/54)   Writing objects:  88% (48/54)   Writing objects:  90% (49/54)   Writing objects:  92% (50/54)   Writing objects:  94% (51/54)   Writing objects:  96% (52/54)   Writing objects:  98% (53/54)   Writing objects: 100% (54/54)   Writing objects: 100% (54/54), 376.71 KiB | 0 bytes/s, done.
+Total 54 (delta 13), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/13)   [Kremote: Resolving deltas:  38% (5/13)   [Kremote: Resolving deltas:  53% (7/13)   [Kremote: Resolving deltas:  61% (8/13)   [Kremote: Resolving deltas:  69% (9/13)   [Kremote: Resolving deltas:  76% (10/13)   [Kremote: Resolving deltas:  84% (11/13)   [Kremote: Resolving deltas:  92% (12/13)   [Kremote: Resolving deltas: 100% (13/13)   [Kremote: Resolving deltas: 100% (13/13), completed with 6 local objects.[K
+To https://github.com/BrunoVilela/Blog.git
+   f3e95fd..d09d5f6  master -> master
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add .
