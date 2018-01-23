@@ -4,3 +4,121 @@ Initialized empty Git repository in /Users/bvilela/Box Sync/blog/.git/
 error: src refspec master does not match any.
 error: failed to push some refs to 'origin'
 ]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add .
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git commit -m "firt[Kst  commit"
+[master (root-commit) f3e95fd] first commit
+ 68 files changed, 2152 insertions(+)
+ create mode 100644 .Rproj.user/125B4295/console06/F960C806
+ create mode 100644 .Rproj.user/125B4295/console06/F960C806.env
+ create mode 100644 .Rproj.user/125B4295/console06/INDEX001
+ create mode 100644 .Rproj.user/125B4295/sources/prop/6FDF0108
+ create mode 100644 .Rproj.user/125B4295/sources/prop/INDEX
+ create mode 100644 .Rproj.user/125B4295/sources/s-496492AB/E4131B47
+ create mode 100644 .Rproj.user/125B4295/sources/s-496492AB/E4131B47-contents
+ create mode 100644 .Rproj.user/125B4295/sources/s-496492AB/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 blog.Rproj
+ create mode 100644 config.toml
+ create mode 100644 content/about.md
+ create mode 100644 content/post/2015-01-01-lorem-ipsum.md
+ create mode 100644 content/post/2016-12-30-hello-markdown.md
+ create mode 100644 index.Rmd
+ create mode 100644 public/.gitkeep
+ create mode 100644 public/2015/01/01/lorem-ipsum/index.html
+ create mode 100644 public/2016/12/30/a-plain-markdown-post/index.html
+ create mode 100644 public/about/index.html
+ create mode 100644 public/categories/index.html
+ create mode 100644 public/categories/index.xml
+ create mode 100644 public/css/fonts.css
+ create mode 100644 public/css/main.css
+ create mode 100644 public/fonts/lato-v11-latin-regular.woff
+ create mode 100644 public/fonts/lato-v11-latin-regular.woff2
+ create mode 100644 public/fonts/merriweather-v13-latin-regular.woff
+ create mode 100644 public/fonts/merriweather-v13-latin-regular.woff2
+ create mode 100644 public/images/hugo-logo.png
+ create mode 100644 public/images/logo.png
+ create mode 100644 public/index.html
+ create mode 100644 public/index.xml
+ create mode 100644 public/js/math-code.js
+ create mode 100644 public/post/index.html
+ create mode 100644 public/post/index.xml
+ create mode 100644 public/sitemap.xml
+ create mode 100644 public/tags/index.html
+ create mode 100644 public/tags/index.xml
+ create mode 100644 static/.gitkeep
+ create mode 100644 themes/hugo-lithium-theme/.gitignore
+ create mode 100644 themes/hugo-lithium-theme/LICENSE.md
+ create mode 100644 themes/hugo-lithium-theme/README.md
+ create mode 100644 themes/hugo-lithium-theme/archetypes/default.md
+ create mode 100644 themes/hugo-lithium-theme/exampleSite/config.toml
+ create mode 100644 themes/hugo-lithium-theme/exampleSite/content/about.md
+ create mode 100644 themes/hugo-lithium-theme/exampleSite/content/post/2015-01-01-lorem-ipsum.md
+ create mode 100644 themes/hugo-lithium-theme/exampleSite/content/post/2016-12-30-hello-markdown.md
+ create mode 100644 themes/hugo-lithium-theme/exampleSite/static/.gitkeep
+ create mode 100644 themes/hugo-lithium-theme/hugo-lithium-theme.Rproj
+ create mode 100644 themes/hugo-lithium-theme/layouts/_default/list.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/_default/single.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/partials/disqus.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/partials/footer.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/partials/footer_highlightjs.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/partials/footer_mathjax.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/partials/head.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/partials/head_custom.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/partials/head_highlightjs.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/partials/header.html
+ create mode 100644 themes/hugo-lithium-theme/layouts/partials/nav.html
+ create mode 100644 themes/hugo-lithium-theme/static/css/fonts.css
+ create mode 100644 themes/hugo-lithium-theme/static/css/main.css
+ create mode 100644 themes/hugo-lithium-theme/static/fonts/lato-v11-latin-regular.woff
+ create mode 100644 themes/hugo-lithium-theme/static/fonts/lato-v11-latin-regular.woff2
+ create mode 100644 themes/hugo-lithium-theme/static/fonts/merriweather-v13-latin-regular.woff
+ create mode 100644 themes/hugo-lithium-theme/static/fonts/merriweather-v13-latin-regular.woff2
+ create mode 100644 themes/hugo-lithium-theme/static/images/hugo-logo.png
+ create mode 100644 themes/hugo-lithium-theme/static/images/logo.png
+ create mode 100644 themes/hugo-lithium-theme/static/js/math-code.js
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git push origin maste r
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/125B4295/console06/F960C806[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add .
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mmodified:   .Rproj.user/125B4295/console06/F960C806[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/125B4295/console06/F960C806[m
+
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git push oriv[Kgin maste r
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git remote add origin  https://github.com/BrunoVilela/Blog.git
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git push -u origin ma ster
+Counting objects: 87, done.
+Delta compression using up to 12 threads.
+Compressing objects:   1% (1/67)   Compressing objects:   2% (2/67)   Compressing objects:   4% (3/67)   Compressing objects:   5% (4/67)   Compressing objects:   7% (5/67)   Compressing objects:   8% (6/67)   Compressing objects:  10% (7/67)   Compressing objects:  11% (8/67)   Compressing objects:  13% (9/67)   Compressing objects:  14% (10/67)   Compressing objects:  16% (11/67)   Compressing objects:  17% (12/67)   Compressing objects:  19% (13/67)   Compressing objects:  20% (14/67)   Compressing objects:  22% (15/67)   Compressing objects:  23% (16/67)   Compressing objects:  25% (17/67)   Compressing objects:  26% (18/67)   Compressing objects:  28% (19/67)   Compressing objects:  29% (20/67)   Compressing objects:  31% (21/67)   Compressing objects:  32% (22/67)   Compressing objects:  34% (23/67)   Compressing objects:  35% (24/67)   Compressing objects:  37% (25/67)   Compressing objects:  38% (26/67)   Compressing objects:  40% (27/67)   Compressing objects:  41% (28/67)   Compressing objects:  43% (29/67)   Compressing objects:  44% (30/67)   Compressing objects:  46% (31/67)   Compressing objects:  47% (32/67)   Compressing objects:  49% (33/67)   Compressing objects:  50% (34/67)   Compressing objects:  52% (35/67)   Compressing objects:  53% (36/67)   Compressing objects:  55% (37/67)   Compressing objects:  56% (38/67)   Compressing objects:  58% (39/67)   Compressing objects:  59% (40/67)   Compressing objects:  61% (41/67)   Compressing objects:  62% (42/67)   Compressing objects:  64% (43/67)   Compressing objects:  65% (44/67)   Compressing objects:  67% (45/67)   Compressing objects:  68% (46/67)   Compressing objects:  70% (47/67)   Compressing objects:  71% (48/67)   Compressing objects:  73% (49/67)   Compressing objects:  74% (50/67)   Compressing objects:  76% (51/67)   Compressing objects:  77% (52/67)   Compressing objects:  79% (53/67)   Compressing objects:  80% (54/67)   Compressing objects:  82% (55/67)   Compressing objects:  83% (56/67)   Compressing objects:  85% (57/67)   Compressing objects:  86% (58/67)   Compressing objects:  88% (59/67)   Compressing objects:  89% (60/67)   Compressing objects:  91% (61/67)   Compressing objects:  92% (62/67)   Compressing objects:  94% (63/67)   Compressing objects:  95% (64/67)   Compressing objects:  97% (65/67)   Compressing objects:  98% (66/67)   Compressing objects: 100% (67/67)   Compressing objects: 100% (67/67), done.
+Writing objects:   1% (1/87)   Writing objects:   2% (2/87)   Writing objects:   3% (3/87)   Writing objects:   4% (4/87)   Writing objects:   5% (5/87)   Writing objects:   6% (6/87)   Writing objects:   8% (7/87)   Writing objects:   9% (8/87)   Writing objects:  10% (9/87)   Writing objects:  11% (10/87)   Writing objects:  12% (11/87)   Writing objects:  13% (12/87)   Writing objects:  14% (13/87)   Writing objects:  16% (14/87)   Writing objects:  17% (15/87)   Writing objects:  18% (16/87)   Writing objects:  19% (17/87)   Writing objects:  20% (18/87)   Writing objects:  21% (19/87)   Writing objects:  22% (20/87)   Writing objects:  24% (21/87)   Writing objects:  25% (22/87)   Writing objects:  27% (24/87)   Writing objects:  28% (25/87)   Writing objects:  29% (26/87)   Writing objects:  31% (27/87)   Writing objects:  32% (28/87)   Writing objects:  33% (29/87)   Writing objects:  34% (30/87)   Writing objects:  35% (31/87)   Writing objects:  37% (33/87)   Writing objects:  39% (34/87)   Writing objects:  40% (35/87)   Writing objects:  41% (36/87)   Writing objects:  42% (37/87)   Writing objects:  43% (38/87)   Writing objects:  44% (39/87)   Writing objects:  45% (40/87)   Writing objects:  48% (42/87)   Writing objects:  49% (43/87)   Writing objects:  50% (44/87)   Writing objects:  51% (45/87)   Writing objects:  52% (46/87)   Writing objects:  54% (47/87)   Writing objects:  55% (48/87)   Writing objects:  56% (49/87)   Writing objects:  57% (50/87)   Writing objects:  58% (51/87)   Writing objects:  59% (52/87)   Writing objects:  60% (53/87)   Writing objects:  62% (54/87)   Writing objects:  63% (55/87)   Writing objects:  64% (56/87)   Writing objects:  65% (57/87)   Writing objects:  66% (58/87)   Writing objects:  67% (59/87)   Writing objects:  68% (60/87)   Writing objects:  70% (61/87)   Writing objects:  71% (62/87)   Writing objects:  72% (63/87)   Writing objects:  73% (64/87)   Writing objects:  74% (65/87)   Writing objects:  75% (66/87)   Writing objects:  77% (67/87)   Writing objects:  78% (68/87)   Writing objects:  79% (69/87)   Writing objects:  80% (70/87)   Writing objects:  81% (71/87)   Writing objects:  82% (72/87)   Writing objects:  83% (73/87)   Writing objects:  85% (74/87)   Writing objects:  86% (75/87)   Writing objects:  87% (76/87)   Writing objects:  88% (77/87)   Writing objects:  89% (78/87)   Writing objects:  90% (79/87)   Writing objects:  91% (80/87)   Writing objects:  93% (81/87)   Writing objects:  94% (82/87)   Writing objects:  95% (83/87)   Writing objects:  96% (84/87)   Writing objects:  97% (85/87)   Writing objects:  98% (86/87)   Writing objects: 100% (87/87)   Writing objects: 100% (87/87), 118.87 KiB | 0 bytes/s, done.
+Total 87 (delta 11), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/11)   [Kremote: Resolving deltas:   9% (1/11)   [Kremote: Resolving deltas:  45% (5/11)   [Kremote: Resolving deltas: 100% (11/11)   [Kremote: Resolving deltas: 100% (11/11), done.[K
+To https://github.com/BrunoVilela/Blog.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add .
