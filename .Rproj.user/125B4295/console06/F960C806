@@ -190,3 +190,22 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add .
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git commit -m "trying  to add comments"
+[master 890ee35] trying to add comments
+ 6 files changed, 78 insertions(+), 10 deletions(-)
+ rename .Rproj.user/125B4295/sources/s-496492AB/{E4131B47 => 7CCD7E9B} (54%)
+ create mode 100644 .Rproj.user/125B4295/sources/s-496492AB/7CCD7E9B-contents
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git push origin maste r
+Counting objects: 15, done.
+Delta compression using up to 12 threads.
+Compressing objects:   7% (1/14)   Compressing objects:  14% (2/14)   Compressing objects:  21% (3/14)   Compressing objects:  28% (4/14)   Compressing objects:  35% (5/14)   Compressing objects:  42% (6/14)   Compressing objects:  50% (7/14)   Compressing objects:  57% (8/14)   Compressing objects:  64% (9/14)   Compressing objects:  71% (10/14)   Compressing objects:  78% (11/14)   Compressing objects:  85% (12/14)   Compressing objects:  92% (13/14)   Compressing objects: 100% (14/14)   Compressing objects: 100% (14/14), done.
+Writing objects:   6% (1/15)   Writing objects:  13% (2/15)   Writing objects:  20% (3/15)   Writing objects:  26% (4/15)   Writing objects:  33% (5/15)   Writing objects:  40% (6/15)   Writing objects:  46% (7/15)   Writing objects:  53% (8/15)   Writing objects:  60% (9/15)   Writing objects:  66% (10/15)   Writing objects:  73% (11/15)   Writing objects:  80% (12/15)   Writing objects:  86% (13/15)   Writing objects:  93% (14/15)   Writing objects: 100% (15/15)   Writing objects: 100% (15/15), 2.86 KiB | 0 bytes/s, done.
+Total 15 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/5)   [Kremote: Resolving deltas:  20% (1/5)   [Kremote: Resolving deltas:  40% (2/5)   [Kremote: Resolving deltas:  60% (3/5)   [Kremote: Resolving deltas:  80% (4/5)   [Kremote: Resolving deltas: 100% (5/5)   [Kremote: Resolving deltas: 100% (5/5), completed with 5 local objects.[K
+remote: This repository moved. Please use the new location:[K
+remote:   https://github.com/BrunoVilela/brunovilela.github.io.git[K
+To https://github.com/BrunoVilela/Blog.git
+   07c2ec5..890ee35  master -> master
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git pull
+Already up-to-date.
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ ig[K[Kig t[K[K[K[Kgit add .
