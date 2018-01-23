@@ -1,0 +1,6 @@
+]0;~/Box Sync/blog[?1034hboteromacserver2:blog bvilela$ [Kboteromacserver2:blog bvilela$ git init
+Initialized empty Git repository in /Users/bvilela/Box Sync/blog/.git/
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git push origin maste r
+error: src refspec master does not match any.
+error: failed to push some refs to 'origin'
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add .
