@@ -209,3 +209,24 @@ To https://github.com/BrunoVilela/Blog.git
 ]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git pull
 Already up-to-date.
 ]0;~/Box Sync/blogboteromacserver2:blog bvilela$ ig[K[Kig t[K[K[K[Kgit add .
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ c[Kgit commit -m "finall y comments added."
+[master d83da7e] finally comments added.
+ 11 files changed, 94 insertions(+), 53 deletions(-)
+ create mode 100644 .Rproj.user/125B4295/sources/prop/9DDCFBE3
+ create mode 100644 .Rproj.user/125B4295/sources/s-496492AB/F0A0AF38
+ create mode 100644 .Rproj.user/125B4295/sources/s-496492AB/F0A0AF38-contents
+ create mode 100644 layouts/partials/disqus.html
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ fir [K[K[K[Kgit push origin maste r
+Counting objects: 28, done.
+Delta compression using up to 12 threads.
+Compressing objects:   4% (1/21)   Compressing objects:   9% (2/21)   Compressing objects:  14% (3/21)   Compressing objects:  19% (4/21)   Compressing objects:  23% (5/21)   Compressing objects:  28% (6/21)   Compressing objects:  33% (7/21)   Compressing objects:  38% (8/21)   Compressing objects:  42% (9/21)   Compressing objects:  47% (10/21)   Compressing objects:  52% (11/21)   Compressing objects:  57% (12/21)   Compressing objects:  61% (13/21)   Compressing objects:  66% (14/21)   Compressing objects:  71% (15/21)   Compressing objects:  76% (16/21)   Compressing objects:  80% (17/21)   Compressing objects:  85% (18/21)   Compressing objects:  90% (19/21)   Compressing objects:  95% (20/21)   Compressing objects: 100% (21/21)   Compressing objects: 100% (21/21), done.
+Writing objects:   3% (1/28)   Writing objects:   7% (2/28)   Writing objects:  10% (3/28)   Writing objects:  14% (4/28)   Writing objects:  17% (5/28)   Writing objects:  21% (6/28)   Writing objects:  25% (7/28)   Writing objects:  28% (8/28)   Writing objects:  32% (9/28)   Writing objects:  35% (10/28)   Writing objects:  39% (11/28)   Writing objects:  42% (12/28)   Writing objects:  46% (13/28)   Writing objects:  50% (14/28)   Writing objects:  53% (15/28)   Writing objects:  57% (16/28)   Writing objects:  60% (17/28)   Writing objects:  64% (18/28)   Writing objects:  67% (19/28)   Writing objects:  71% (20/28)   Writing objects:  75% (21/28)   Writing objects:  78% (22/28)   Writing objects:  82% (23/28)   Writing objects:  85% (24/28)   Writing objects:  89% (25/28)   Writing objects:  92% (26/28)   Writing objects:  96% (27/28)   Writing objects: 100% (28/28)   Writing objects: 100% (28/28), 3.26 KiB | 0 bytes/s, done.
+Total 28 (delta 12), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/12)   [Kremote: Resolving deltas:   8% (1/12)   [Kremote: Resolving deltas:  16% (2/12)   [Kremote: Resolving deltas:  25% (3/12)   [Kremote: Resolving deltas:  33% (4/12)   [Kremote: Resolving deltas:  50% (6/12)   [Kremote: Resolving deltas:  58% (7/12)   [Kremote: Resolving deltas:  66% (8/12)   [Kremote: Resolving deltas:  75% (9/12)   [Kremote: Resolving deltas:  83% (10/12)   [Kremote: Resolving deltas:  91% (11/12)   [Kremote: Resolving deltas: 100% (12/12)   [Kremote: Resolving deltas: 100% (12/12), completed with 11 local objects.[K
+remote: This repository moved. Please use the new location:[K
+remote:   https://github.com/BrunoVilela/brunovilela.github.io.git[K
+To https://github.com/BrunoVilela/Blog.git
+   890ee35..d83da7e  master -> master
+]0;~/Box Sync/blog[?1034hboteromacserver2:blog bvilela$ git add ,
+fatal: pathspec ',' did not match any files
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add ,[K.
