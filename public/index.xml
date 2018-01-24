@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>A guide to transform species shapefiles into a presence absence matrix based on a user-defined grid system</title>
+      <title>A guide to transform species distributions into a presence absence matrix based on a user-defined grid in R</title>
       <link>/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/</guid>
-      <description>Species distribution are largely available in online databases, such as the distributions ranges in IUCN, or the occurrence records in GBIF. However, to analyze this kind of data most of the time it is necessary to transform the spatial distribution of species into a presence absence matrix or into a grid format. In this tutorial I will show how to easily make this transformation using the R package letsR, wrote by myself and Fabricio Villalobos.</description>
+      <description>Species distribution are largely available in online databases, such as the distributions ranges in IUCN, or the occurrence records in GBIF. However, to analyze these kind of data most of the time it is necessary to transform the spatial distribution of species into a presence absence matrix or into a grid format. In this tutorial I will show how to easily make this transformation using the R package letsR, wrote by myself and Fabricio Villalobos.</description>
     </item>
     
     <item>

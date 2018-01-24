@@ -12,11 +12,56 @@
     
     
     <item>
+      <title>Grid</title>
+      <link>/tags/grid/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/grid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iucn</title>
+      <link>/tags/iucn/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/iucn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Letsr</title>
       <link>/tags/letsr/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/letsr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Presence Absence Matrix</title>
+      <link>/tags/presence-absence-matrix/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/presence-absence-matrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shapefiles</title>
+      <link>/tags/shapefiles/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/shapefiles/</guid>
       <description></description>
     </item>
     
