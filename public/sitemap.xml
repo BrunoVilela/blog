@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/01/24/cropping-and-subseting-your-presence-absence-matrix/</loc>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
   </url>
@@ -14,6 +19,12 @@
   
   <url>
     <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/crop/</loc>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -67,6 +78,12 @@
   
   <url>
     <loc>/tags/shapefiles/</loc>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/subset/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

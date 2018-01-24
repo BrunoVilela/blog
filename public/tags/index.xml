@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Crop</title>
+      <link>/tags/crop/</link>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/crop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Grid</title>
       <link>/tags/grid/</link>
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
@@ -62,6 +71,15 @@
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/shapefiles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Subset</title>
+      <link>/tags/subset/</link>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/subset/</guid>
       <description></description>
     </item>
     

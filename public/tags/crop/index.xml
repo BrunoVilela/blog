@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crop on R tutorials for macroecology</title>
+    <link>/tags/crop/</link>
+    <description>Recent content in Crop on R tutorials for macroecology</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/crop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cropping and subseting your presence absence matrix</title>
+      <link>/2018/01/24/cropping-and-subseting-your-presence-absence-matrix/</link>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/24/cropping-and-subseting-your-presence-absence-matrix/</guid>
+      <description>In previous posts I showed how to build a presence absence matrix (PAM) from species distribution data (check here) as PresenceAbsence object (check also how to transform a PAM into a PresenceAbsence). In this post I will show how to subset or crop a PresenceAbsence object.
+Subseting a PresenceAbsence object can be done using the function lets.subsetPAM. You just need to provide the species you want to keep, and the PresenceAbsence object.</description>
+    </item>
+    
+  </channel>
+</rss>

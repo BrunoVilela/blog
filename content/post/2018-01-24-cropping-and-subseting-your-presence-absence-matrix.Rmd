@@ -1,0 +1,47 @@
+---
+title: Cropping and subseting your presence absence matrix
+author: Bruno Vilela
+date: '2018-01-24'
+slug: cropping-and-subseting-your-presence-absence-matrix
+categories:
+  - macroecology
+tags:
+  - letsR
+  - Presence Absence Matrix
+  - R
+  - subset
+  - crop
+---
+
+In previous posts I showed how to build a presence absence matrix (PAM) from species distribution data [(check here)](https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/) as `PresenceAbsence` object [(check also how to transform a PAM into a `PresenceAbsence`)](https://rmacroecology.netlify.com/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/). In this post I will show how to subset or crop a `PresenceAbsence` object.
+
+Subseting a `PresenceAbsence` object can be done using the function `lets.subsetPAM`. You just need to provide the species you want to keep, and the `PresenceAbsence` object. 
+```{r, message=FALSE, warning=FALSE}
+library(letsR)
+```
+
+```{r}
+data("PAM")
+set.seed(1)
+names <- sample(PAM$Species_name, 20)
+PAM_subset <- lets.subsetPAM(PAM, names)
+par(mfrow = c(1, 2))
+plot(PAM, main = "All species")
+plot(PAM_subset, main = "Subset")
+```
+
+You may also want to crop the `PresenceAbsence` object to a determined region using a shapefile. The function `lets.pamcrop` is a easy way to do that. For example, lets crop our PAM to Brazil.
+```{r, warning=FALSE, message=FALSE}
+library(maptools)    
+```
+
+```{r}
+data(wrld_simpl)  # World map
+Brazil <- wrld_simpl[wrld_simpl$NAME == "Brazil", ]  # Brazil (polygon)
+PAM_crop <- lets.pamcrop(PAM, Brazil, remove.sp = TRUE)
+par(mfrow = c(1, 2))
+plot(PAM, main = "South America")
+plot(PAM_crop, main = "Brazil",
+     col = colorRampPalette(c("darkgreen", "yellow", "blue")))
+```
+
