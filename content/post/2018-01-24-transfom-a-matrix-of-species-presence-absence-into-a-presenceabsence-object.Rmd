@@ -89,7 +89,7 @@ names(PAM_from_grid) <- names(PAM)
 class(PAM_from_grid) <- class(PAM)
 ```
 
-The transformation is complete. Now we can use all the functions for a `PresenceAbsence` object.
+The transformation is complete. Now we can use all the methods for a `PresenceAbsence` object.
 ```{r}
 summary(PAM_from_grid)
 plot(PAM_from_grid)
