@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<title>Transfom a matrix of species presence absence into a PresenceAbsence object - R tutorials for macroecology</title>
+<meta property="og:title" content="Transfom a matrix of species presence absence into a PresenceAbsence object - R tutorials for macroecology">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/bruno_trans.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="http://bvilela.weebly.com">About the author</a></li>
+    
+    <li><a href="https://github.com/BrunoVilela/brunovilela.github.io">GitHub</a></li>
+    
+    <li><a href="https://rmacroecology.netlify.com">Posts</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Transfom a matrix of species presence absence into a PresenceAbsence object</h1>
+
+    
+    <span class="article-date">2018/01/24</span>
+    
+
+    <div class="article-content">
+      <p>Most of <code>letsR</code> package functions require a <code>PresenceAbsence</code> object <a href="https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/">(see previous post)</a>. But some users may already have a matrix of species presence absence (PAM) generated somewhere else or created using the <code>lets.presab.grid</code> function. In this post I will show how to transform these PAM files into a <code>PresenceAbsence</code> object.</p>
+<p>First, note that this will only be possible if your grid used to generate the PAM is a square or a rectangular grid. Most of <code>letsR</code> functions are based on raster files, and rasters can only be square or rectangular.</p>
+<p>So, first I will generate an example file using the function <code>lets.presab.grid</code>.</p>
+<pre class="r"><code>library(letsR)</code></pre>
+<pre class="r"><code>sp.r &lt;- rasterToPolygons(raster(xmn = -93, xmx = -29,
+                                ymn = -57, ymx = 15,
+                                resolution = 5))
+# Give an ID to the cell
+slot(sp.r, &quot;data&quot;) &lt;- cbind(&quot;ID&quot; = 1:length(sp.r),
+                            slot(sp.r, &quot;data&quot;))
+data(Phyllomedusa)
+projection(Phyllomedusa) &lt;- projection(sp.r)
+resu &lt;- lets.presab.grid(Phyllomedusa, sp.r, &quot;ID&quot;)
+rich_plus1 &lt;- rowSums(resu$PAM) + 1
+colfunc &lt;- colorRampPalette(c(&quot;#fff5f0&quot;, &quot;#fb6a4a&quot;, &quot;#67000d&quot;))
+colors &lt;- c(&quot;white&quot;, colfunc(max(rich_plus1)))
+plot(resu$grid, border = &quot;gray40&quot;,
+     col = colors[rich_plus1])
+map(add = TRUE)</code></pre>
+<p><img src="/post/2018-01-24-transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Now we have a PAM in <code>matrix</code> format, with the row names indicating the cell ID in a gird.</p>
+<pre class="r"><code># Print only te first rows and columns of the PAM
+resu$PAM[1:5, 1:3]</code></pre>
+<pre><code>##   Phyllomedusa atelopoides Phyllomedusa iheringii Phyllomedusa distincta
+## 1                        0                      0                      0
+## 2                        0                      0                      0
+## 3                        0                      0                      0
+## 4                        0                      0                      0
+## 5                        0                      0                      0</code></pre>
+<p>And we also have a grid.</p>
+<pre class="r"><code>resu$grid</code></pre>
+<pre><code>## class       : SpatialPolygonsDataFrame 
+## features    : 182 
+## extent      : -93, -28, -55, 15  (xmin, xmax, ymin, ymax)
+## coord. ref. : +proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0 
+## variables   : 2
+## names       :  ID, layer 
+## min values  :   1,   Inf 
+## max values  : 182,  -Inf</code></pre>
+<p>We have to first transform the grid into a raster file. To do this, you have to know the resolution and extent of your grid. In this case the resolution is 5, and we can get the extent direct from the grid.</p>
+<pre class="r"><code>ext &lt;- extent(resu$grid)
+xmn &lt;- ext[1]
+xmx &lt;- ext[2]
+ymn &lt;- ext[3]
+ymx &lt;- ext[4]
+
+r &lt;- raster(resolution = 5, xmn = xmn, xmx = xmx,
+            ymn = ymn, ymx = ymx)
+rich &lt;- rasterize(resu$grid, r, field = &quot;ID&quot;)
+values(rich) &lt;- rowSums(resu$PAM)
+plot(rich)
+map(add = TRUE)</code></pre>
+<p><img src="/post/2018-01-24-transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Now the grid is in a raster format and contains species richness values, which is one of the objects of the <code>PresenceAbsence</code> object. We can now make the other two.</p>
+<pre class="r"><code>xy &lt;- xyFromCell(rich, 1:ncell(rich))
+colnames(xy) &lt;- c(&quot;Longitude(x)&quot;, &quot;Latitude(y)&quot;)
+pam &lt;- cbind(xy, resu$PAM)
+pam[1:5, 1:3] # print first 3 columns and 5 rows</code></pre>
+<pre><code>##   Longitude(x) Latitude(y) Phyllomedusa atelopoides
+## 1        -90.5        12.5                        0
+## 2        -85.5        12.5                        0
+## 3        -80.5        12.5                        0
+## 4        -75.5        12.5                        0
+## 5        -70.5        12.5                        0</code></pre>
+<pre class="r"><code>species_names &lt;- colnames(resu$PAM)</code></pre>
+<p>We also have the PAM with the centroid of the cells and the species name file. We are ready to make the <code>PresenceAbsence</code> object.</p>
+<pre class="r"><code>PAM_from_grid &lt;- list(pam, rich, species_names)
+data(&quot;PAM&quot;)
+names(PAM_from_grid) &lt;- names(PAM)
+class(PAM_from_grid) &lt;- class(PAM)</code></pre>
+<p>The transformation is complete. Now we can use all the functions for a <code>PresenceAbsence</code> object.</p>
+<pre class="r"><code>summary(PAM_from_grid)</code></pre>
+<pre><code>## 
+## Class: PresenceAbsence
+## _ _
+## Number of species: 23 
+## Number of cells: 182
+## Cells with presence: 65
+## Cells without presence: 117
+## Species without presence: 0
+## Species with the largest range: Phyllomedusa hypochondrialis
+## _ _
+## Grid parameters
+## Resolution: 5, 5 (x, y)
+## Extention: -93, -28, -55, 15 (xmin, xmax, ymin, ymax)
+## Coord. Ref.:  +proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0</code></pre>
+<pre class="r"><code>plot(PAM_from_grid)</code></pre>
+<p><img src="/post/2018-01-24-transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://https-rmacroecology-netlify-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

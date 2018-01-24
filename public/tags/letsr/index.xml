@@ -6,10 +6,20 @@
     <description>Recent content in Letsr on R tutorials for macroecology</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/letsr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Transfom a matrix of species presence absence into a PresenceAbsence object</title>
+      <link>/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/</link>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/</guid>
+      <description>Most of letsR package functions require a PresenceAbsence object (see previous post). But some users may already have a matrix of species presence absence (PAM) generated somewhere else or created using the lets.presab.grid function. In this post I will show how to transform these PAM files into a PresenceAbsence object.
+First, note that this will only be possible if your grid used to generate the PAM is a square or a rectangular grid.</description>
+    </item>
     
     <item>
       <title>A guide to transform species distributions into a presence absence matrix based on a user-defined grid in R</title>

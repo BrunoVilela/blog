@@ -1,0 +1,99 @@
+---
+title: Transfom a matrix of species presence absence into a PresenceAbsence object
+author: Bruno Vilela
+date: '2018-01-24'
+slug: transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object
+categories:
+  - macroecology
+tags:
+  - Grid
+  - IUCN
+  - letsR
+  - Presence Absence Matrix
+  - R
+  - Shapefiles
+---
+
+
+Most of `letsR` package functions require a `PresenceAbsence` object [(see previous post)](https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/). But some users may already have a matrix of species presence absence (PAM) generated somewhere else or created using the `lets.presab.grid` function. In this post I will show how to transform these PAM files into a `PresenceAbsence` object.
+
+First, note that this will only be possible if your grid used to generate the PAM is a square or a rectangular grid. Most of `letsR` functions are based on raster files, and rasters can only be square or rectangular.
+
+So, first I will generate an example file using the function `lets.presab.grid`.
+
+```{r, message=FALSE, warning=FALSE}
+library(letsR)
+```
+
+```{r}
+sp.r <- rasterToPolygons(raster(xmn = -93, xmx = -29,
+                                ymn = -57, ymx = 15,
+                                resolution = 5))
+# Give an ID to the cell
+slot(sp.r, "data") <- cbind("ID" = 1:length(sp.r),
+                            slot(sp.r, "data"))
+data(Phyllomedusa)
+projection(Phyllomedusa) <- projection(sp.r)
+resu <- lets.presab.grid(Phyllomedusa, sp.r, "ID")
+rich_plus1 <- rowSums(resu$PAM) + 1
+colfunc <- colorRampPalette(c("#fff5f0", "#fb6a4a", "#67000d"))
+colors <- c("white", colfunc(max(rich_plus1)))
+plot(resu$grid, border = "gray40",
+     col = colors[rich_plus1])
+map(add = TRUE)
+```
+
+Now we have a PAM in `matrix` format, with the row names indicating the cell ID in a gird.
+```{r}
+# Print only te first rows and columns of the PAM
+resu$PAM[1:5, 1:3]
+```
+
+And we also have a grid.
+```{r}
+resu$grid
+```
+
+We have to first transform the grid into a raster file.
+To do this, you have to know the resolution and extent of your grid. In this case the resolution is 5, and we can get the extent direct from the grid. 
+```{r}
+ext <- extent(resu$grid)
+xmn <- ext[1]
+xmx <- ext[2]
+ymn <- ext[3]
+ymx <- ext[4]
+
+r <- raster(resolution = 5, xmn = xmn, xmx = xmx,
+            ymn = ymn, ymx = ymx)
+rich <- rasterize(resu$grid, r, field = "ID")
+values(rich) <- rowSums(resu$PAM)
+plot(rich)
+map(add = TRUE)
+```
+
+Now the grid is in a raster format and contains species richness values, which is one of the objects of the `PresenceAbsence` object. We can now make the other two.
+```{r}
+xy <- xyFromCell(rich, 1:ncell(rich))
+colnames(xy) <- c("Longitude(x)", "Latitude(y)")
+pam <- cbind(xy, resu$PAM)
+pam[1:5, 1:3] # print first 3 columns and 5 rows
+species_names <- colnames(resu$PAM)
+```
+
+We also have the PAM with the centroid of the cells and the species name file.
+We are ready to make the `PresenceAbsence` object.
+```{r}
+PAM_from_grid <- list(pam, rich, species_names)
+data("PAM")
+names(PAM_from_grid) <- names(PAM)
+class(PAM_from_grid) <- class(PAM)
+```
+
+The transformation is complete. Now we can use all the functions for a `PresenceAbsence` object.
+```{r}
+summary(PAM_from_grid)
+plot(PAM_from_grid)
+```
+
+
+
