@@ -1,19 +1,19 @@
 ---
-title: A guide to transform species shapefiles into a presence absence matrix or grid
+title: A guide to transform species shapefiles into a presence absence matrix based on a user-defined grid system
 author: Bruno Vilela
 date: '2018-01-23'
 categories:
-  - macroecology
+- macroecology
 tags:
-  - letsR
-slug: a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid
+- letsR
+slug: a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system
 ---
 
-Species distribution are largely available in online databases, such as the distributions ranges in IUCN, or occurrence records in GBIF. However, to analyze this kind of data most of the time it is necessary to transform the spatial distribution of species into a presence absence matrix or into a grid format. In this tutorial I will show how to easily make this transformation using the R package [`letsR`](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12401/abstract), wrote by myself and [Fabricio Villalobos](http://fabro.github.io).
+Species distribution are largely available in online databases, such as the distributions ranges in IUCN, or the occurrence records in GBIF. However, to analyze this kind of data most of the time it is necessary to transform the spatial distribution of species into a presence absence matrix or into a grid format. In this tutorial I will show how to easily make this transformation using the R package [`letsR`](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12401/abstract), wrote by myself and [Fabricio Villalobos](http://fabro.github.io).
 
 ## IUCN shapefiles
 
-First you will have to download the species distribution shapefiles from the IUCN [website](http://www.iucnredlist.org/technical-documents/spatial-data). This data can be loaded using the functions `rgdal::readOGR` or `raster::shapefile`. Here I will use the data for the frogs of the family Phyllomedusa, that is already loaded with the letsR package. 
+First you will have to download the species distribution shapefiles from the IUCN [website](http://www.iucnredlist.org/technical-documents/spatial-data). This data can be loaded using the functions `rgdal::readOGR` or `raster::shapefile`. Here I will use the data for the frogs of the family Phyllomedusa that is already loaded within the letsR package. 
 ```{r, message = FALSE, warning=FALSE}
 library(letsR)
 data("Phyllomedusa")
@@ -31,6 +31,7 @@ colors <- colors[position]
 ## Plot call
 plot(Phyllomedusa, col = colors, lty = 0,
      main = "Spatial polygons of tailles amphibians")
+map(add = TRUE)
 ```
 
 ### Quick start
@@ -42,7 +43,7 @@ PAM <- lets.presab(Phyllomedusa, xmn = -93, xmx = -29,
 ```
 
 Note that if you have shapefiles with more species, or if you decide for a high resolution grid, the function may run very slowly. In this case, you may want to keep track of the analysis relative running time by setting the argument `count = TRUE`.\n
-The PAM results in a `PresenceAbsence` object. This object is basically a list containing a presence absence matrix, a raster with the geographical information, and the species names (for more information `?PresenceAbsence`). We can use the function `summary` to have some summary data on the PAM we just created. 
+The PAM results in a `PresenceAbsence` object, unless  `show.matrix = TRUE`, which in this case only a presence absence matrix is returned. The `PresenceAbsence` object is basically a list containing a presence absence matrix, a raster with the geographical information, and the species names (for more information `?PresenceAbsence`). We can use the function `summary` to generate summary data about the PAM we just created. 
 ```{r}
 summary(PAM)
 ```
@@ -53,12 +54,12 @@ plot(PAM)
 ```
 
 The `plot` function also allow users to plot specific species distributions.
-For example we can plot the map of *Phyllomedusa hypochondrialis* 
+For example we can plot the map of *Phyllomedusa hypochondrialis*: 
 ```{r}
 plot(PAM, name = "Phyllomedusa hypochondrialis")
 ```
 
-As I said before, the PAM object contains the actual presence absence matrix, to access it we can use the following code.
+As I said before, the PAM object contains the actual presence absence matrix, to access it we can use the following code:
 ```{r}
 presab <- PAM$P
 ```
@@ -69,4 +70,67 @@ The first two columns of the matrix contain the longitude (x) and latitude (y) o
 presab[1:5, 1:3]
 ```
 
+### Using different projections
 
+Some users may want to use different projections to generate the presence absence matrix. The `lets.presab` function allow users to do it by changing the `crs.grid` argument. Check the example using the South America Equidistant Conic projection.
+
+```{r, message=FALSE, warning=FALSE}
+pro <- paste("+proj=eqdc +lat_0=-32 +lon_0=-60 +lat_1=-5",
+             "+lat_2=-42 +x_0=0 +y_0=0 +ellps=aust_SA", 
+             "+units=m +no_defs")
+SA_EC <- CRS(pro)
+PAM_proj <- lets.presab(Phyllomedusa, xmn = -4135157,
+                        xmx = 4707602,
+                        ymn = -450000, ymx = 5774733,
+                        res = 100000,
+                        crs.grid = SA_EC)
+```
+```{r}
+summary(PAM_proj)
+```
+```{r, message=FALSE, warning=FALSE}
+plot(PAM_proj)
+# Add projected country boundaries
+library(maptools)
+data("wrld_simpl")
+world <- spTransform(wrld_simpl, SA_EC)
+plot(world, add = TRUE)
+```
+
+Note however that I changed the extent and resolution parameters to match the new projection. A good way to determine both the extent and the resolution is to first transform the projection of a raster from a non-projected PresenceAbsence object, and see how the parameters changed. For example:
+```{r, message=F, warning=F}
+pr2 <- projectRaster(PAM$Richness_Raster, crs = SA_EC)
+mean(res(pr2)) # Resolution value
+extent(pr2) # Extent values (i.e. xmn, xmx, ymn, ymx)
+```
+
+Also note that the function assumes that the shapefiles are in WGS84 format, if this is not the case for your data you should change the `crs` argument. 
+
+
+### Other features
+
+The function `lets.presab` also has some other useful arguments.
+For example, some users may want to exclude parts of the range where the species are extinct, or only keep the breeding ranges. The arguments `presence`, `origin` and `seasonal` allow users to filter the species distribution according to the IUCN classification of the different parts of a species range distribution. The specif values to use in these arguments  may be obtained from the [IUCN metadata files](http://www.iucnredlist.org/technical-documents/spatial-data).
+
+In some situations it is useful to only consider a species present in a cell if it covers more than a certain percentage value. Users can change this value using the argument `cover`.
+Note that this option is only available when the coordinates are in degrees (longitude/latitude).
+
+```{r}
+# 90% cover
+PAM_90 <- lets.presab(Phyllomedusa, xmn = -93,
+                      xmx = -29, ymn = -57,
+                      ymx = 15, res = 1,
+                      cover = 0.9)
+plot(PAM_90)
+```
+
+When creating multiple `PresenceAbsence` objects for different groups, users may want to keep the same grid. In this case it is important to keep the argument `remove.cells = FALSE`, to avoid altering the grid. When `remove.cells = TRUE` the final matrix will not contain cells in the grid with a value of zero (i.e. sites with no species present).
+```{r}
+PAM_keep_cells <- lets.presab(Phyllomedusa, xmn = -93,
+                              xmx = -29, ymn = -57,
+                              ymx = 15, res = 1,
+                              remove.cells = FALSE)
+summary(PAM_keep_cells)
+```
+
+Also, if users want to keep the species that do not occur in any cell of the grid it is necessary to set `remove.sp = TRUE`.
