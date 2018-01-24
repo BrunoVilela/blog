@@ -15,7 +15,7 @@ tags:
 slug: a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system
 ---
 
-Species distribution are largely available in online databases, such as the distributions ranges in IUCN, or the occurrence records in GBIF. However, to analyze these kind of data most of the time it is necessary to transform the spatial distribution of species into a presence absence matrix or into a grid format. In this tutorial I will show how to easily make this transformation using the R package [`letsR`](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12401/abstract), wrote by myself and [Fabricio Villalobos](http://fabro.github.io).
+Species distribution are largely available in online databases, such as the distributions ranges in IUCN, or the occurrence records in GBIF. However, to analyze these kind of data most of the time it is necessary to transform the spatial distribution of species into a presence absence matrix or into a grid format. In this tutorial I will show how to easily make this transformation using the R package [`letsR`](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12401/abstract), written by myself and [Fabricio Villalobos](http://fabro.github.io).
 
 ## IUCN shapefiles
 
@@ -140,7 +140,95 @@ PAM_keep_cells <- lets.presab(Phyllomedusa, xmn = -93,
                               xmx = -29, ymn = -57,
                               ymx = 15, res = 1,
                               remove.cells = FALSE)
+```
+
+Now you can use the summary function to verify if the empty cells were kept.
+```{r}
 summary(PAM_keep_cells)
 ```
 
 Also, if users want to keep the species that do not occur in any cell of the grid it is necessary to set `remove.sp = TRUE`.
+
+## BirdLife shapefiles
+
+BirdLife species distribution data can be slightly different from the ones provided by IUCN. The main difference is that they are normally provided in separated shapefiles, rather than in one unique shapefile containing all the species. `letsR` contains a specific function to deal with this kind of data. The function `lets.presab.birds` is an analogous function to `lets.presab`. The difference is that instead of a shapefile, users have to provide the path pointing to the location of all birds shapefiles. In the example below we will build a `PresenceAbsence` object to Ramphastos birds.
+```{r}
+# Attention: For your own files change the path.
+path_Ramphastos <- system.file("extdata", package = "letsR")
+PAM_birds <- lets.presab.birds(path_Ramphastos, xmn = -93, xmx = -29, 
+                               ymn = -57, ymx = 25)
+```
+
+We can also use the functions `summary` and `plot` to the result of `lets.presab.birds`.
+```{r}
+summary(PAM_birds)
+plot(PAM_birds)
+```
+
+All the options in `lets.presab` are also available in `lets.presab.birds`.
+
+## Occurrence data (e.g. GBIF)
+
+Another common source of spatial data are occurrence records. The function `lets.presab.points` allows users to input occurrence records to generate a `PresenceAbsence` object. To use this function you will need a two column matrix with longitude and latitude, and a vector indicating the species name of each occurrence record. The example below uses occurrence data from GBIF for Phyllomedusa, obtained using the R package `spocc`. 
+```{r, message=F, warning=F}
+library(spocc)
+```
+```{r}
+# Get occurrences for Phyllomedusa
+occurrrences <- occ(query = 'Phyllomedusa', from = 'gbif', limit = 5000)
+data <- occurrrences$gbif$data$Phyllomedusa
+# Remove NAs
+remove_na <- is.na(data$longitude) | is.na(data$latitude)
+data <- data[!remove_na, ]
+xy <- data[, c("longitude", "latitude")] # coordinates
+sp_name <- data$name
+```
+
+Now that we have the coordinates and species name, we can use the `lets.presab.points` function.
+```{r}
+PAM_points <- lets.presab.points(xy, sp_name, xmn = -93, xmx = -29, 
+                                 ymn = -57, ymx = 15, res = 1)
+```
+```{r}
+plot(PAM_points)
+```
+
+## Using your own grid
+
+Some users may want to create a presence absence matrix based on their own grid in shapefile format due to several reasons. The function `lets.presab.grid` allow users to convert species' ranges into a presence-absence matrix based on a grid in shapefile format. However, this function only returns the actual matrix of presence absence and the grid, not an `PresenceAbsence` object. In some situations it is possible to convert this result to a `PresenceAbsence` object, I will cover this in a new post soon. Let's first create our grid:
+```{r}
+# Grid 
+sp.r <- rasterToPolygons(raster(xmn = -93, xmx = -29,
+                                ymn = -57, ymx = 15,
+                                resolution = 5))
+# Give an ID to the cell
+slot(sp.r, "data") <- cbind("ID" = 1:length(sp.r),
+                            slot(sp.r, "data"))
+plot(sp.r, border = rgb(.5, .5, .5))
+map(add = T)
+```
+
+The grid and the species ranges should be in the same projection.
+```{r}
+data(Phyllomedusa)
+projection(Phyllomedusa) <- projection(sp.r)
+```
+
+Now we can build our presence absence matrix from the grid.
+```{r}
+resu <- lets.presab.grid(Phyllomedusa, sp.r, "ID")
+```
+
+The result is a list with the presence absence matrix and the grid.
+To plot the richness map we can use the following code:
+```{r}
+rich_plus1 <- rowSums(resu$PAM) + 1
+colfunc <- colorRampPalette(c("#fff5f0", "#fb6a4a", "#67000d"))
+colors <- c("white", colfunc(max(rich_plus1)))
+plot(resu$grid, border = "gray40",
+     col = colors[rich_plus1])
+map(add = TRUE)
+```
+
+This covers all the functions to convert species distribution into presence absence matrix using the `letsR` package. Let me know if you have any suggestion or comments, and please share if you like it. Hope to be publishing other posts about macroecology in R soon. 
+
