@@ -23,11 +23,14 @@ We can plot the data to see how it looks like.
 ```{r}
 # Plot
 ## Color settings and assignment
-colors <- rainbow(length(unique(Phyllomedusa@data$binomial)), alpha = 0.5)
-position <- match(Phyllomedusa@data$binomial, unique(Phyllomedusa@data$binomial))
+colors <- rainbow(length(unique(Phyllomedusa@data$binomial)),
+                  alpha = 0.5)
+position <- match(Phyllomedusa@data$binomial,
+                  unique(Phyllomedusa@data$binomial))
 colors <- colors[position]
 ## Plot call
-plot(Phyllomedusa, col = colors, lty = 0, main = "Spatial polygons of tailles amphibians")
+plot(Phyllomedusa, col = colors, lty = 0,
+     main = "Spatial polygons of tailles amphibians")
 ```
 
 ### Quick start
