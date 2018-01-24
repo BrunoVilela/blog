@@ -14,7 +14,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "http://bvilela.weebly.com"
 
 [[menu.main]]
-    name = "GitHub of this page"
+    name = "GitHub"
     url = "https://github.com/BrunoVilela/brunovilela.github.io"
 
     
