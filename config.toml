@@ -2,7 +2,7 @@ baseurl = "https://rmacroecology.netlify.com"
 languageCode = "en-us"
 title = "R tutorials for macroecology"
 theme = "hugo-lithium-theme"
-googleAnalytics = ""
+googleAnalytics = "UA-113034513-1"
 disqusShortname = "bvilela"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 

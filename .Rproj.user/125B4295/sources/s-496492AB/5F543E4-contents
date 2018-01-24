@@ -147,7 +147,7 @@ Now you can use the summary function to verify if the empty cells were kept.
 summary(PAM_keep_cells)
 ```
 
-Also, if users want to keep the species that do not occur in any cell of the grid it is necessary to set `remove.sp = TRUE`.
+Also, if users want to keep the species that do not occur in any cell of the grid it is necessary to set `remove.sp = FALSE`.
 
 ## BirdLife shapefiles
 
@@ -195,7 +195,7 @@ plot(PAM_points)
 
 ## Using your own grid
 
-Some users may want to create a presence absence matrix based on their own grid in shapefile format due to several reasons. The function `lets.presab.grid` allow users to convert species' ranges into a presence-absence matrix based on a grid in shapefile format. However, this function only returns the actual matrix of presence absence and the grid, not an `PresenceAbsence` object. In some situations it is possible to convert this result to a `PresenceAbsence` object, I will cover this in a new post soon. Let's first create our grid:
+For different reasons some users may want to create a presence absence matrix based on their own grid in shapefile format. The function `lets.presab.grid` allow users to convert species' ranges into a presence-absence matrix based on a grid in shapefile format. However, this function only returns the actual matrix of presence absence and the grid, not an `PresenceAbsence` object. In some situations it is possible to convert this result to a `PresenceAbsence` object, I will cover this in a new post soon. Let's first create our grid:
 ```{r}
 # Grid 
 sp.r <- rasterToPolygons(raster(xmn = -93, xmx = -29,
@@ -230,5 +230,5 @@ plot(resu$grid, border = "gray40",
 map(add = TRUE)
 ```
 
-This covers all the functions to convert species distribution into presence absence matrix using the `letsR` package. Let me know if you have any suggestion or comments, and please share if you like it. Hope to be publishing other posts about macroecology in R soon. 
+This covers all the functions to convert species distribution into presence absence matrix using the `letsR` package. Let me know if you have any suggestion or comments, and please share if you like it.
 

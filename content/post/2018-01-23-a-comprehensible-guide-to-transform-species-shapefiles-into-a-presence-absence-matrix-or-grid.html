@@ -155,7 +155,7 @@ plot(PAM_90)</code></pre>
 ## Resolution: 1, 1 (x, y)
 ## Extention: -93, -29, -57, 15 (xmin, xmax, ymin, ymax)
 ## Coord. Ref.:  +proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0</code></pre>
-<p>Also, if users want to keep the species that do not occur in any cell of the grid it is necessary to set <code>remove.sp = TRUE</code>.</p>
+<p>Also, if users want to keep the species that do not occur in any cell of the grid it is necessary to set <code>remove.sp = FALSE</code>.</p>
 </div>
 </div>
 <div id="birdlife-shapefiles" class="section level2">
@@ -205,7 +205,7 @@ sp_name &lt;- data$name</code></pre>
 </div>
 <div id="using-your-own-grid" class="section level2">
 <h2>Using your own grid</h2>
-<p>Some users may want to create a presence absence matrix based on their own grid in shapefile format due to several reasons. The function <code>lets.presab.grid</code> allow users to convert species’ ranges into a presence-absence matrix based on a grid in shapefile format. However, this function only returns the actual matrix of presence absence and the grid, not an <code>PresenceAbsence</code> object. In some situations it is possible to convert this result to a <code>PresenceAbsence</code> object, I will cover this in a new post soon. Let’s first create our grid:</p>
+<p>For different reasons some users may want to create a presence absence matrix based on their own grid in shapefile format. The function <code>lets.presab.grid</code> allow users to convert species’ ranges into a presence-absence matrix based on a grid in shapefile format. However, this function only returns the actual matrix of presence absence and the grid, not an <code>PresenceAbsence</code> object. In some situations it is possible to convert this result to a <code>PresenceAbsence</code> object, I will cover this in a new post soon. Let’s first create our grid:</p>
 <pre class="r"><code># Grid 
 sp.r &lt;- rasterToPolygons(raster(xmn = -93, xmx = -29,
                                 ymn = -57, ymx = 15,
@@ -229,5 +229,5 @@ plot(resu$grid, border = &quot;gray40&quot;,
      col = colors[rich_plus1])
 map(add = TRUE)</code></pre>
 <p><img src="/post/2018-01-23-a-comprehensible-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
-<p>This covers all the functions to convert species distribution into presence absence matrix using the <code>letsR</code> package. Let me know if you have any suggestion or comments, and please share if you like it. Hope to be publishing other posts about macroecology in R soon.</p>
+<p>This covers all the functions to convert species distribution into presence absence matrix using the <code>letsR</code> package. Let me know if you have any suggestion or comments, and please share if you like it.</p>
 </div>

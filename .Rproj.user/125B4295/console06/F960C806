@@ -341,3 +341,48 @@ remote:   https://github.com/BrunoVilela/brunovilela.github.io.git[K
 To https://github.com/BrunoVilela/Blog.git
    b88d58f..7fc41a8  master -> master
 ]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add .
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git commit -m "minor changes post 2"
+[master fadefe2] minor changes post 2
+ 4 files changed, 27 insertions(+), 3 deletions(-)
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ fir [K[K[K[Kgit push origin master
+Counting objects: 16, done.
+Delta compression using up to 12 threads.
+Compressing objects:   7% (1/13)   Compressing objects:  15% (2/13)   Compressing objects:  23% (3/13)   Compressing objects:  30% (4/13)   Compressing objects:  38% (5/13)   Compressing objects:  46% (6/13)   Compressing objects:  53% (7/13)   Compressing objects:  61% (8/13)   Compressing objects:  69% (9/13)   Compressing objects:  76% (10/13)   Compressing objects:  84% (11/13)   Compressing objects:  92% (12/13)   Compressing objects: 100% (13/13)   Compressing objects: 100% (13/13), done.
+Writing objects:   6% (1/16)   Writing objects:  12% (2/16)   Writing objects:  18% (3/16)   Writing objects:  25% (4/16)   Writing objects:  31% (5/16)   Writing objects:  37% (6/16)   Writing objects:  43% (7/16)   Writing objects:  50% (8/16)   Writing objects:  56% (9/16)   Writing objects:  62% (10/16)   Writing objects:  68% (11/16)   Writing objects:  75% (12/16)   Writing objects:  81% (13/16)   Writing objects:  87% (14/16)   Writing objects:  93% (15/16)   Writing objects: 100% (16/16)   Writing objects: 100% (16/16), 2.21 KiB | 0 bytes/s, done.
+Total 16 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/8)   [Kremote: Resolving deltas:  12% (1/8)   [Kremote: Resolving deltas:  25% (2/8)   [Kremote: Resolving deltas:  37% (3/8)   [Kremote: Resolving deltas:  50% (4/8)   [Kremote: Resolving deltas:  62% (5/8)   [Kremote: Resolving deltas:  75% (6/8)   [Kremote: Resolving deltas:  87% (7/8)   [Kremote: Resolving deltas: 100% (8/8)   [Kremote: Resolving deltas: 100% (8/8), completed with 8 local objects.[K
+To https://github.com/BrunoVilela/Blog.git
+   7fc41a8..fadefe2  master -> master
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ gits [K[K status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/125B4295/console06/F960C806[m
+	[31mmodified:   .Rproj.user/125B4295/sources/prop/6FDF0108[m
+	[31mmodified:   .Rproj.user/125B4295/sources/prop/8E1BC73F[m
+	[31mmodified:   .Rproj.user/125B4295/sources/s-496492AB/5F543E4[m
+	[31mmodified:   .Rproj.user/125B4295/sources/s-496492AB/5F543E4-contents[m
+	[31mmodified:   .Rproj.user/125B4295/sources/s-496492AB/7CCD7E9B[m
+	[31mmodified:   .Rproj.user/125B4295/sources/s-496492AB/7CCD7E9B-contents[m
+	[31mmodified:   config.toml[m
+	[31mmodified:   content/post/2018-01-23-a-comprehensible-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid.Rmd[m
+	[31mmodified:   content/post/2018-01-23-a-comprehensible-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid.html[m
+	[31mmodified:   public/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/index.html[m
+	[31mmodified:   public/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/index.html[m
+	[31mmodified:   public/categories/index.html[m
+	[31mmodified:   public/categories/macroecology/index.html[m
+	[31mmodified:   public/index.html[m
+	[31mmodified:   public/post/index.html[m
+	[31mmodified:   public/tags/grid/index.html[m
+	[31mmodified:   public/tags/index.html[m
+	[31mmodified:   public/tags/iucn/index.html[m
+	[31mmodified:   public/tags/letsr/index.html[m
+	[31mmodified:   public/tags/presence-absence-matrix/index.html[m
+	[31mmodified:   public/tags/r/index.html[m
+	[31mmodified:   public/tags/shapefiles/index.html[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/Box Sync/blogboteromacserver2:blog bvilela$ git add .
