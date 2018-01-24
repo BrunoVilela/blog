@@ -13,6 +13,12 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     name = "About the author"
     url = "http://bvilela.weebly.com"
 
+[[menu.main]]
+    name = "GitHub of this page"
+    url = "https://github.com/BrunoVilela/brunovilela.github.io"
+
+    
+    
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
     highlightjsCDN = "//cdn.bootcss.com"
