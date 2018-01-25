@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "4011395164",
     "id" : "5F543E4",
-    "lastKnownWriteTime" : 1516819076,
-    "last_content_update" : 1516819076310,
+    "lastKnownWriteTime" : 1516899781,
+    "last_content_update" : 1516899781907,
     "path" : "~/Box Sync/blog/content/post/2018-01-23-a-comprehensible-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid.Rmd",
     "project_path" : "content/post/2018-01-23-a-comprehensible-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-or-grid.Rmd",
     "properties" : {
-        "cursorPosition" : "232,202",
+        "cursorPosition" : "123,233",
         "docOutlineVisible" : "0",
-        "scrollLine" : "219"
+        "scrollLine" : "122"
     },
     "relative_order" : 2,
     "source_on_save" : false,

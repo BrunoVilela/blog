@@ -121,7 +121,7 @@ The function `lets.presab` has some other useful arguments.
 For example, some users may want to exclude parts of the range where the species are extinct, or only keep the breeding ranges. The arguments `presence`, `origin` and `seasonal` allow users to filter the species distribution according to the IUCN classification of the different parts of a species range distribution. The specific values to use in these arguments  may be obtained from the [IUCN metadata files](http://www.iucnredlist.org/technical-documents/spatial-data).
 
 In some situations it is useful to only consider a species present in a cell if it covers more than a certain percentage value. Users can change this value using the argument `cover`.
-Note that this option is only available when the coordinates are in degrees (longitude/latitude).
+Note that this option is only available when the coordinates are in degrees (longitude/latitude). UPDATE: the version on [github](https://github.com/macroecology/letsR) now allow users to use the argument cover with other projections. 
 
 ```{r}
 # 90% cover

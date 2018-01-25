@@ -125,7 +125,7 @@ mean(res(pr2)) # Resolution value</code></pre>
 <div id="other-features" class="section level3">
 <h3>Other features</h3>
 <p>The function <code>lets.presab</code> has some other useful arguments. For example, some users may want to exclude parts of the range where the species are extinct, or only keep the breeding ranges. The arguments <code>presence</code>, <code>origin</code> and <code>seasonal</code> allow users to filter the species distribution according to the IUCN classification of the different parts of a species range distribution. The specific values to use in these arguments may be obtained from the <a href="http://www.iucnredlist.org/technical-documents/spatial-data">IUCN metadata files</a>.</p>
-<p>In some situations it is useful to only consider a species present in a cell if it covers more than a certain percentage value. Users can change this value using the argument <code>cover</code>. Note that this option is only available when the coordinates are in degrees (longitude/latitude).</p>
+<p>In some situations it is useful to only consider a species present in a cell if it covers more than a certain percentage value. Users can change this value using the argument <code>cover</code>. Note that this option is only available when the coordinates are in degrees (longitude/latitude). UPDATE: the version on <a href="https://github.com/macroecology/letsR">github</a> now allow users to use the argument cover with other projections.</p>
 <pre class="r"><code># 90% cover
 PAM_90 &lt;- lets.presab(Phyllomedusa, xmn = -93,
                       xmx = -29, ymn = -57,
