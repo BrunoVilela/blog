@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Variables on R tutorials for macroecology</title>
+    <link>/tags/variables/</link>
+    <description>Recent content in Variables on R tutorials for macroecology</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/variables/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Adding variables to a PresenceAbsence object</title>
+      <link>/2018/01/26/adding-variables-to-a-presenceabsence-object/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/26/adding-variables-to-a-presenceabsence-object/</guid>
+      <description>Once you have transformed species distribution data into a presence absence matrix (PAM) in PresenceAbsence format (see the first and second posts on how to do it), you may want to add variables to it. These variables are normally in raster format, for example the WorldClim bioclimatic data, or in shapefile format, for example ecorregions of the world.
+Adding variables in raster format To add variables in raster format to a PresenceAbsence object we can use the function lets.</description>
+    </item>
+    
+  </channel>
+</rss>

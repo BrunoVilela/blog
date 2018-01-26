@@ -1,0 +1,153 @@
+---
+title: Adding variables to a PresenceAbsence object
+author: Bruno Vilela
+date: '2018-01-26'
+slug: adding-variables-to-a-presenceabsence-object
+categories:
+  - macroecology
+tags:
+  - letsR
+  - Presence Absence Matrix
+  - R
+  - Variables
+  - Shapefiles
+  - Rasters
+---
+
+Once you have transformed species distribution data into a presence absence matrix (PAM) in `PresenceAbsence` format (see the [first](https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/) and [second](https://rmacroecology.netlify.com/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/) posts on how to do it), you may want to add variables to it. These variables are normally in raster format, for example the WorldClim bioclimatic data, or in shapefile format, for example ecorregions of the world. 
+
+### Adding variables in raster format
+
+To add variables in raster format to a `PresenceAbsence` object we can use the function `lets.addvar` from the `letsR` package. This function takes a `raster` object with any resolution and extent, and transform it to match the information in your `PresenceAbsence` object. Once this is done, the variables are included as additional columns containing the aggregate/summarize value of the variable(s) in each cell of the presence-absence matrix. Let's see an example using the bioclimatic data from WorldClim that can be downloaded with the package `raster`. 
+
+```{r, message=F, warning=F}
+library(letsR)
+```
+
+First we get the data.
+```{r}
+r <- getData("worldclim", var = "bio", 
+             res = 10)
+plot(r)
+```
+
+Here I will use the `PresenceAbsence` object for Phyllomedusa species [generated previously](https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/).
+```{r}
+data(PAM)
+plot(PAM, main = "Phyllomedusa\nRichness")
+```
+
+Let's check the projection differences.
+```{r}
+projection(r)
+projection(PAM$Richness_Raster)
+```
+
+Since the CRS descriptions differ, we have to fix them first. In this case the projections are actually the same, but the character describing them differ, so we can just change the name directly. But if the projections are actually different, you may want to use the function `raster::projectRaster`. 
+```{r}
+projection(PAM$Richness_Raster) <- projection(r)
+```
+
+We can now run the `lets.addvar` function. 
+```{r}
+PAM_env <- lets.addvar(PAM, r, fun = mean)
+```
+
+The climatic data have a higher resolution than our PAM. In this case, we could choose a function to aggregate the values with the argument `fun`. In most of the situations, people will be interested in averaging values to aggregate multiple cells, but in some specific cases you may want to sum them, or get the standard deviation, or use any another function. 
+
+The results are a presence absence matrix, where the last columns now include the raster values. Check the table:
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(knitr)
+library(dplyr)
+library(kableExtra)
+```
+
+```{r, eval=FALSE}
+PAM_env
+```
+
+```{r, echo = FALSE}
+kable(PAM_env, "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "800px", height = "400px")
+```
+
+If you do not want the coordinates and species included you can set the argument `onlyvar = TRUE`.
+```{r}
+climate <- lets.addvar(PAM, r, fun = mean, onlyvar = TRUE)
+```
+```{r, eval=F}
+climate
+```
+```{r, echo = FALSE}
+kable(climate, "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "800px", height = "400px")
+```
+
+Now that we have the variables, we can use it to relate to our species data in many ways. For example, you could graph the relationship between precipitation/temperature and species richness. 
+```{r}
+rich <- rowSums(PAM$P[, -(1:2)])
+plot(y = rich, x = climate[, 1]/10, 
+     xlab = "Temperature (Celsius)", ylab = "Species Richness",
+     col = rgb(0, 0, 0, .3), pch = 20, cex = 2)
+plot(y = rich, x = climate[, 12], 
+     xlab = "Preciptation (mm)", ylab = "Species Richness",
+     col = rgb(0, 0, 0, .3), pch = 20, cex = 2)
+```
+
+
+### Adding variables in polygon format
+
+Information like the shapefiles of ecorregions, conservation units, countries, etc, can be added to a PAM using the function `lets.addpoly`. This function adds polygons' attributes as columns at the right-end of the matrix. The Values represent the percentage of the cell covered by the polygon attribute used. As an example, we can use the South America countries map available in the package `maptools`.
+
+```{r, message=F, warning=F}
+library(maptools)
+```
+```{r}
+data("wrld_simpl")
+SA <- c("Brazil", "Colombia",  "Argentina",
+        "Peru", "Venezuela", "Chile",
+        "Ecuador", "Bolivia", "Paraguay",
+        "Uruguay", "Guyana", "Suriname",
+        "French Guiana")
+south_ame <- wrld_simpl[wrld_simpl@data$NAME %in% SA, ]
+plot(south_ame)
+```
+
+Now we can add this variables to our PAM.
+```{r}
+PAM_pol <- lets.addpoly(PAM, south_ame, "NAME")
+```
+```{r, eval=F}
+PAM_pol
+```
+```{r, echo = FALSE}
+kable(PAM_pol, "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "800px", height = "400px")
+```
+
+This information can be used to calculate the number of species per country for example. 
+
+```{r}
+vars_col <- (ncol(PAM$P) + 1):ncol(PAM_pol)
+n <- length(vars_col)
+rich_count <- numeric(n)
+for (i in 1:n) {
+  rich_count[i] <- sum(colSums(PAM$P[PAM_pol[, vars_col[i]] > 0,
+                                  -(1:2)]) > 0)
+}
+labs <- as.factor(colnames(PAM_pol)[vars_col])
+names(rich_count) <- labs
+barplot(rich_count, las = 2,
+        col = "blue",
+        main = "Phyllomedusa richness per country")
+
+```
+
+
+
+
+
+

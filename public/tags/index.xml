@@ -41,7 +41,7 @@
     <item>
       <title>Letsr</title>
       <link>/tags/letsr/</link>
-      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/letsr/</guid>
       <description></description>
@@ -50,7 +50,7 @@
     <item>
       <title>Presence Absence Matrix</title>
       <link>/tags/presence-absence-matrix/</link>
-      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/presence-absence-matrix/</guid>
       <description></description>
@@ -59,16 +59,25 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Rasters</title>
+      <link>/tags/rasters/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rasters/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Shapefiles</title>
       <link>/tags/shapefiles/</link>
-      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/shapefiles/</guid>
       <description></description>
@@ -80,6 +89,15 @@
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/subset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variables</title>
+      <link>/tags/variables/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/variables/</guid>
       <description></description>
     </item>
     
