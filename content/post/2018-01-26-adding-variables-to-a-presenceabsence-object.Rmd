@@ -55,7 +55,7 @@ PAM_env <- lets.addvar(PAM, r, fun = mean)
 
 The climatic data have a higher resolution than our PAM. In this case, we could choose a function to aggregate the values with the argument `fun`. In most of the situations, people will be interested in averaging values to aggregate multiple cells, but in some specific cases you may want to sum them, or get the standard deviation, or use any another function. 
 
-The results are a presence absence matrix, where the last columns now include the raster values. Check the table:
+The result is a presence absence matrix, where the last columns now include the raster values. Check the table:
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(knitr)
 library(dplyr)
@@ -99,7 +99,7 @@ plot(y = rich, x = climate[, 12],
 
 ### Adding variables in polygon format
 
-Information like the shapefiles of ecorregions, conservation units, countries, etc, can be added to a PAM using the function `lets.addpoly`. This function adds polygons' attributes as columns at the right-end of the matrix. The Values represent the percentage of the cell covered by the polygon attribute used. As an example, we can use the South America countries map available in the package `maptools`.
+Data in shapefile format like ecorregions, conservation units or countries, can be added to a PAM using the function `lets.addpoly`. This function adds polygons' attributes as columns at the right-end of the matrix. The values represent the percentage of the cell covered by the polygon attribute used. As an example, we can use the South America countries map available in the package `maptools`.
 
 ```{r, message=F, warning=F}
 library(maptools)
