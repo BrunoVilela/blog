@@ -63,11 +63,11 @@ library(kableExtra)
 ```
 
 ```{r, eval=FALSE}
-PAM_env
+head(PAM_env)
 ```
 
 ```{r, echo = FALSE}
-kable(PAM_env, "html") %>%
+kable(head(PAM_env), "html") %>%
   kable_styling() %>%
   scroll_box(width = "800px", height = "400px")
 ```
@@ -77,10 +77,10 @@ If you do not want the coordinates and species included you can set the argument
 climate <- lets.addvar(PAM, r, fun = mean, onlyvar = TRUE)
 ```
 ```{r, eval=F}
-climate
+head(climate)
 ```
 ```{r, echo = FALSE}
-kable(climate, "html") %>%
+kable(head(climate), "html") %>%
   kable_styling() %>%
   scroll_box(width = "800px", height = "400px")
 ```
@@ -120,10 +120,10 @@ Now we can add this variables to our PAM.
 PAM_pol <- lets.addpoly(PAM, south_ame, "NAME")
 ```
 ```{r, eval=F}
-PAM_pol
+head(PAM_pol)
 ```
 ```{r, echo = FALSE}
-kable(PAM_pol, "html") %>%
+kable(head(PAM_pol), "html") %>%
   kable_styling() %>%
   scroll_box(width = "800px", height = "400px")
 ```
