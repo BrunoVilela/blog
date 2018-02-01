@@ -1602,15 +1602,26 @@ bio19_mean
 </table>
 </div>
 <p>Now that we have the variables, we can use it to relate to our species data in many ways. For example, you could graph the relationship between precipitation/temperature and species richness.</p>
+<pre class="r"><code>library(ggplot2)</code></pre>
 <pre class="r"><code>rich &lt;- rowSums(PAM$P[, -(1:2)])
-plot(y = rich, x = climate[, 1]/10, 
-     xlab = &quot;Temperature (Celsius)&quot;, ylab = &quot;Species Richness&quot;,
-     col = rgb(0, 0, 0, .3), pch = 20, cex = 2)</code></pre>
-<p><img src="/post/2018-01-26-adding-variables-to-a-presenceabsence-object_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<pre class="r"><code>plot(y = rich, x = climate[, 12], 
-     xlab = &quot;Preciptation (mm)&quot;, ylab = &quot;Species Richness&quot;,
-     col = rgb(0, 0, 0, .3), pch = 20, cex = 2)</code></pre>
-<p><img src="/post/2018-01-26-adding-variables-to-a-presenceabsence-object_files/figure-html/unnamed-chunk-13-2.png" width="672" /></p>
+
+mpg1 &lt;- data.frame(&quot;Temperature&quot; = climate[, 1]/10,
+                   &quot;Precipitation&quot; = climate[, 12],
+                   &quot;Richness&quot; = rich)
+f1 &lt;- ggplot(mpg1, aes(Temperature, Richness))
+f1 &lt;- f1 + geom_smooth(model = lm) + 
+  geom_point(col = rgb(0, 0, 0, .6)) + 
+  theme_bw()
+
+f2 &lt;- ggplot(mpg1, aes(Precipitation, Richness))
+f2 &lt;- f2 + geom_smooth(model = lm) + 
+  geom_point(col = rgb(0, 0, 0, .6)) + 
+  theme_bw()
+
+f1</code></pre>
+<p><img src="/post/2018-01-26-adding-variables-to-a-presenceabsence-object_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code>f2</code></pre>
+<p><img src="/post/2018-01-26-adding-variables-to-a-presenceabsence-object_files/figure-html/unnamed-chunk-14-2.png" width="672" /></p>
 </div>
 <div id="adding-variables-in-polygon-format" class="section level3">
 <h3>Adding variables in polygon format</h3>
@@ -1624,7 +1635,7 @@ SA &lt;- c(&quot;Brazil&quot;, &quot;Colombia&quot;,  &quot;Argentina&quot;,
         &quot;French Guiana&quot;)
 south_ame &lt;- wrld_simpl[wrld_simpl@data$NAME %in% SA, ]
 plot(south_ame)</code></pre>
-<p><img src="/post/2018-01-26-adding-variables-to-a-presenceabsence-object_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="/post/2018-01-26-adding-variables-to-a-presenceabsence-object_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>Now we can add this variables to our PAM.</p>
 <pre class="r"><code>PAM_pol &lt;- lets.addpoly(PAM, south_ame, &quot;NAME&quot;)</code></pre>
 <pre class="r"><code>head(PAM_pol)</code></pre>
@@ -2643,12 +2654,13 @@ n &lt;- length(vars_col)
 rich_count &lt;- numeric(n)
 for (i in 1:n) {
   rich_count[i] &lt;- sum(colSums(PAM$P[PAM_pol[, vars_col[i]] &gt; 0,
-                                  -(1:2)]) &gt; 0)
+                                     -(1:2)]) &gt; 0)
 }
 labs &lt;- as.factor(colnames(PAM_pol)[vars_col])
-names(rich_count) &lt;- labs
-barplot(rich_count, las = 2,
-        col = &quot;blue&quot;,
-        main = &quot;Phyllomedusa richness per country&quot;)</code></pre>
-<p><img src="/post/2018-01-26-adding-variables-to-a-presenceabsence-object_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+names(rich_count) &lt;- labs</code></pre>
+<pre class="r"><code>mpg &lt;- data.frame(&quot;Richness&quot; = rich_count, &quot;Country&quot; = as.factor(labs))
+g &lt;- ggplot(mpg, aes(labs, Richness))
+g + geom_bar(stat = &quot;identity&quot;) + labs(x = &quot;&quot;) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))</code></pre>
+<p><img src="/post/2018-01-26-adding-variables-to-a-presenceabsence-object_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>

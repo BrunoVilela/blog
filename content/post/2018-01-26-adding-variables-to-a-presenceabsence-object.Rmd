@@ -86,14 +86,29 @@ kable(head(climate), "html") %>%
 ```
 
 Now that we have the variables, we can use it to relate to our species data in many ways. For example, you could graph the relationship between precipitation/temperature and species richness. 
-```{r}
+
+```{r, message=FALSE, warning=FALSE}
+library(ggplot2)
+```
+
+```{r, warning = FALSE, message = FALSE}
 rich <- rowSums(PAM$P[, -(1:2)])
-plot(y = rich, x = climate[, 1]/10, 
-     xlab = "Temperature (Celsius)", ylab = "Species Richness",
-     col = rgb(0, 0, 0, .3), pch = 20, cex = 2)
-plot(y = rich, x = climate[, 12], 
-     xlab = "Preciptation (mm)", ylab = "Species Richness",
-     col = rgb(0, 0, 0, .3), pch = 20, cex = 2)
+
+mpg1 <- data.frame("Temperature" = climate[, 1]/10,
+                   "Precipitation" = climate[, 12],
+                   "Richness" = rich)
+f1 <- ggplot(mpg1, aes(Temperature, Richness))
+f1 <- f1 + geom_smooth(model = lm) + 
+  geom_point(col = rgb(0, 0, 0, .6)) + 
+  theme_bw()
+
+f2 <- ggplot(mpg1, aes(Precipitation, Richness))
+f2 <- f2 + geom_smooth(model = lm) + 
+  geom_point(col = rgb(0, 0, 0, .6)) + 
+  theme_bw()
+
+f1
+f2
 ```
 
 
@@ -136,16 +151,18 @@ n <- length(vars_col)
 rich_count <- numeric(n)
 for (i in 1:n) {
   rich_count[i] <- sum(colSums(PAM$P[PAM_pol[, vars_col[i]] > 0,
-                                  -(1:2)]) > 0)
+                                     -(1:2)]) > 0)
 }
 labs <- as.factor(colnames(PAM_pol)[vars_col])
 names(rich_count) <- labs
-barplot(rich_count, las = 2,
-        col = "blue",
-        main = "Phyllomedusa richness per country")
-
 ```
 
+```{r}
+mpg <- data.frame("Richness" = rich_count, "Country" = as.factor(labs))
+g <- ggplot(mpg, aes(labs, Richness))
+g + geom_bar(stat = "identity") + labs(x = "") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
 
 
 
