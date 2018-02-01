@@ -56,7 +56,7 @@ Visually, the Rapoport's rule doesn't seem to work on Phyllomedusa frogs. We can
 library(ggplot2)
 ```
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 mpg <- as.data.frame(resu$Matrix)
 f <- ggplot(mpg, aes(`Latitude(y)`, Variable_mean))
 f + geom_smooth(model = lm) + 

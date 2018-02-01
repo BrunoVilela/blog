@@ -57,7 +57,7 @@
 
   <article class="article">
     
-    <span class="article-duration">3 min read</span>
+    <span class="article-duration">2 min read</span>
     
 
     <h1 class="article-title">Mapping species traits</h1>
@@ -100,8 +100,6 @@ f + geom_smooth(model = lm) +
   geom_point(col = rgb(0, 0, 0, .6)) + 
   labs(y = &quot;Range Size&quot;) + 
   theme_bw()</code></pre>
-<pre><code>## Warning: Ignoring unknown parameters: model</code></pre>
-<pre><code>## `geom_smooth()` using method = &#39;gam&#39;</code></pre>
 <p><img src="/post/2018-01-30-mapping-species-traits_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Seems that the Rapoport’s rule doesn’t stand for this genus, actually the direction seems inverted, at least when analyzing it at the community level. However, to confirm this we would have to perform formal statistical analysis and control for spatial autocorrelation problems.</p>
 <p><em>A quick note here. Scientists should be carefull with this type of comunity analysis, as the repetition in species co-occurrence can easilly generate spourious patterns and significant correlations (<a href="http://onlinelibrary.wiley.com/getIdentityKey?redirectTo=http%3A%2F%2Fonlinelibrary.wiley.com%2Fdoi%2F10.1111%2Fjbi.12953%2Ffull%3Fwol1URL%3D%2Fdoi%2F10.1111%2Fjbi.12953%2Ffull&amp;userIp=128.252.25.55&amp;doi=10.1111%2Fjbi.12953">see our paper for further discussion</a>).</em></p>
