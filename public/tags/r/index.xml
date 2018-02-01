@@ -6,10 +6,20 @@
     <description>Recent content in R on R tutorials for macroecology</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mapping species traits</title>
+      <link>/2018/01/30/mapping-species-traits/</link>
+      <pubDate>Tue, 30 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/30/mapping-species-traits/</guid>
+      <description>Many times scientists are interested in analyzing or describing the geographical variation of a trait. For example, how species body size varies among the space. Here I will show how to map species traits using the letsR package.
+To do this, let’s test the Rapoport’s rule on Phyllomedusa frogs. Following Wikipedia: “Rapoport’s rule is an ecogeographical rule that states that latitudinal ranges of plants and animals are generally smaller at lower latitudes than at higher latitudes.</description>
+    </item>
     
     <item>
       <title>Adding variables to a PresenceAbsence object</title>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<title>Mapping species traits - R tutorials for macroecology</title>
+<meta property="og:title" content="Mapping species traits - R tutorials for macroecology">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/bruno_trans.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="http://bvilela.weebly.com">About the author</a></li>
+    
+    <li><a href="https://github.com/BrunoVilela/brunovilela.github.io">GitHub</a></li>
+    
+    <li><a href="https://rmacroecology.netlify.com">Posts</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Mapping species traits</h1>
+
+    
+    <span class="article-date">2018/01/30</span>
+    
+
+    <div class="article-content">
+      <p>Many times scientists are interested in analyzing or describing the geographical variation of a trait. For example, how species body size varies among the space. Here I will show how to map species traits using the <code>letsR</code> package.</p>
+<p>To do this, let’s test the Rapoport’s rule on Phyllomedusa frogs. Following Wikipedia: “Rapoport’s rule is an ecogeographical rule that states that latitudinal ranges of plants and animals are generally smaller at lower latitudes than at higher latitudes.”.</p>
+<p>To start this test we can load our <code>PresenceAbsence</code> object that we generated previously (see the <a href="https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/">first</a> and <a href="https://rmacroecology.netlify.com/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/">second</a> posts on how to do it).</p>
+<p><em>Note: I recommend to use the latest version of the <code>letsR</code> package on <a href="https://github.com/macroecology/letsR">GitHub</a></em></p>
+<pre class="r"><code>library(letsR)</code></pre>
+<pre class="r"><code>data(&quot;PAM&quot;)
+# Change the color 
+cols &lt;- colorRampPalette(c(&#39;#ffffd9&#39;,&#39;#edf8b1&#39;,&#39;#c7e9b4&#39;,
+                           &#39;#7fcdbb&#39;,&#39;#41b6c4&#39;,
+                           &#39;#1d91c0&#39;,&#39;#225ea8&#39;))
+plot(PAM, col_rich = cols)</code></pre>
+<p><img src="/post/2018-01-30-mapping-species-traits_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Now, we have to calculate the species range sizes. <code>letsR</code> includes a function to do that called <code>lets.rangesize</code>. We can calculate the range size from the <code>PresenceAbsence</code> matrix, as the number of cells or in square meters. Alternatively, we can do it directly on the species ranges shapefiles. Let’s do the latter option, since it is more accurate, although all options should be correlated.</p>
+<pre class="r"><code>data(&quot;Phyllomedusa&quot;)
+rangesize &lt;- lets.rangesize(Phyllomedusa,
+                            coordinates = &quot;geographic&quot;)
+rangesize &lt;- rangesize / 1000 # Transform in km2</code></pre>
+<div id="community-level-analysis" class="section level2">
+<h2>Community level analysis</h2>
+<p>To map this trait by cell, we can use the <code>lets.maplizer</code> function. You can choose the function to aggregate the species trait per cell, but in this case we want to use the default option that will average the values. We also want the function to return a raster with the mapped traits, so we will set <code>ras = TRUE</code>.</p>
+<pre class="r"><code>resu &lt;- lets.maplizer(PAM, rangesize, rownames(rangesize), ras = TRUE)
+cols2 &lt;- colorRampPalette(c(&#39;#e0ecf4&#39;,&#39;#9ebcda&#39;,&#39;#8856a7&#39;))
+plot(resu$Raster, col = cols2(10))
+map(add = TRUE)</code></pre>
+<p><img src="/post/2018-01-30-mapping-species-traits_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Visually, the Rapoport’s rule doesn’t seem to work on Phyllomedusa frogs. We can go further and see the relationship with latitude.</p>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<pre class="r"><code>mpg &lt;- as.data.frame(resu$Matrix)
+f &lt;- ggplot(mpg, aes(`Latitude(y)`, Variable_mean))
+f + geom_smooth(model = lm) + 
+  geom_point(col = rgb(0, 0, 0, .6)) + 
+  labs(y = &quot;Range Size&quot;) + 
+  theme_bw()</code></pre>
+<pre><code>## Warning: Ignoring unknown parameters: model</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;gam&#39;</code></pre>
+<p><img src="/post/2018-01-30-mapping-species-traits_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Seems that the Rapoport’s rule doesn’t stand for this genera, actually the direction seems inverted, at least when analyzing it at the community level. However, to confirm this we would have to perform formal statistical analysis and control for spatial autocorrelation problems.</p>
+<p><em>A quick note here. Scientists should be carefull with this type of comunity analysis, as the repetition in species co-occurrence can easilly generate spourious patterns and significant correlations (<a href="http://onlinelibrary.wiley.com/getIdentityKey?redirectTo=http%3A%2F%2Fonlinelibrary.wiley.com%2Fdoi%2F10.1111%2Fjbi.12953%2Ffull%3Fwol1URL%3D%2Fdoi%2F10.1111%2Fjbi.12953%2Ffull&amp;userIp=128.252.25.55&amp;doi=10.1111%2Fjbi.12953">see our paper for further discussion</a>).</em></p>
+</div>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://https-rmacroecology-netlify-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-113034513-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/01/30/mapping-species-traits/</loc>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/01/26/adding-variables-to-a-presenceabsence-object/</loc>
     <lastmod>2018-01-26T00:00:00+00:00</lastmod>
   </url>
@@ -47,43 +52,43 @@
   
   <url>
     <loc>/tags/letsr/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/macroecology/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/presence-absence-matrix/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/rasters/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -106,8 +111,14 @@
   </url>
   
   <url>
+    <loc>/tags/traits/</loc>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/variables/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
