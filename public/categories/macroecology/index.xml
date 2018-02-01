@@ -17,7 +17,7 @@
       <pubDate>Tue, 30 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/01/30/mapping-species-traits/</guid>
-      <description>Many times scientists are interested in analyzing or describing the geographical variation of a trait. For example, how species body size varies among the space. Here I will show how to map species traits using the letsR package.
+      <description>Many times scientists are interested in analyzing or describing the geographical variation of a trait. For example, how species body size varies across the space. Here I will show how to map species traits using the letsR package.
 To do this, let’s test the Rapoport’s rule on Phyllomedusa frogs. Following Wikipedia: “Rapoport’s rule is an ecogeographical rule that states that latitudinal ranges of plants and animals are generally smaller at lower latitudes than at higher latitudes.</description>
     </item>
     
