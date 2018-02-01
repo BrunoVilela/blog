@@ -47,7 +47,7 @@ To map this trait by cell, we can use the `lets.maplizer` function. You can choo
 ```{r}
 resu <- lets.maplizer(PAM, rangesize, rownames(rangesize), ras = TRUE)
 cols2 <- colorRampPalette(c('#e0ecf4','#9ebcda','#8856a7'))
-plot(resu$Raster, col = cols2(10))
+plot(resu$Raster, col = cols2(10), main = "Mean Range Size")
 map(add = TRUE)
 ```
 

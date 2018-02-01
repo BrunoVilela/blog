@@ -89,7 +89,7 @@ rangesize &lt;- rangesize / 1000 # Transform in km2</code></pre>
 <p>To map this trait by cell, we can use the <code>lets.maplizer</code> function. You can choose the function to aggregate the species trait per cell, but in this case we want to use the default option that will average the values. We also want the function to return a raster with the mapped traits, so we will set <code>ras = TRUE</code>.</p>
 <pre class="r"><code>resu &lt;- lets.maplizer(PAM, rangesize, rownames(rangesize), ras = TRUE)
 cols2 &lt;- colorRampPalette(c(&#39;#e0ecf4&#39;,&#39;#9ebcda&#39;,&#39;#8856a7&#39;))
-plot(resu$Raster, col = cols2(10))
+plot(resu$Raster, col = cols2(10), main = &quot;Mean Range Size&quot;)
 map(add = TRUE)</code></pre>
 <p><img src="/post/2018-01-30-mapping-species-traits_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Visually, the Rapoport’s rule doesn’t seem to work on Phyllomedusa frogs. We can go further and see the relationship with latitude.</p>
