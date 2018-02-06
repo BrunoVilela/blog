@@ -1,0 +1,52 @@
+---
+title: Macroecological analysis at the species level
+author: Bruno Vilela
+date: '2018-02-06'
+categories:
+  - macroecology
+tags:
+  - letsR
+  - Presence Absence Matrix
+  - R
+  - Rasters
+  - Shapefiles
+  - subset
+  - traits
+  - Variables
+slug: species-level-macroecological-analysis
+---
+
+In the previous post, I have shown how to use `letsR` to analyze species traits at the community level. But, in many cases this type of analysis can lead to spurious patterns ([click here for further discussion on this issue](http://onlinelibrary.wiley.com/doi/10.1111/jbi.12953/full)). An alternative can be analyzing the data at the species-level. In this post, I will show an example on how to make macroecological analysis at the species level using the `letsR` package. As an example we will explore how climate correlates with species extinction risk. 
+
+To start this test we can load our `PresenceAbsence` object that we generated previously  (see the [first](https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/) and [second](https://rmacroecology.netlify.com/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/) posts on how to do it).
+
+*Note: I recommend to use the latest version of the `letsR` package on [GitHub](https://github.com/macroecology/letsR)*
+```{r, message = FALSE, warning=FALSE}
+library(letsR)
+```
+```{r}
+data("PAM")
+```
+
+To make things even more interesting lets make an iterative map, using the leaflet package.
+```{r, message = FALSE, warning=FALSE}
+library(leaflet)
+```
+
+```{r}
+r <- PAM$Richness_Raster
+values(r)[values(r) == 0] <- NA
+pal <- colorNumeric(c('#edf8e9','#c7e9c0','#a1d99b',
+                       '#74c476','#31a354','#006d2c'), 
+                    values(r), 
+                    na.color = "transparent")
+h = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G"
+leaflet() %>% 
+    addTiles(urlTemplate = h,
+             attribution = 'Google') %>%
+  addRasterImage(r, colors = pal, opacity = .6) %>%
+  addLegend(pal = pal, values = values(r),
+    title = "Species Richness")
+
+```
+

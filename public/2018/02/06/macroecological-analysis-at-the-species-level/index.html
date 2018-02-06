@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<title>Macroecological analysis at the species level - R tutorials for macroecology</title>
+<meta property="og:title" content="Macroecological analysis at the species level - R tutorials for macroecology">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/bruno_trans.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="http://bvilela.weebly.com">About the author</a></li>
+    
+    <li><a href="https://github.com/BrunoVilela/brunovilela.github.io">GitHub</a></li>
+    
+    <li><a href="https://rmacroecology.netlify.com">Posts</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Macroecological analysis at the species level</h1>
+
+    
+    <span class="article-date">2018/02/06</span>
+    
+
+    <div class="article-content">
+      <p>In the previous post, I have shown how to use <code>letsR</code> to analyze species traits at the community level. But, in many cases this type of analysis can lead to spurious patterns (<a href="http://onlinelibrary.wiley.com/doi/10.1111/jbi.12953/full">click here for further discussion on this issue</a>). An alternative can be analyzing the data at the species-level. In this post, I will show an example on how to make macroecological analysis at the species level using the <code>letsR</code> package. As an example we will explore how climate correlates with species extinction risk.</p>
+
+<p>To start this test we can load our <code>PresenceAbsence</code> object that we generated previously  (see the <a href="https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/">first</a> and <a href="https://rmacroecology.netlify.com/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/">second</a> posts on how to do it).</p>
+
+<p><em>Note: I recommend to use the latest version of the <code>letsR</code> package on <a href="https://github.com/macroecology/letsR">GitHub</a></em></p>
+
+<pre><code class="language-r">library(letsR)
+</code></pre>
+
+<pre><code class="language-r">data(&quot;PAM&quot;)
+</code></pre>
+
+<p>To make things even more interesting lets make an iterative map, using the leaflet package.</p>
+
+<pre><code class="language-r">library(leaflet)
+</code></pre>
+
+<pre><code class="language-r">r &lt;- PAM$Richness_Raster
+values(r)[values(r) == 0] &lt;- NA
+pal &lt;- colorNumeric(c(&quot;#0C2C84&quot;, &quot;#41B6C4&quot;, &quot;#FFFFCC&quot;), 
+                    values(r), 
+                    na.color = &quot;transparent&quot;)
+leaflet() %&gt;% addTiles() %&gt;%
+  addRasterImage(r, colors = pal, opacity = 0.8) %&gt;%
+  addLegend(pal = pal, values = values(r),
+    title = &quot;Species Richness&quot;)
+</code></pre>
+
+<p><!--html_preserve--><div id="htmlwidget-90ea71d2fe30e026e181" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-90ea71d2fe30e026e181">{&ldquo;x&rdquo;:{&ldquo;options&rdquo;:{&ldquo;crs&rdquo;:{&ldquo;crsClass&rdquo;:&ldquo;L.CRS.EPSG3857&rdquo;,&ldquo;code&rdquo;:null,&ldquo;proj4def&rdquo;:null,&ldquo;projectedBounds&rdquo;:null,&ldquo;options&rdquo;:{}}},&ldquo;calls&rdquo;:[{&ldquo;method&rdquo;:&ldquo;addTiles&rdquo;,&ldquo;args&rdquo;:[&ldquo;//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&rdquo;,null,null,{&ldquo;minZoom&rdquo;:0,&ldquo;maxZoom&rdquo;:18,&ldquo;maxNativeZoom&rdquo;:null,&ldquo;tileSize&rdquo;:256,&ldquo;subdomains&rdquo;:&ldquo;abc&rdquo;,&ldquo;errorTileUrl&rdquo;:&ldquo;&rdquo;,&ldquo;tms&rdquo;:false,&ldquo;continuousWorld&rdquo;:false,&ldquo;noWrap&rdquo;:false,&ldquo;zoomOffset&rdquo;:0,&ldquo;zoomReverse&rdquo;:false,&ldquo;opacity&rdquo;:1,&ldquo;zIndex&rdquo;:null,&ldquo;unloadInvisibleTiles&rdquo;:null,&ldquo;updateWhenIdle&rdquo;:null,&ldquo;detectRetina&rdquo;:false,&ldquo;reuseTiles&rdquo;:false,&ldquo;attribution&rdquo;:&rdquo;&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap&lt;\/a&gt; contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA&lt;\/a&gt;&ldquo;}]},{&ldquo;method&rdquo;:&ldquo;addRasterImage&rdquo;,&ldquo;args&rdquo;:[&ldquo;data:image/png;base64,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&rdquo;,[[15,-93],[-57,-29]],0.8,null,null,null]},{&ldquo;method&rdquo;:&ldquo;addLegend&rdquo;,&ldquo;args&rdquo;:[{&ldquo;colors&rdquo;:[&ldquo;#0C2C84 , #0C2C84 0%, #295297 14.2857142857143%, #3879A9 28.5714285714286%, #40A1BB 42.8571428571429%, #68C0C5 57.1428571428571%, #A1D5C8 71.4285714285714%, #D2EACA 85.7142857142857%, #FFFFCC 100%, #FFFFCC &ldquo;],&ldquo;labels&rdquo;:[&ldquo;1&rdquo;,&ldquo;2&rdquo;,&ldquo;3&rdquo;,&ldquo;4&rdquo;,&ldquo;5&rdquo;,&ldquo;6&rdquo;,&ldquo;7&rdquo;,&ldquo;8&rdquo;],&ldquo;na_color&rdquo;:null,&ldquo;na_label&rdquo;:&ldquo;NA&rdquo;,&ldquo;opacity&rdquo;:0.5,&ldquo;position&rdquo;:&ldquo;topright&rdquo;,&ldquo;type&rdquo;:&ldquo;numeric&rdquo;,&ldquo;title&rdquo;:&ldquo;Species Richness&rdquo;,&ldquo;extra&rdquo;:{&ldquo;p_1&rdquo;:0,&ldquo;p_n&rdquo;:1},&ldquo;layerId&rdquo;:null,&ldquo;className&rdquo;:&ldquo;info legend&rdquo;}]}],&ldquo;limits&rdquo;:{&ldquo;lat&rdquo;:[-57,15],&ldquo;lng&rdquo;:[-93,-29]}},&ldquo;evals&rdquo;:[],&ldquo;jsHooks&rdquo;:[]}</script><!--/html_preserve--></p>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://https-rmacroecology-netlify-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-113034513-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+

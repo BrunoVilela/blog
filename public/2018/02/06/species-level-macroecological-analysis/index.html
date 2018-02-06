@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<title>Macroecological analysis at the species level - R tutorials for macroecology</title>
+<meta property="og:title" content="Macroecological analysis at the species level - R tutorials for macroecology">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/bruno_trans.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="http://bvilela.weebly.com">About the author</a></li>
+    
+    <li><a href="https://github.com/BrunoVilela/brunovilela.github.io">GitHub</a></li>
+    
+    <li><a href="https://rmacroecology.netlify.com">Posts</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Macroecological analysis at the species level</h1>
+
+    
+    <span class="article-date">2018/02/06</span>
+    
+
+    <div class="article-content">
+      <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/leaflet-label/leaflet.label.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-label/leaflet.label.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<p>In the previous post, I have shown how to use <code>letsR</code> to analyze species traits at the community level. But, in many cases this type of analysis can lead to spurious patterns (<a href="http://onlinelibrary.wiley.com/doi/10.1111/jbi.12953/full">click here for further discussion on this issue</a>). An alternative can be analyzing the data at the species-level. In this post, I will show an example on how to make macroecological analysis at the species level using the <code>letsR</code> package. As an example we will explore how climate correlates with species extinction risk.</p>
+<p>To start this test we can load our <code>PresenceAbsence</code> object that we generated previously (see the <a href="https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/">first</a> and <a href="https://rmacroecology.netlify.com/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/">second</a> posts on how to do it).</p>
+<p><em>Note: I recommend to use the latest version of the <code>letsR</code> package on <a href="https://github.com/macroecology/letsR">GitHub</a></em></p>
+<pre class="r"><code>library(letsR)</code></pre>
+<pre class="r"><code>data(&quot;PAM&quot;)</code></pre>
+<p>To make things even more interesting lets make an iterative map, using the leaflet package.</p>
+<pre class="r"><code>library(leaflet)</code></pre>
+<pre class="r"><code>r &lt;- PAM$Richness_Raster
+values(r)[values(r) == 0] &lt;- NA
+pal &lt;- colorNumeric(c(&#39;#edf8e9&#39;,&#39;#c7e9c0&#39;,&#39;#a1d99b&#39;,
+                       &#39;#74c476&#39;,&#39;#31a354&#39;,&#39;#006d2c&#39;), 
+                    values(r), 
+                    na.color = &quot;transparent&quot;)
+h = &quot;https://mts1.google.com/vt/lyrs=s&amp;hl=en&amp;src=app&amp;x={x}&amp;y={y}&amp;z={z}&amp;s=G&quot;
+leaflet() %&gt;% 
+    addTiles(urlTemplate = h,
+             attribution = &#39;Google&#39;) %&gt;%
+  addRasterImage(r, colors = pal, opacity = .6) %&gt;%
+  addLegend(pal = pal, values = values(r),
+    title = &quot;Species Richness&quot;)</code></pre>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"Google"}]},{"method":"addRasterImage","args":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABICAYAAABGOvOzAAAIM0lEQVR4nO1aS3Pb1hk9APEgAZIwKZIiCUqx5cSxPXbisZ1xu+k6u073XWaT/5Hf0Gyy7KbdJOki4+lkuuj0MWmiha02dirHlkiRFF8QXyCIF9EFBIgQSImSSMIz5ZnBzH3zu+fe+z0uL2FZFv6fQQYtQNBYKAE70vZbv72IeRwBSa1bAJBkM4RTttfftQgQiNFxAEBZLk3sez/5iJhYsSRQVx3AmfxpxGnhuL6JJJvy1CXDJ3lJrVvjxC0bVyJg2uT3+ruWYgwAAGvHk1+PZE9+lKRRU6qoKYcAgKExtD7e+HUgJMxdB+z1d62e1oUxMrAeyYEiaQD2pJ0PAPZ7e3jVfo1X7dcAgKelrwPRF3PXAdN2hVPvpHekbWtH2oE+0pFkEwCA2qDh6/PJnU8XujPmSsA0TDrjjoV43noGxVDPHH+RJFyZAGfyXa0NAIgz1zz1p7W/yG8gyWaIHWnbKskl/KP8A64L4rm/sygS5kbA0FTw385LiFzBUz80h558OBTG0Bzi79V/oqW0oRjDmQgAFkPCXAh4WvoGD1IPkGTX0FDqE9sdKtWTtFzDT9IbNz8rAcD8Sbg0AU9LX1tZLouKXMEI9hiHcg0P0w9AEiQIgkRVrnj6GJaJSr+KYrfqG+8iJADzI+LSBPzx599bqqlCNTW8aNmreUPIo632kOVTSEdSvj7fHz6bOt5FCShE8xD5wpU9yUs7QncSd9DWjvCX4t/w3UEJGY6DahjYSuQBAA2l6Wnf1eQzx+tqMuIMf2E5xuMNkd8AMNnqTMOlHKG9/q51jU3gGpPAs8MS6k3bAlS6HfzY2Pe1byltSEr7zDHPq58FbU1CW5PwuvfSmjUQuxQB16PvETwVRWPoV3jSYOAr652z+g6qfb8jNA3pSNqTbwzrkHXZ/YDZotFLu8LfHvwZb7r7uJ3O+ur2Jyi5WaCa2kztHmcegSFZT1kq7Nc5gG2lznLUrmQGJbVu/WnvK7w6KuLHunfSv7p+FxQRAkWGsNep+PpSZGjimIXYOihysmqiyBDEaB7ZSM5THiJDMEemrywbybv5aXrhStFgWS7hduJ9lHveo9BRVfzur99iY30NH2RzeH5YhcCybh0AbCWSiLInq8jTdvqgV5toESIUCzEqutFlOBR269bCaZ/HOT75s3AlAu4nHxGSWrekjITtim0KD2UZzVYHAFCqtSCwLEq1FpQ1AUedPo7qbcSTMZRqLdzbPBEyG4sjGeEhsFG3LMZEEaPtvMiLHjdbGEv39Z6b7uld5LjZTeqVL0SSbIbYiG5aonAN5U7bnbyDNx07T5MkOq0uas0ONM2w6wQeNwT74uSw18WtZAGb8RNSRF50TRtHTTeRneM45HX3NdgQg/VIDkeqBABIsMkzzeKVCQDsnSCwX1q/vHsf/y7+wVOX4TiA48DTNKoCj02WRrFoH5lUR8bWjS237da1TTAkAwC4m7gHJsT4lN00NIZ1NJQmCtE89vv2bkyHM7gZv32mTzC3C5HPfvEZ4cT1v3n4wC3naRo8bV+C3N7IoVxu4ua7edx8117p/fYRwhSDW8l3wJAMcnweD9MfIUrHPJOvDsq+zykHAM3UkOezbloztZmOwlzuAybhixefW9/s/oB76yJG1gg/Sw3cTKZda/GiXANJkXh/PY0Ps5t4knuAx+knnkmdRnVQQY7LY2SZIIkTK1KWD0ASJHJc3m33OP1kJo9wYQQ4+OLF55YxMmFaJiSlg5+aVQx0DbKu4yNxE3tHLfz23scAAJG3Q2ltpE7d+tpIRUNpQOQL0Ea2RXHy43DuHc6Tby464Cx8cudTQlLr1ldvvkQuyoAiKexKFXQ12+l5Urjl6yPrMhh2MgGyLoOjOADAfq8Ijoq4+ctg4TvAwY60bR3IB+hpPRS7ZbTVHt4R8tiIes/p6ZWchJ7eBQAc9MsQo3n3Ct5BjIkjTgtvxw5wcBy2WkycQSqyhueN/yBK8zhST4IgWR+Ao72rmWCSvrG6mk3AZmwDPBX1tmeT4Ch+5ohwaQQAJ+GqZmq4IfTQUFq+NgPdG0yZIxOpcBqpsB38NId2wJQKp9zxmsMGmsMGUuE0BoZ8ps9wGksloKt34PxhwoZYZLnMuX2KvRJMy3Tjg5pyiNqgDpEvgD12h2vKIdbCawAA1VQXfx9wWcRpAcbIcPMbsU1QJOX5xlGRq9BHBtKRDIyRgWK/CGNk4MPUBydtBgdIRzKgCNvXuIgbDCxxBzgh6Xe1f4EgCIh8DgT8C0UQBBzFbAHYiIkgj9fJskbI8TlU5AoIECjLBxD5AkJEyO2TCmcvdEW2NAK6egc8xYMiQ8hy6wCAiux3ePKc6N4gb8YKvtD3+9q2Zwy7T+FC234cS9UBrWETW8IWdFODPtInttFHGtZY+zzTx3GBA5qkkQgLSEcyGOgy5vGH6tL8gPFbmeawjuaw4ZozB2yIhWqqbtrR/OP1qbCtOOf1l3ogBDjY7bzE0BxCMRQAthNUlg/ctIMIFfG8MZjne4JA3wi9J9xGkl3zuLIcxbl5J336gcU8sbQdAEzeBc5Vlj7S3DPP07YjQ5OM6+nJRt9Nz3MHLFUJTkL0+MpLYBK+9wUd7chtZxwrzXk/pwlUB4zDmdisDyzmhaXsgPFJnZ7EecQsGktRguet3Cz1i3pJtlQleB6m7YZFPqN7qwgAzj4ui8BbR8CysXosHbQAQWNFQNACBI0VAUELEDRWBAQtQNBYERC0AEFjRUDQAgSNFQFBCxA0VgQELUDQWBEQtABBY0VA0AIEjRUBQQsQNFYEBC1A0FgRELQAQeN/ujp0sZ4B/iMAAAAASUVORK5CYII=",[[15,-93],[-57,-29]],0.6,null,null,null]},{"method":"addLegend","args":[{"colors":["#EDF8E9 , #EDF8E9 0%, #D2EDCC 14.2857142857143%, #B7E2B0 28.5714285714286%, #9BD696 42.8571428571429%, #7BC77B 57.1428571428571%, #51B162 71.4285714285714%, #259348 85.7142857142857%, #006D2C 100%, #006D2C "],"labels":["1","2","3","4","5","6","7","8"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"topright","type":"numeric","title":"Species Richness","extra":{"p_1":0,"p_n":1},"layerId":null,"className":"info legend"}]}],"limits":{"lat":[-57,15],"lng":[-93,-29]}},"evals":[],"jsHooks":[]}</script>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://https-rmacroecology-netlify-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-113034513-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+

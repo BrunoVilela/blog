@@ -6,10 +6,19 @@
     <description>Recent content in Shapefiles on R tutorials for macroecology</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/shapefiles/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Macroecological analysis at the species level</title>
+      <link>/2018/02/06/species-level-macroecological-analysis/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/02/06/species-level-macroecological-analysis/</guid>
+      <description>In the previous post, I have shown how to use letsR to analyze species traits at the community level. But, in many cases this type of analysis can lead to spurious patterns (click here for further discussion on this issue). An alternative can be analyzing the data at the species-level. In this post, I will show an example on how to make macroecological analysis at the species level using the letsR package.</description>
+    </item>
     
     <item>
       <title>Adding variables to a PresenceAbsence object</title>
