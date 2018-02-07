@@ -232,3 +232,8 @@ map(add = TRUE)
 
 This covers all the functions to convert species distribution into presence absence matrix using the `letsR` package. Let me know if you have any suggestion or comments, and please share if you like it.
 
+
+**To cite letsR in publications use:**
+*Bruno Vilela and Fabricio Villalobos (2015). letsR: a new R package for data handling and analysis in macroecology. Methods in Ecology and Evolution. DOI: 10.1111/2041-210X.12401*
+
+

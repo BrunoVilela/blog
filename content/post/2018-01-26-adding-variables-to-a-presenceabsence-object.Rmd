@@ -164,6 +164,8 @@ g + geom_bar(stat = "identity") + labs(x = "") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ```
 
+**To cite letsR in publications use:**
+*Bruno Vilela and Fabricio Villalobos (2015). letsR: a new R package for data handling and analysis in macroecology. Methods in Ecology and Evolution. DOI: 10.1111/2041-210X.12401*
 
 
 
