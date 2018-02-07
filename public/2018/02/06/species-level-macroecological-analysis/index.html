@@ -57,7 +57,7 @@
 
   <article class="article">
     
-    <span class="article-duration">5 min read</span>
+    <span class="article-duration">7 min read</span>
     
 
     <h1 class="article-title">Macroecological analysis at the species level</h1>
@@ -79,13 +79,14 @@
 <script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
 
 
-<p>In the previous post, I have shown how to use <code>letsR</code> to analyze species traits at the community level. But, in many cases this type of analysis can lead to spurious patterns (<a href="http://onlinelibrary.wiley.com/doi/10.1111/jbi.12953/full">click here for further discussion on this issue</a>). An alternative can be analyzing the data at the species-level. In this post, I will show an example on how to make macroecological analysis at the species level using the <code>letsR</code> package. As an example we will explore how climate correlates with species extinction risk.</p>
+<p>In the previous post, I have shown how to use <a href="http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12401/abstract"><code>letsR</code></a> to analyze species traits at the community level. But, in many cases this type of analysis can lead to spurious patterns (<a href="http://onlinelibrary.wiley.com/doi/10.1111/jbi.12953/full">click here for further discussion on this issue</a>). An alternative can be analyzing the data at the species-level. In this post, I will show two examples on how to make macroecological analysis at the species level using the <code>letsR</code> package. In the first example, we will continue the test of Rapoport’s rule on Phyllomedusa frogs using species centroids. In the second example, we will summarize climate spatial data at the species level to explore how temperature correlates with Phyllomedusa species extinction risk.</p>
 <p>To start this test we can load our <code>PresenceAbsence</code> object that we generated previously (see the <a href="https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/">first</a> and <a href="https://rmacroecology.netlify.com/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/">second</a> posts on how to do it).</p>
 <p><em>Note: I recommend to use the latest version of the <code>letsR</code> package on <a href="https://github.com/macroecology/letsR">GitHub</a></em></p>
 <pre class="r"><code>library(letsR)</code></pre>
 <pre class="r"><code>data(&quot;PAM&quot;)</code></pre>
-<p>To make things even more interesting, lets make an iterative map using the leaflet package (if you just want a normal plot use: <code>plot(PAM)</code>).</p>
-<pre class="r"><code>library(leaflet)</code></pre>
+<p>To make things even more interesting, lets make an interactive map using the leaflet package (if you just want a normal plot use: <code>plot(PAM)</code>).</p>
+<pre class="r"><code>library(leaflet)
+library(htmltools)</code></pre>
 <pre class="r"><code>r &lt;- PAM$Richness_Raster
 values(r)[values(r) == 0] &lt;- NA
 pal &lt;- colorNumeric(c(&#39;#edf8e9&#39;,&#39;#c7e9c0&#39;,&#39;#a1d99b&#39;,
@@ -101,12 +102,426 @@ leaflet() %&gt;%
     title = &quot;Species Richness&quot;)</code></pre>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"Google"}]},{"method":"addRasterImage","args":["data:image/png;base64,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",[[15,-93],[-57,-29]],0.6,null,null,null]},{"method":"addLegend","args":[{"colors":["#EDF8E9 , #EDF8E9 0%, #D2EDCC 14.2857142857143%, #B7E2B0 28.5714285714286%, #9BD696 42.8571428571429%, #7BC77B 57.1428571428571%, #51B162 71.4285714285714%, #259348 85.7142857142857%, #006D2C 100%, #006D2C "],"labels":["1","2","3","4","5","6","7","8"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"topright","type":"numeric","title":"Species Richness","extra":{"p_1":0,"p_n":1},"layerId":null,"className":"info legend"}]}],"limits":{"lat":[-57,15],"lng":[-93,-29]}},"evals":[],"jsHooks":[]}</script>
-<p>After we can add environmental variables to the <code>PresenceAbsence</code>object (click here for a detailed tutorial on this subject)[<a href="https://rmacroecology.netlify.com/2018/01/26/adding-variables-to-a-presenceabsence-object/" class="uri">https://rmacroecology.netlify.com/2018/01/26/adding-variables-to-a-presenceabsence-object/</a>]).</p>
+<div id="example-1-species-level-test-of-rapoports-rule-on-phyllomedusa-frogs." class="section level2">
+<h2>Example 1: Species level test of Rapoport’s rule on Phyllomedusa frogs.</h2>
+<p>Like the previous test at the <a href="https://rmacroecology.netlify.com/2018/01/30/mapping-species-traits/">community level</a>, we first have to calculate species range size. We can do it directly on the species shapefiles for higher precision.</p>
+<pre class="r"><code>data(&quot;Phyllomedusa&quot;)
+rangesize &lt;- lets.rangesize(Phyllomedusa,
+                            coordinates = &quot;geographic&quot;)
+rangesize &lt;- rangesize / 1000 # Transform in km2</code></pre>
+<p>The second step is to calculate species geographical centroid/midpoint using the function <code>lets.midpoint</code>. There are several ways to calculate species geographic centroid, and this function offers several methods to do it. When species range are both circular and continuous, all of the methods will provide the same answer. However, as the shape of distributions start to become more complex, different methods will provide very different answers. For this example, we will use the default option “PC” (polygon centroid). This method will generate a polygon from the raster, and calculate the centroid of this polygon.</p>
+<pre class="r"><code>centroids &lt;- lets.midpoint(PAM)</code></pre>
+<pre class="r"><code>centroids</code></pre>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:600px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:right;">
+x
+</th>
+<th style="text-align:right;">
+y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa araguari
+</td>
+<td style="text-align:right;">
+-47.50000
+</td>
+<td style="text-align:right;">
+-19.500000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa atelopoides
+</td>
+<td style="text-align:right;">
+-72.48928
+</td>
+<td style="text-align:right;">
+-7.090112
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa ayeaye
+</td>
+<td style="text-align:right;">
+-46.83259
+</td>
+<td style="text-align:right;">
+-20.836399
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa azurea
+</td>
+<td style="text-align:right;">
+-56.60321
+</td>
+<td style="text-align:right;">
+-19.316356
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa bahiana
+</td>
+<td style="text-align:right;">
+-40.16538
+</td>
+<td style="text-align:right;">
+-11.673186
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa baltea
+</td>
+<td style="text-align:right;">
+-74.50000
+</td>
+<td style="text-align:right;">
+-9.500000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa bicolor
+</td>
+<td style="text-align:right;">
+-60.96245
+</td>
+<td style="text-align:right;">
+-3.443338
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa boliviana
+</td>
+<td style="text-align:right;">
+-62.00709
+</td>
+<td style="text-align:right;">
+-15.190434
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa burmeisteri
+</td>
+<td style="text-align:right;">
+-43.26027
+</td>
+<td style="text-align:right;">
+-18.045139
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa camba
+</td>
+<td style="text-align:right;">
+-66.00666
+</td>
+<td style="text-align:right;">
+-12.005590
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa centralis
+</td>
+<td style="text-align:right;">
+-55.50000
+</td>
+<td style="text-align:right;">
+-15.500000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa coelestis
+</td>
+<td style="text-align:right;">
+-76.41726
+</td>
+<td style="text-align:right;">
+-4.587097
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa distincta
+</td>
+<td style="text-align:right;">
+-48.25991
+</td>
+<td style="text-align:right;">
+-25.652435
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa duellmani
+</td>
+<td style="text-align:right;">
+-77.50000
+</td>
+<td style="text-align:right;">
+-5.500000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa ecuatoriana
+</td>
+<td style="text-align:right;">
+-78.50000
+</td>
+<td style="text-align:right;">
+-2.500000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa hypochondrialis
+</td>
+<td style="text-align:right;">
+-55.66230
+</td>
+<td style="text-align:right;">
+-9.675312
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa iheringii
+</td>
+<td style="text-align:right;">
+-53.55319
+</td>
+<td style="text-align:right;">
+-31.863794
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa itacolomi
+</td>
+<td style="text-align:right;">
+-43.50000
+</td>
+<td style="text-align:right;">
+-20.500000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa megacephala
+</td>
+<td style="text-align:right;">
+-43.00000
+</td>
+<td style="text-align:right;">
+-19.500773
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa neildi
+</td>
+<td style="text-align:right;">
+-69.50000
+</td>
+<td style="text-align:right;">
+11.500000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa nordestina
+</td>
+<td style="text-align:right;">
+-40.63072
+</td>
+<td style="text-align:right;">
+-10.860987
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa oreades
+</td>
+<td style="text-align:right;">
+-47.83385
+</td>
+<td style="text-align:right;">
+-15.168817
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa palliata
+</td>
+<td style="text-align:right;">
+-69.81883
+</td>
+<td style="text-align:right;">
+-9.452030
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa perinesos
+</td>
+<td style="text-align:right;">
+-77.50000
+</td>
+<td style="text-align:right;">
+-0.500019
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa rohdei
+</td>
+<td style="text-align:right;">
+-44.16199
+</td>
+<td style="text-align:right;">
+-22.126262
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa sauvagii
+</td>
+<td style="text-align:right;">
+-60.03017
+</td>
+<td style="text-align:right;">
+-24.154080
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa tarsius
+</td>
+<td style="text-align:right;">
+-67.10458
+</td>
+<td style="text-align:right;">
+-4.942237
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa tetraploidea
+</td>
+<td style="text-align:right;">
+-51.82583
+</td>
+<td style="text-align:right;">
+-24.139091
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa tomopterna
+</td>
+<td style="text-align:right;">
+-62.64377
+</td>
+<td style="text-align:right;">
+-4.179290
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa trinitatis
+</td>
+<td style="text-align:right;">
+-66.16788
+</td>
+<td style="text-align:right;">
+10.368902
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa vaillantii
+</td>
+<td style="text-align:right;">
+-61.80198
+</td>
+<td style="text-align:right;">
+-5.069758
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa venusta
+</td>
+<td style="text-align:right;">
+-75.40027
+</td>
+<td style="text-align:right;">
+7.667742
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We can plot the geographical centroids using our cool leaflet maps. Dot size varies with range size in a log scale. You can pass the mouse over the dots to see the species name.</p>
+<pre class="r"><code>d &lt;- data.frame(&quot;Species&quot; = centroids[, 1], 
+                &quot;Range size&quot; = rangesize)
+sp &lt;- sp::SpatialPointsDataFrame(centroids[, 2:3], 
+                                 d)
+
+h = &quot;https://mts1.google.com/vt/lyrs=s&amp;hl=en&amp;src=app&amp;x={x}&amp;y={y}&amp;z={z}&amp;s=G&quot;
+leaflet(sp) %&gt;% 
+    addTiles(urlTemplate = h,
+             attribution = &#39;Google&#39;) %&gt;%
+  addCircleMarkers(
+    col = rep(&quot;red&quot;, length(sp)),
+    stroke = F, fillOpacity = 0.6, 
+    radius = log(rangesize)/4,
+    label = ~htmlEscape(Species),
+     labelOptions = labelOptions(noHide = F,
+      style = list(
+        &quot;font-style&quot; = &quot;italic&quot;,
+        &quot;font-size&quot; = &quot;14px&quot;,
+        &quot;border-color&quot; = &quot;rgba(0,0,0,0.5)&quot;
+      )))</code></pre>
+<div id="htmlwidget-2" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"Google"}]},{"method":"addCircleMarkers","args":[[-19.5,-7.09011230730369,-20.8363988850261,-19.3163560648052,-11.6731862289309,-9.5,-3.44333854387658,-15.1904338235439,-18.0451392407733,-12.005589873767,-15.5,-4.58709650140975,-25.6524349879254,-5.5,-2.5,-9.67531215417732,-31.8637938813682,-20.5,-19.5007725932388,11.5,-10.8609868222976,-15.1688173121058,-9.45203017709394,-0.500019039676217,-22.126261969978,-24.1540798279359,-4.9422374050322,-24.1390906953436,-4.17929015105007,10.3689018382649,-5.06975854089243,7.6677419592263],[-47.5,-72.4892848055626,-46.8325880286342,-56.6032138672417,-40.1653799289583,-74.5,-60.9624540159995,-62.0070944869876,-43.260274128579,-66.0066581878,-55.5,-76.4172584888895,-48.25990552036,-77.5,-78.5,-55.662302201674,-53.5531879115879,-43.5,-43,-69.5,-40.6307243022298,-47.8338525917821,-69.8188280554172,-77.5000000000002,-44.1619940925033,-60.0301711860061,-67.1045820935035,-51.825832260824,-62.6437725507336,-66.1678827414301,-61.8019800925226,-75.4002733100664],[[2.87769130326205],[4.96590217497338],[2.85238700648982],[5.36839647813352],[4.47893626855991],[3.16166004831922],[5.59449735664635],[5.10360866881129],[5.18090903346279],[5.17446989870153],[3.34015287112171],[4.48026267495241],[4.63123032834883],[2.80339031536675],[2.24288581486819],[5.70669087343437],[4.68754967380383],[3.20160932021488],[3.62372854861393],[2.7391922126907],[5.1858108050862],[3.21839648136122],[5.20598496552805],[2.75202058011393],[4.70446781797612],[5.20663833204464],[5.42868328150139],[4.93636428419862],[5.60598671204168],[4.42155570829848],[5.5827856033847],[4.65612967498132]],null,null,{"lineCap":null,"lineJoin":null,"clickable":true,"pointerEvents":null,"className":"","stroke":false,"color":["red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red","red"],"fillOpacity":0.6,"dashArray":null},null,null,null,null,["Phyllomedusa araguari","Phyllomedusa atelopoides","Phyllomedusa ayeaye","Phyllomedusa azurea","Phyllomedusa bahiana","Phyllomedusa baltea","Phyllomedusa bicolor","Phyllomedusa boliviana","Phyllomedusa burmeisteri","Phyllomedusa camba","Phyllomedusa centralis","Phyllomedusa coelestis","Phyllomedusa distincta","Phyllomedusa duellmani","Phyllomedusa ecuatoriana","Phyllomedusa hypochondrialis","Phyllomedusa iheringii","Phyllomedusa itacolomi","Phyllomedusa megacephala","Phyllomedusa neildi","Phyllomedusa nordestina","Phyllomedusa oreades","Phyllomedusa palliata","Phyllomedusa perinesos","Phyllomedusa rohdei","Phyllomedusa sauvagii","Phyllomedusa tarsius","Phyllomedusa tetraploidea","Phyllomedusa tomopterna","Phyllomedusa trinitatis","Phyllomedusa vaillantii","Phyllomedusa venusta"],{"clickable":false,"noHide":false,"direction":"right","opacity":1,"offset":[12,-15],"textsize":"10px","textOnly":false,"style":{"font-style":"italic","font-size":"14px","border-color":"rgba(0,0,0,0.5)"},"zoomAnimation":true,"className":""},null]}],"limits":{"lat":[-31.8637938813682,11.5],"lng":[-78.5,-40.1653799289583]}},"evals":[],"jsHooks":[]}</script>
+<p>To check the Rapoport’s rule we can plot the latitude against the range size:</p>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<pre class="r"><code>data_plot &lt;- data.frame(centroids[, 2:3], &quot;Range size&quot; = rangesize)
+g &lt;- ggplot(data_plot, aes(x, Range_size))
+g + geom_smooth() + geom_point() + labs(x = &quot;Latitude(x)&quot;, y = &quot;Range size&quot;)</code></pre>
+<p><img src="/post/2018-02-06-species-level-macroecological-analysis_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Again, the data indicate that Rapoport’s rule does not apply for Phyllomedusa genus. However, there seems to be an interesting pattern where range size decreases from the center towards the extremes of the group. This could be an effect of niche conservatism, where species in the extreme latitude would face very different conditions from the ancestral Phylllomedusa. Another possibility is that this pattern could be due to the shape of the continent, where extreme latitudes means smaller longitudes.</p>
+</div>
+<div id="example-2-extinction-risk-correlation-with-temperature" class="section level2">
+<h2>Example 2: Extinction risk correlation with temperature</h2>
+<p>To evaluate how temperature correlates with extinction risk, we first have to add the temperature variable to the <code>PresenceAbsence</code> object <a href="https://rmacroecology.netlify.com/2018/01/26/adding-variables-to-a-presenceabsence-object/">(click here for a detailed tutorial on how to add variables to a <code>PresenceAbsence</code> object)</a>.</p>
 <pre class="r"><code>r &lt;- raster(getData(&quot;worldclim&quot;, var = &quot;bio&quot;, 
              res = 10), 1) / 10
 projection(PAM$Richness_Raster) &lt;- projection(r)
 PAM_env &lt;- lets.addvar(PAM, r, fun = mean)</code></pre>
-<p>Next step is to get the average values per species for temperature. The <code>lets.summarizer</code> can do this directly on the resulting object of <code>lets.addvar</code> function (note that this can only be done if <code>onlyvar = FALSE</code>). We only have to indicate the position of the variable in the matrix using the argument <code>pos</code>.</p>
+<p>Next step is to get the average temperature values per species. The <code>lets.summarizer</code> can do this directly on the resulting object of <code>lets.addvar</code> function (note that this can only be done if <code>onlyvar = FALSE</code>). We only have to indicate the position of the variable in the matrix using the argument <code>pos</code>.</p>
 <pre class="r"><code>pos &lt;- which(colnames(PAM_env) == &quot;bio1_mean&quot;)
 temp_mean &lt;- lets.summarizer(PAM_env, pos)</code></pre>
 <pre class="r"><code>temp_mean</code></pre>
@@ -382,7 +797,7 @@ Phyllomedusa venusta
 </tbody>
 </table>
 </div>
-<p>Next we can relate the species mean temperature with any trait. Following our example, we need to take the IUCN extinction risk data. Previous version of the package included functions to do this, but they are no longer supported, but luckily there is a new package called <a href="https://ropensci.org/tutorials/rredlist_tutorial/"><code>rredlist</code></a> that can do this for us. For now, we can use the example data in the <code>letsR</code> package called <code>IUCN</code>.</p>
+<p>Following our example, we need to obtain the IUCN extinction risk data. Previous version of the package included functions to do this, but they are no longer supported. Luckily, there is a new package called <a href="https://ropensci.org/tutorials/rredlist_tutorial/"><code>rredlist</code></a> that can do this for us. Yet, for now, we can use the example data in the <code>letsR</code> package called <code>IUCN</code>.</p>
 <pre class="r"><code>data(&quot;IUCN&quot;)</code></pre>
 <pre class="r"><code>IUCN</code></pre>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:800px; ">
@@ -1124,15 +1539,15 @@ Colombia, Panama
 </table>
 </div>
 <p>Finally, we can verify the relationship between temperature and extinction risk.</p>
-<pre class="r"><code>library(ggplot2)</code></pre>
 <pre class="r"><code>level_order &lt;- c(&quot;DD&quot;, &quot;LC&quot;,  &quot;EN&quot;, &quot;CR&quot;) # ordering for the plot
 data &lt;- data.frame(&quot;Status&quot; = factor(IUCN$Status, levels = level_order),
                    &quot;Temperature&quot; = temp_mean[, 2])
 g &lt;- ggplot(data, aes(Status, Temperature))
 g + geom_boxplot() + coord_flip()</code></pre>
-<p><img src="/post/2018-02-06-species-level-macroecological-analysis_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>The graph indicate that there is a tendency for threatened Phyllomedusa species to occur in colder regions. Still, further formal statistical analysis could confirm this pattern.</p>
+<p><img src="/post/2018-02-06-species-level-macroecological-analysis_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>The graph indicate that there is a tendency for threatened Phyllomedusa species to occur in colder regions. Still, further statistical analysis should be done to confirm this pattern.</p>
 <p><strong>To cite letsR in publications use:</strong> <em>Bruno Vilela and Fabricio Villalobos (2015). letsR: a new R package for data handling and analysis in macroecology. Methods in Ecology and Evolution. DOI: 10.1111/2041-210X.12401</em></p>
+</div>
 
     </div>
   </article>

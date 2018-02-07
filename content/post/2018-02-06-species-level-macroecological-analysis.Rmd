@@ -16,7 +16,7 @@ tags:
 slug: species-level-macroecological-analysis
 ---
 
-In the previous post, I have shown how to use `letsR` to analyze species traits at the community level. But, in many cases this type of analysis can lead to spurious patterns ([click here for further discussion on this issue](http://onlinelibrary.wiley.com/doi/10.1111/jbi.12953/full)). An alternative can be analyzing the data at the species-level. In this post, I will show an example on how to make macroecological analysis at the species level using the `letsR` package. As an example we will explore how climate correlates with species extinction risk. 
+In the previous post, I have shown how to use [`letsR`](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12401/abstract) to analyze species traits at the community level. But, in many cases this type of analysis can lead to spurious patterns ([click here for further discussion on this issue](http://onlinelibrary.wiley.com/doi/10.1111/jbi.12953/full)). An alternative can be analyzing the data at the species-level. In this post, I will show two examples on how to make macroecological analysis at the species level using the `letsR` package. In the first example, we will continue the test of Rapoport's rule on Phyllomedusa frogs using species centroids. In the second example, we will summarize climate spatial data at the species level to explore how temperature correlates with Phyllomedusa species extinction risk. 
 
 To start this test we can load our `PresenceAbsence` object that we generated previously  (see the [first](https://rmacroecology.netlify.com/2018/01/23/a-guide-to-transform-species-shapefiles-into-a-presence-absence-matrix-based-on-a-user-defined-grid-system/) and [second](https://rmacroecology.netlify.com/2018/01/24/transfom-a-matrix-of-species-presence-absence-into-a-presenceabsence-object/) posts on how to do it).
 
@@ -28,9 +28,11 @@ library(letsR)
 data("PAM")
 ```
 
-To make things even more interesting, lets make an iterative map using the leaflet package (if you just want a normal plot use: `plot(PAM)`).
+To make things even more interesting, lets make an interactive map using the leaflet package (if you just want a normal plot use: `plot(PAM)`).
 ```{r, message = FALSE, warning=FALSE}
 library(leaflet)
+library(htmltools)
+
 ```
 
 ```{r}
@@ -49,10 +51,78 @@ leaflet() %>%
     title = "Species Richness")
 ```
 
+## Example 1: Species level test of Rapoport's rule on Phyllomedusa frogs.
+
+Like the previous test at the [community level](https://rmacroecology.netlify.com/2018/01/30/mapping-species-traits/), we first have to calculate species range size. We can do it directly on the species shapefiles for higher precision. 
+```{r}
+data("Phyllomedusa")
+rangesize <- lets.rangesize(Phyllomedusa,
+                            coordinates = "geographic")
+rangesize <- rangesize / 1000 # Transform in km2
+```
+
+The second step is to calculate species geographical centroid/midpoint using the function `lets.midpoint`. There are several ways to calculate species geographic centroid, and this function offers several methods to do it. When species range are both circular and continuous, all of the methods will provide the same answer. However, as the shape of distributions start to become more complex, different methods will provide very different answers. For this example, we will use the default option "PC" (polygon centroid). This method  will generate a polygon from the raster, and calculate the centroid of this polygon.
+```{r}
+centroids <- lets.midpoint(PAM)
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(knitr)
+library(dplyr)
+library(kableExtra)
+```
+
+```{r, eval=FALSE}
+centroids
+```
+
+```{r, echo = FALSE}
+kable(centroids, "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "600px", height = "400px")
+```
+
+We can plot the geographical centroids using our cool leaflet maps. Dot size varies with range size in a log scale. You can pass the mouse over the dots to see the species name. 
+```{r}
+d <- data.frame("Species" = centroids[, 1], 
+                "Range size" = rangesize)
+sp <- sp::SpatialPointsDataFrame(centroids[, 2:3], 
+                                 d)
+
+h = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G"
+leaflet(sp) %>% 
+    addTiles(urlTemplate = h,
+             attribution = 'Google') %>%
+  addCircleMarkers(
+    col = rep("red", length(sp)),
+    stroke = F, fillOpacity = 0.6, 
+    radius = log(rangesize)/4,
+    label = ~htmlEscape(Species),
+     labelOptions = labelOptions(noHide = F,
+      style = list(
+        "font-style" = "italic",
+        "font-size" = "14px",
+        "border-color" = "rgba(0,0,0,0.5)"
+      )))
+```
+
+To check the Rapoport's rule we can plot the latitude against the range size:
+```{r, message = FALSE, warning=FALSE}
+library(ggplot2)
+```
+
+```{r, message=F}
+data_plot <- data.frame(centroids[, 2:3], "Range size" = rangesize)
+g <- ggplot(data_plot, aes(x, Range_size))
+g + geom_smooth() + geom_point() + labs(x = "Latitude(x)", y = "Range size")
+```
+
+Again, the data indicate that Rapoport's rule does not apply for Phyllomedusa genus.
+However, there seems to be an interesting pattern where range size decreases from the center towards the extremes of the group. This could be an effect of niche conservatism, where species in the extreme latitude would face very different conditions from the ancestral Phylllomedusa. Another possibility is that this pattern could be due to the shape of the continent, where extreme latitudes means smaller longitudes. 
 
 
-
-After we can add environmental variables to the `PresenceAbsence`object (click here for a detailed tutorial on this subject)[https://rmacroecology.netlify.com/2018/01/26/adding-variables-to-a-presenceabsence-object/]). 
+## Example 2: Extinction risk correlation with temperature
+To evaluate how temperature correlates with extinction risk, we first have to add the temperature variable to the `PresenceAbsence` object [(click here for a detailed tutorial on how to add variables to a  `PresenceAbsence` object)](https://rmacroecology.netlify.com/2018/01/26/adding-variables-to-a-presenceabsence-object/). 
 
 ```{r}
 r <- raster(getData("worldclim", var = "bio", 
@@ -61,17 +131,11 @@ projection(PAM$Richness_Raster) <- projection(r)
 PAM_env <- lets.addvar(PAM, r, fun = mean)
 ```
 
-Next step is to get the average values per species for temperature. The `lets.summarizer` can do this directly on the resulting object of `lets.addvar` function (note that this can only be done if `onlyvar = FALSE`). We only have to indicate the position of the variable in the matrix using the argument `pos`. 
+Next step is to get the average temperature values per species. The `lets.summarizer` can do this directly on the resulting object of `lets.addvar` function (note that this can only be done if `onlyvar = FALSE`). We only have to indicate the position of the variable in the matrix using the argument `pos`. 
 
 ```{r}
 pos <- which(colnames(PAM_env) == "bio1_mean")
 temp_mean <- lets.summarizer(PAM_env, pos)
-```
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-library(knitr)
-library(dplyr)
-library(kableExtra)
 ```
 
 ```{r, eval=FALSE}
@@ -85,7 +149,7 @@ kable(temp_mean, "html") %>%
 ```
 
 
-Next we can relate the species mean temperature with any trait. Following our example, we need to take the IUCN extinction risk data. Previous version of the package included functions to do this, but they are no longer supported, but luckily there is a new package called [`rredlist`](https://ropensci.org/tutorials/rredlist_tutorial/) that can do this for us. For now, we can use the example data in the `letsR` package  called `IUCN`.
+Following our example, we need to obtain the IUCN extinction risk data. Previous version of the package included functions to do this, but they are no longer supported. Luckily, there is a new package called [`rredlist`](https://ropensci.org/tutorials/rredlist_tutorial/) that can do this for us. Yet, for now, we can use the example data in the `letsR` package  called `IUCN`.
 ```{r}
 data("IUCN")
 ```
@@ -101,10 +165,6 @@ kable(IUCN, "html") %>%
 ```
 
 Finally, we can verify the relationship between temperature and extinction risk.
-```{r, message = FALSE, warning=FALSE}
-library(ggplot2)
-```
-
 ```{r}
 level_order <- c("DD", "LC",  "EN", "CR") # ordering for the plot
 data <- data.frame("Status" = factor(IUCN$Status, levels = level_order),
@@ -113,7 +173,9 @@ g <- ggplot(data, aes(Status, Temperature))
 g + geom_boxplot() + coord_flip()
 ```
 
-The graph indicate that there is a tendency for threatened Phyllomedusa species to occur in colder regions. Still, further formal statistical analysis could confirm this pattern.
+The graph indicate that there is a tendency for threatened Phyllomedusa species to occur in colder regions. Still, further statistical analysis should be done to confirm this pattern. 
+
+
 
 **To cite letsR in publications use:**
 *Bruno Vilela and Fabricio Villalobos (2015). letsR: a new R package for data handling and analysis in macroecology. Methods in Ecology and Evolution. DOI: 10.1111/2041-210X.12401*
