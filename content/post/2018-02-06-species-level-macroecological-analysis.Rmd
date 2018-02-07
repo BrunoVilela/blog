@@ -28,7 +28,7 @@ library(letsR)
 data("PAM")
 ```
 
-To make things even more interesting lets make an iterative map, using the leaflet package.
+To make things even more interesting, lets make an iterative map using the leaflet package (if you just want a normal plot use: `plot(PAM)`).
 ```{r, message = FALSE, warning=FALSE}
 library(leaflet)
 ```
@@ -47,6 +47,76 @@ leaflet() %>%
   addRasterImage(r, colors = pal, opacity = .6) %>%
   addLegend(pal = pal, values = values(r),
     title = "Species Richness")
-
 ```
+
+
+
+
+After we can add environmental variables to the `PresenceAbsence`object (click here for a detailed tutorial on this subject)[https://rmacroecology.netlify.com/2018/01/26/adding-variables-to-a-presenceabsence-object/]). 
+
+```{r}
+r <- raster(getData("worldclim", var = "bio", 
+             res = 10), 1) / 10
+projection(PAM$Richness_Raster) <- projection(r)
+PAM_env <- lets.addvar(PAM, r, fun = mean)
+```
+
+Next step is to get the average values per species for temperature. The `lets.summarizer` can do this directly on the resulting object of `lets.addvar` function (note that this can only be done if `onlyvar = FALSE`). We only have to indicate the position of the variable in the matrix using the argument `pos`. 
+
+```{r}
+pos <- which(colnames(PAM_env) == "bio1_mean")
+temp_mean <- lets.summarizer(PAM_env, pos)
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(knitr)
+library(dplyr)
+library(kableExtra)
+```
+
+```{r, eval=FALSE}
+temp_mean
+```
+
+```{r, echo = FALSE}
+kable(temp_mean, "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "400px", height = "400px")
+```
+
+
+Next we can relate the species mean temperature with any trait. Following our example, we need to take the IUCN extinction risk data. Previous version of the package included functions to do this, but they are no longer supported, but luckily there is a new package called [`rredlist`](https://ropensci.org/tutorials/rredlist_tutorial/) that can do this for us. For now, we can use the example data in the `letsR` package  called `IUCN`.
+```{r}
+data("IUCN")
+```
+
+```{r, eval=FALSE}
+IUCN
+```
+
+```{r, echo = FALSE}
+kable(IUCN, "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "800px", height = "400px")
+```
+
+Finally, we can verify the relationship between temperature and extinction risk.
+```{r, message = FALSE, warning=FALSE}
+library(ggplot2)
+```
+
+```{r}
+level_order <- c("DD", "LC",  "EN", "CR") # ordering for the plot
+data <- data.frame("Status" = factor(IUCN$Status, levels = level_order),
+                   "Temperature" = temp_mean[, 2])
+g <- ggplot(data, aes(Status, Temperature))
+g + geom_boxplot() + coord_flip()
+```
+
+The graph indicate that there is a tendency for threatened Phyllomedusa species to occur in colder regions. Still, further formal statistical analysis could confirm this pattern.
+
+**To cite letsR in publications use:**
+*Bruno Vilela and Fabricio Villalobos (2015). letsR: a new R package for data handling and analysis in macroecology. Methods in Ecology and Evolution. DOI: 10.1111/2041-210X.12401*
+
+
 

@@ -33,7 +33,7 @@ slug: species-level-macroecological-analysis
 <p><em>Note: I recommend to use the latest version of the <code>letsR</code> package on <a href="https://github.com/macroecology/letsR">GitHub</a></em></p>
 <pre class="r"><code>library(letsR)</code></pre>
 <pre class="r"><code>data(&quot;PAM&quot;)</code></pre>
-<p>To make things even more interesting lets make an iterative map, using the leaflet package.</p>
+<p>To make things even more interesting, lets make an iterative map using the leaflet package (if you just want a normal plot use: <code>plot(PAM)</code>).</p>
 <pre class="r"><code>library(leaflet)</code></pre>
 <pre class="r"><code>r &lt;- PAM$Richness_Raster
 values(r)[values(r) == 0] &lt;- NA
@@ -50,3 +50,1035 @@ leaflet() %&gt;%
     title = &quot;Species Richness&quot;)</code></pre>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"Google"}]},{"method":"addRasterImage","args":["data:image/png;base64,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",[[15,-93],[-57,-29]],0.6,null,null,null]},{"method":"addLegend","args":[{"colors":["#EDF8E9 , #EDF8E9 0%, #D2EDCC 14.2857142857143%, #B7E2B0 28.5714285714286%, #9BD696 42.8571428571429%, #7BC77B 57.1428571428571%, #51B162 71.4285714285714%, #259348 85.7142857142857%, #006D2C 100%, #006D2C "],"labels":["1","2","3","4","5","6","7","8"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"topright","type":"numeric","title":"Species Richness","extra":{"p_1":0,"p_n":1},"layerId":null,"className":"info legend"}]}],"limits":{"lat":[-57,15],"lng":[-93,-29]}},"evals":[],"jsHooks":[]}</script>
+<p>After we can add environmental variables to the <code>PresenceAbsence</code>object (click here for a detailed tutorial on this subject)[<a href="https://rmacroecology.netlify.com/2018/01/26/adding-variables-to-a-presenceabsence-object/" class="uri">https://rmacroecology.netlify.com/2018/01/26/adding-variables-to-a-presenceabsence-object/</a>]).</p>
+<pre class="r"><code>r &lt;- raster(getData(&quot;worldclim&quot;, var = &quot;bio&quot;, 
+             res = 10), 1) / 10
+projection(PAM$Richness_Raster) &lt;- projection(r)
+PAM_env &lt;- lets.addvar(PAM, r, fun = mean)</code></pre>
+<p>Next step is to get the average values per species for temperature. The <code>lets.summarizer</code> can do this directly on the resulting object of <code>lets.addvar</code> function (note that this can only be done if <code>onlyvar = FALSE</code>). We only have to indicate the position of the variable in the matrix using the argument <code>pos</code>.</p>
+<pre class="r"><code>pos &lt;- which(colnames(PAM_env) == &quot;bio1_mean&quot;)
+temp_mean &lt;- lets.summarizer(PAM_env, pos)</code></pre>
+<pre class="r"><code>temp_mean</code></pre>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:400px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:right;">
+bio1_mean
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa araguari
+</td>
+<td style="text-align:right;">
+20.80840
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa atelopoides
+</td>
+<td style="text-align:right;">
+25.70186
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa ayeaye
+</td>
+<td style="text-align:right;">
+20.30772
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa azurea
+</td>
+<td style="text-align:right;">
+23.50477
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa bahiana
+</td>
+<td style="text-align:right;">
+22.99238
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa baltea
+</td>
+<td style="text-align:right;">
+25.49704
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa bicolor
+</td>
+<td style="text-align:right;">
+25.98631
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa boliviana
+</td>
+<td style="text-align:right;">
+23.68508
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa burmeisteri
+</td>
+<td style="text-align:right;">
+21.98282
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa camba
+</td>
+<td style="text-align:right;">
+24.76891
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa centralis
+</td>
+<td style="text-align:right;">
+23.89120
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa coelestis
+</td>
+<td style="text-align:right;">
+24.68128
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa distincta
+</td>
+<td style="text-align:right;">
+18.99102
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa duellmani
+</td>
+<td style="text-align:right;">
+21.48040
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa ecuatoriana
+</td>
+<td style="text-align:right;">
+15.60320
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa hypochondrialis
+</td>
+<td style="text-align:right;">
+24.93516
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa iheringii
+</td>
+<td style="text-align:right;">
+17.84105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa itacolomi
+</td>
+<td style="text-align:right;">
+19.76412
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa megacephala
+</td>
+<td style="text-align:right;">
+21.19124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa neildi
+</td>
+<td style="text-align:right;">
+26.28497
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa nordestina
+</td>
+<td style="text-align:right;">
+24.03002
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa oreades
+</td>
+<td style="text-align:right;">
+23.70687
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa palliata
+</td>
+<td style="text-align:right;">
+25.18994
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa perinesos
+</td>
+<td style="text-align:right;">
+21.58766
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa rohdei
+</td>
+<td style="text-align:right;">
+20.64380
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa sauvagii
+</td>
+<td style="text-align:right;">
+22.31562
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa tarsius
+</td>
+<td style="text-align:right;">
+25.46380
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa tetraploidea
+</td>
+<td style="text-align:right;">
+20.46091
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa tomopterna
+</td>
+<td style="text-align:right;">
+25.73224
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa trinitatis
+</td>
+<td style="text-align:right;">
+25.43068
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa vaillantii
+</td>
+<td style="text-align:right;">
+25.81837
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa venusta
+</td>
+<td style="text-align:right;">
+24.54523
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Next we can relate the species mean temperature with any trait. Following our example, we need to take the IUCN extinction risk data. Previous version of the package included functions to do this, but they are no longer supported, but luckily there is a new package called <a href="https://ropensci.org/tutorials/rredlist_tutorial/"><code>rredlist</code></a> that can do this for us. For now, we can use the example data in the <code>letsR</code> package called <code>IUCN</code>.</p>
+<pre class="r"><code>data(&quot;IUCN&quot;)</code></pre>
+<pre class="r"><code>IUCN</code></pre>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:800px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:left;">
+Family
+</th>
+<th style="text-align:left;">
+Status
+</th>
+<th style="text-align:left;">
+Criteria
+</th>
+<th style="text-align:left;">
+Population
+</th>
+<th style="text-align:right;">
+Description_Year
+</th>
+<th style="text-align:left;">
+Country
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa araguari
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa atelopoides
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:left;">
+Bolivia, Brazil, Peru
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa ayeaye
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+CR
+</td>
+<td style="text-align:left;">
+B1ab(iii)+2ab(iii)
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa azurea
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1862
+</td>
+<td style="text-align:left;">
+Argentina, Bolivia, Brazil, Paraguay
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa bahiana
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1925
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa baltea
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+EN
+</td>
+<td style="text-align:left;">
+B1ab(iii)+2ab(iii)
+</td>
+<td style="text-align:left;">
+Decreasing
+</td>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+Peru
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa bicolor
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1772
+</td>
+<td style="text-align:left;">
+Bolivia, Brazil, Colombia, French Guiana, Guyana, Peru, Suriname, Venezuela
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa boliviana
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1902
+</td>
+<td style="text-align:left;">
+Argentina, Bolivia, Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa burmeisteri
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1882
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa camba
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+Bolivia, Brazil, Peru
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa centralis
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa coelestis
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1874
+</td>
+<td style="text-align:left;">
+Colombia, Ecuador, Peru
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa distincta
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Decreasing
+</td>
+<td style="text-align:right;">
+1950
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa duellmani
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+Peru
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa ecuatoriana
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+EN
+</td>
+<td style="text-align:left;">
+B1ab(iii)
+</td>
+<td style="text-align:left;">
+Decreasing
+</td>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+Ecuador
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa hypochondrialis
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1800
+</td>
+<td style="text-align:left;">
+Argentina, Bolivia, Brazil, Colombia, French Guiana, Guyana, Paraguay, Suriname, Venezuela
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa iheringii
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1885
+</td>
+<td style="text-align:left;">
+Brazil, Uruguay
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa itacolomi
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa megacephala
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1926
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa neildi
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+Venezuela
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa nordestina
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa oreades
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa palliata
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1873
+</td>
+<td style="text-align:left;">
+Bolivia, Brazil, Ecuador, Peru
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa perinesos
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Unknown
+</td>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:left;">
+Colombia, Ecuador
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa rohdei
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1926
+</td>
+<td style="text-align:left;">
+Brazil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa sauvagii
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1882
+</td>
+<td style="text-align:left;">
+Argentina, Bolivia, Brazil, Paraguay
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa tarsius
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1868
+</td>
+<td style="text-align:left;">
+Brazil, Colombia, Ecuador, Peru, Venezuela
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa tetraploidea
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:left;">
+Argentina, Brazil, Paraguay
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa tomopterna
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1868
+</td>
+<td style="text-align:left;">
+Bolivia, Brazil, Colombia, Ecuador, French Guiana, Guyana, Peru, Suriname, Venezuela
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa trinitatis
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1926
+</td>
+<td style="text-align:left;">
+Trinidad and Tobago, Venezuela
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa vaillantii
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Stable
+</td>
+<td style="text-align:right;">
+1882
+</td>
+<td style="text-align:left;">
+Bolivia, Brazil, Colombia, Ecuador, French Guiana, Guyana, Peru, Suriname, Venezuela
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phyllomedusa venusta
+</td>
+<td style="text-align:left;">
+HYLIDAE
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Decreasing
+</td>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:left;">
+Colombia, Panama
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Finally, we can verify the relationship between temperature and extinction risk.</p>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<pre class="r"><code>level_order &lt;- c(&quot;DD&quot;, &quot;LC&quot;,  &quot;EN&quot;, &quot;CR&quot;) # ordering for the plot
+data &lt;- data.frame(&quot;Status&quot; = factor(IUCN$Status, levels = level_order),
+                   &quot;Temperature&quot; = temp_mean[, 2])
+g &lt;- ggplot(data, aes(Status, Temperature))
+g + geom_boxplot() + coord_flip()</code></pre>
+<p><img src="/post/2018-02-06-species-level-macroecological-analysis_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>The graph indicate that there is a tendency for threatened Phyllomedusa species to occur in colder regions. Still, further formal statistical analysis could confirm this pattern.</p>
+<p><strong>To cite letsR in publications use:</strong> <em>Bruno Vilela and Fabricio Villalobos (2015). letsR: a new R package for data handling and analysis in macroecology. Methods in Ecology and Evolution. DOI: 10.1111/2041-210X.12401</em></p>
