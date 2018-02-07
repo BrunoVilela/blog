@@ -28,7 +28,7 @@ library(letsR)
 data("PAM")
 ```
 
-To make things even more interesting, lets make an interactive map using the leaflet package (if you just want a normal plot use: `plot(PAM)`).
+To make things even more interesting, lets make an interactive map using the [leaflet](https://rstudio.github.io/leaflet/) package (if you just want a normal plot use: `plot(PAM)`).
 ```{r, message = FALSE, warning=FALSE}
 library(leaflet)
 library(htmltools)
