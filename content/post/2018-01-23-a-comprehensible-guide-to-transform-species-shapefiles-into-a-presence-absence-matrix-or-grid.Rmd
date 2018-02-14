@@ -36,7 +36,7 @@ position <- match(Phyllomedusa@data$binomial,
 colors <- colors[position]
 ## Plot call
 plot(Phyllomedusa, col = colors, lty = 0,
-     main = "Spatial polygons of tailles amphibians")
+     main = "Spatial polygons of Phyllomedusa")
 map(add = TRUE)
 ```
 

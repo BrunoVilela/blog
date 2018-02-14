@@ -6,10 +6,19 @@
     <description>Recent content in Shapefiles on R tutorials for macroecology</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/shapefiles/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mapping plants phylogenetic diversity</title>
+      <link>/2018/02/12/mapping-plant-richness/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/02/12/mapping-plant-richness/</guid>
+      <description>library(BIEN) library(rgdal) library(letsR) require(maptools) library(ggplot2) library(ape) library(classInt) genus_vector &amp;lt;- c(&amp;quot;Pinus&amp;quot;) temp_dir &amp;lt;- file.path(tempdir(), &amp;quot;BIEN_temp&amp;quot;)#Set a working directory sp &amp;lt;- BIEN_ranges_genus(genus_vector, temp_dir) list_species &amp;lt;- unique(gsub(&amp;quot;\\..*&amp;quot;, &amp;quot;&amp;quot;, list.files(temp_dir))) shapes &amp;lt;- list() for (i in 1:length(list_species)) { shapes[[i]] &amp;lt;- rgdal::readOGR(dsn = temp_dir, layer = list_species[i], verbose = FALSE) } all_shapes &amp;lt;- do.call(rbind, shapes) colnames(all_shapes@data) &amp;lt;- &amp;quot;binomial&amp;quot; # Plot colors &amp;lt;- rainbow(length(unique(all_shapes@data$binomial)), alpha = 0.5) position &amp;lt;- match(all_shapes@data$binomial, unique(all_shapes@data$binomial)) colors &amp;lt;- colors[position] plot(all_shapes, col = colors, lty = 0, main = &amp;quot;Spatial polygons&amp;quot;) map(add = TRUE) PAM &amp;lt;- lets.</description>
+    </item>
     
     <item>
       <title>Macroecological analysis at the species level</title>

@@ -1,0 +1,237 @@
+---
+title: Mapping plants phylogenetic diversity
+author: Bruno Vilela
+date: '2018-02-12'
+categories:
+  - macroecology
+  - macroevolution
+tags:
+  - BIEN
+  - Grid
+  - letsR
+  - Plants
+  - Presence Absence Matrix
+  - R
+  - Rasters
+  - Shapefiles
+  - Tree
+  - PD
+  - Phylogeny
+  - Phylogenetic Diversity
+  - Bivariate map
+slug: mapping-plant-richness
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, cache = TRUE)
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(BIEN)
+library(rgdal)
+library(letsR)
+require(maptools)    
+library(ggplot2)
+library(ape)
+library(classInt)
+```
+
+```{r}
+genus_vector <- c("Pinus")
+temp_dir <- file.path(tempdir(), "BIEN_temp")#Set a working directory
+```
+
+```{r, cache = TRUE}
+sp <- BIEN_ranges_genus(genus_vector, temp_dir)
+```
+
+```{r, cache = TRUE}
+list_species <- unique(gsub("\\..*", "", list.files(temp_dir)))
+shapes <- list()
+for (i in 1:length(list_species)) {
+  shapes[[i]] <- rgdal::readOGR(dsn = temp_dir, layer = list_species[i],
+                                verbose = FALSE)
+}
+```
+
+```{r}
+all_shapes <- do.call(rbind, shapes)
+colnames(all_shapes@data) <- "binomial"
+# Plot
+colors <- rainbow(length(unique(all_shapes@data$binomial)),
+                  alpha = 0.5)
+position <- match(all_shapes@data$binomial,
+                  unique(all_shapes@data$binomial))
+colors <- colors[position]
+plot(all_shapes, col = colors, lty = 0,
+     main = "Spatial polygons")
+map(add = TRUE)
+```
+
+```{r}
+PAM <- lets.presab(all_shapes)
+```
+
+
+```{r}
+data(wrld_simpl)  # World map
+NoAme <- c("United States", "Canada", "Mexico")
+na <- wrld_simpl[wrld_simpl$NAME %in% NoAme, ]  # Brazil (polygon)
+PAM_na <- lets.pamcrop(PAM, na, remove.sp = TRUE)
+plot(PAM_na, xlim = c(-150, -50), ylim = c(10, 70))
+```
+
+
+```{r}
+tree <- BIEN_phylogeny_complete(1)
+```
+
+
+```{r}
+value <- which(tree$tip.label %in% PAM_na$Species_name)
+sps <- tree$tip.label[value]
+names(tree$edge.length) <- tree$edge[, 2]
+branch_length <- tree$edge.length[as.character(value)]
+sps2 <- PAM_na$Species_name[!(PAM_na$Species_name %in% sps)]
+sps2_bran <- rep(mean(branch_length), length(sps2))
+```
+
+```{r}
+print(paste("Proportion of species that are not in the tree:",
+      length(sps2) / length(c(sps, sps2))))
+```
+
+```{r}
+PD <- lets.maplizer(PAM_na, c(branch_length, sps2_bran), 
+                    c(sps, sps2),
+                    func = sum,
+                    ras = TRUE)
+```
+
+```{r}
+colors <- c('#ffffcc','#d9f0a3','#addd8e','#78c679','#31a354','#006837')
+plot(PD$Raster, 
+     col = colorRampPalette(colors)(100),
+     xlim = c(-150, -50), ylim = c(10, 70),
+     main = "Phylogenetic Diversity")
+map(add = TRUE)
+```
+
+```{r, message=FALSE}
+rich <- rowSums(PAM_na$Presence_and_Absence_Matrix[, -c(1, 2)])
+data <- data.frame("Richness" = rich, "PD" = PD$Matrix[, 3])
+g <- ggplot(data, aes(Richness, PD))
+g + geom_quantile() + geom_point()
+```
+
+
+
+```{r}
+# Load:
+colmat <- function(nquantiles = 10,
+                   upperleft = rgb(0,150,235, maxColorValue = 255),
+                   upperright = rgb(130,0,80, maxColorValue = 255),
+                   bottomleft = "grey",
+                   bottomright = rgb(255,230,15, maxColorValue = 255),
+                   xlab = "x label", ylab = "y label",
+                   plot = FALSE, ...) {
+  
+  my.data <- seq(0,1,.01)
+  my.class <- classIntervals(my.data, n = nquantiles, style = "quantile")
+  my.pal.1 <- findColours(my.class, c(upperleft, bottomleft))
+  my.pal.2 <- findColours(my.class, c(upperright, bottomright))
+  col.matrix <- matrix(nrow = 101, ncol = 101, NA)
+  
+  for (i in 1:101) {
+    my.col <- c(paste(my.pal.1[i]), paste(my.pal.2[i]))
+    col.matrix[102 - i,] <- findColours(my.class, my.col)
+  }
+  
+  if (plot) {
+    plot(c(1, 1), pch = 19, col = my.pal.1, cex = 0.5, xli = c(0,1),
+         ylim = c(0,1), frame.plot = FALSE, xlab = xlab, ylab = ylab,
+         cex.lab = 1.3)
+    for (i in 1:101) {
+      col.temp <- col.matrix[i - 1,]
+      points(my.data, rep((i - 1) / 100, 101), 
+             pch = 15, col = col.temp, cex = 1)
+    }
+  }
+
+seqs <- seq(0, 100, (100 / nquantiles))
+seqs[1] <- 1
+col.matrix <- col.matrix[c(seqs), c(seqs)]
+}
+```
+
+```{r}
+# Plot bivariate map
+bivariate.map <- function(rasterx, rastery, colormatrix = col.matrix,
+                          nquantiles = 10) {
+  
+  quanmean <- getValues(rasterx)
+  temp <- data.frame(quanmean, quantile = rep(NA, length(quanmean)))
+  brks <- with(temp, quantile(temp, na.rm = TRUE,
+                              probs = c(seq(0, 1, 1 / nquantiles))))
+  while(any(duplicated(brks))) {
+    brks <- ifelse(duplicated(brks), brks + (0.01 * min(brks[brks > 0])), brks)
+  }
+  r1 <- within(temp, quantile <- cut(quanmean, breaks = brks,
+                                     labels = 2:length(brks),
+                                     include.lowest = TRUE))
+  quantr <- data.frame(r1[,2])
+  
+  quanvar <- getValues(rastery)
+  temp <- data.frame(quanvar, quantile = rep(NA, length(quanvar)))
+  brks <- with(temp, quantile(temp,na.rm = TRUE,
+                              probs = c(seq(0, 1, 1 / nquantiles))))
+  while(any(duplicated(brks))) {
+    brks <- ifelse(duplicated(brks), brks + (0.01 * min(brks[brks > 0])), brks)
+  }
+  r2 <- within(temp, quantile <- cut(quanvar, breaks = brks,
+                                     labels = 2:length(brks),
+                                     include.lowest = TRUE))
+  quantr2 <- data.frame(r2[, 2])
+  
+  as.numeric.factor <- function(x) {as.numeric(levels(x))[x]}
+  col.matrix2 <- colormatrix
+  cn <- unique(colormatrix)
+  
+  for (i in 1:length(col.matrix2)) {
+    ifelse(is.na(col.matrix2[i]),
+           col.matrix2[i] <- 1,
+           col.matrix2[i] <- which(col.matrix2[i] == cn)[1])
+  }
+  
+  cols <- numeric(length(quantr[, 1]))
+  for (i in 1:length(quantr[, 1])) {
+    a <- as.numeric.factor(quantr[i, 1])
+    b <- as.numeric.factor(quantr2[i, 1])
+    cols[i] <- as.numeric(col.matrix2[b, a])
+  }
+  r <- rasterx
+  r[1:length(r)] <- cols
+  return(r)
+}
+```
+
+```{r, cache = TRUE}
+col.matrix <- colmat(nquantiles = 20)
+
+bivmap <- bivariate.map(rasterx = PAM_na$Richness_Raster, rastery = PD$Raster,
+                        colormatrix = col.matrix, nquantiles = 20)
+```
+
+```{r, fig.height= 8, fig.width=9}
+plot(bivmap, frame.plot = FALSE, add = FALSE,
+     legend = FALSE, col = as.vector(col.matrix),
+     xlim = c(-150, -50), ylim = c(10, 70))
+map(add = TRUE, fill = F)
+
+par(new=T, fig=c(1.5,3,2.3,4)/10)
+colmat(nquantiles = 20, plot = TRUE)
+mtext("Richness", 1, 2, font.lab = 2)
+mtext("PD", 2, 2, font.lab = 2)
+```
+

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/02/12/mapping-plant-richness/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/02/06/species-level-macroecological-analysis/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
   </url>
@@ -33,6 +38,18 @@
   </url>
   
   <url>
+    <loc>/tags/bien/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/bivariate-map/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
@@ -45,7 +62,7 @@
   
   <url>
     <loc>/tags/grid/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -57,49 +74,79 @@
   
   <url>
     <loc>/tags/letsr/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/macroecology/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/macroevolution/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/pd/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/phylogenetic-diversity/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/phylogeny/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/plants/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/presence-absence-matrix/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/rasters/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/shapefiles/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -111,13 +158,19 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/traits/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tree/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

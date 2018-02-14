@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.34" />
+
+
+<title>Mapping plants phylogenetic diversity - R tutorials for macroecology</title>
+<meta property="og:title" content="Mapping plants phylogenetic diversity - R tutorials for macroecology">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/bruno_trans.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="http://bvilela.weebly.com">About the author</a></li>
+    
+    <li><a href="https://github.com/BrunoVilela/brunovilela.github.io">GitHub</a></li>
+    
+    <li><a href="https://rmacroecology.netlify.com">Posts</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">4 min read</span>
+    
+
+    <h1 class="article-title">Mapping plants phylogenetic diversity</h1>
+
+    
+    <span class="article-date">2018/02/12</span>
+    
+
+    <div class="article-content">
+      <pre class="r"><code>library(BIEN)
+library(rgdal)
+library(letsR)
+require(maptools)    
+library(ggplot2)
+library(ape)
+library(classInt)</code></pre>
+<pre class="r"><code>genus_vector &lt;- c(&quot;Pinus&quot;)
+temp_dir &lt;- file.path(tempdir(), &quot;BIEN_temp&quot;)#Set a working directory</code></pre>
+<pre class="r"><code>sp &lt;- BIEN_ranges_genus(genus_vector, temp_dir)</code></pre>
+<pre class="r"><code>list_species &lt;- unique(gsub(&quot;\\..*&quot;, &quot;&quot;, list.files(temp_dir)))
+shapes &lt;- list()
+for (i in 1:length(list_species)) {
+  shapes[[i]] &lt;- rgdal::readOGR(dsn = temp_dir, layer = list_species[i],
+                                verbose = FALSE)
+}</code></pre>
+<pre class="r"><code>all_shapes &lt;- do.call(rbind, shapes)
+colnames(all_shapes@data) &lt;- &quot;binomial&quot;
+# Plot
+colors &lt;- rainbow(length(unique(all_shapes@data$binomial)),
+                  alpha = 0.5)
+position &lt;- match(all_shapes@data$binomial,
+                  unique(all_shapes@data$binomial))
+colors &lt;- colors[position]
+plot(all_shapes, col = colors, lty = 0,
+     main = &quot;Spatial polygons&quot;)
+map(add = TRUE)</code></pre>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>PAM &lt;- lets.presab(all_shapes)</code></pre>
+<pre class="r"><code>data(wrld_simpl)  # World map
+NoAme &lt;- c(&quot;United States&quot;, &quot;Canada&quot;, &quot;Mexico&quot;)
+na &lt;- wrld_simpl[wrld_simpl$NAME %in% NoAme, ]  # Brazil (polygon)
+PAM_na &lt;- lets.pamcrop(PAM, na, remove.sp = TRUE)
+plot(PAM_na, xlim = c(-150, -50), ylim = c(10, 70))</code></pre>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>tree &lt;- BIEN_phylogeny_complete(1)</code></pre>
+<pre class="r"><code>value &lt;- which(tree$tip.label %in% PAM_na$Species_name)
+sps &lt;- tree$tip.label[value]
+names(tree$edge.length) &lt;- tree$edge[, 2]
+branch_length &lt;- tree$edge.length[as.character(value)]
+sps2 &lt;- PAM_na$Species_name[!(PAM_na$Species_name %in% sps)]
+sps2_bran &lt;- rep(mean(branch_length), length(sps2))</code></pre>
+<pre class="r"><code>print(paste(&quot;Proportion of species that are not in the tree:&quot;,
+      length(sps2) / length(c(sps, sps2))))</code></pre>
+<pre><code>## [1] &quot;Proportion of species that are not in the tree: 0.19047619047619&quot;</code></pre>
+<pre class="r"><code>PD &lt;- lets.maplizer(PAM_na, c(branch_length, sps2_bran), 
+                    c(sps, sps2),
+                    func = sum,
+                    ras = TRUE)</code></pre>
+<pre class="r"><code>colors &lt;- c(&#39;#ffffcc&#39;,&#39;#d9f0a3&#39;,&#39;#addd8e&#39;,&#39;#78c679&#39;,&#39;#31a354&#39;,&#39;#006837&#39;)
+plot(PD$Raster, 
+     col = colorRampPalette(colors)(100),
+     xlim = c(-150, -50), ylim = c(10, 70),
+     main = &quot;Phylogenetic Diversity&quot;)
+map(add = TRUE)</code></pre>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code>rich &lt;- rowSums(PAM_na$Presence_and_Absence_Matrix[, -c(1, 2)])
+data &lt;- data.frame(&quot;Richness&quot; = rich, &quot;PD&quot; = PD$Matrix[, 3])
+g &lt;- ggplot(data, aes(Richness, PD))
+g + geom_quantile() + geom_point()</code></pre>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<pre class="r"><code># Load:
+colmat &lt;- function(nquantiles = 10,
+                   upperleft = rgb(0,150,235, maxColorValue = 255),
+                   upperright = rgb(130,0,80, maxColorValue = 255),
+                   bottomleft = &quot;grey&quot;,
+                   bottomright = rgb(255,230,15, maxColorValue = 255),
+                   xlab = &quot;x label&quot;, ylab = &quot;y label&quot;,
+                   plot = FALSE, ...) {
+  
+  my.data &lt;- seq(0,1,.01)
+  my.class &lt;- classIntervals(my.data, n = nquantiles, style = &quot;quantile&quot;)
+  my.pal.1 &lt;- findColours(my.class, c(upperleft, bottomleft))
+  my.pal.2 &lt;- findColours(my.class, c(upperright, bottomright))
+  col.matrix &lt;- matrix(nrow = 101, ncol = 101, NA)
+  
+  for (i in 1:101) {
+    my.col &lt;- c(paste(my.pal.1[i]), paste(my.pal.2[i]))
+    col.matrix[102 - i,] &lt;- findColours(my.class, my.col)
+  }
+  
+  if (plot) {
+    plot(c(1, 1), pch = 19, col = my.pal.1, cex = 0.5, xli = c(0,1),
+         ylim = c(0,1), frame.plot = FALSE, xlab = xlab, ylab = ylab,
+         cex.lab = 1.3)
+    for (i in 1:101) {
+      col.temp &lt;- col.matrix[i - 1,]
+      points(my.data, rep((i - 1) / 100, 101), 
+             pch = 15, col = col.temp, cex = 1)
+    }
+  }
+
+seqs &lt;- seq(0, 100, (100 / nquantiles))
+seqs[1] &lt;- 1
+col.matrix &lt;- col.matrix[c(seqs), c(seqs)]
+}</code></pre>
+<pre class="r"><code># Plot bivariate map
+bivariate.map &lt;- function(rasterx, rastery, colormatrix = col.matrix,
+                          nquantiles = 10) {
+  
+  quanmean &lt;- getValues(rasterx)
+  temp &lt;- data.frame(quanmean, quantile = rep(NA, length(quanmean)))
+  brks &lt;- with(temp, quantile(temp, na.rm = TRUE,
+                              probs = c(seq(0, 1, 1 / nquantiles))))
+  while(any(duplicated(brks))) {
+    brks &lt;- ifelse(duplicated(brks), brks + (0.01 * min(brks[brks &gt; 0])), brks)
+  }
+  r1 &lt;- within(temp, quantile &lt;- cut(quanmean, breaks = brks,
+                                     labels = 2:length(brks),
+                                     include.lowest = TRUE))
+  quantr &lt;- data.frame(r1[,2])
+  
+  quanvar &lt;- getValues(rastery)
+  temp &lt;- data.frame(quanvar, quantile = rep(NA, length(quanvar)))
+  brks &lt;- with(temp, quantile(temp,na.rm = TRUE,
+                              probs = c(seq(0, 1, 1 / nquantiles))))
+  while(any(duplicated(brks))) {
+    brks &lt;- ifelse(duplicated(brks), brks + (0.01 * min(brks[brks &gt; 0])), brks)
+  }
+  r2 &lt;- within(temp, quantile &lt;- cut(quanvar, breaks = brks,
+                                     labels = 2:length(brks),
+                                     include.lowest = TRUE))
+  quantr2 &lt;- data.frame(r2[, 2])
+  
+  as.numeric.factor &lt;- function(x) {as.numeric(levels(x))[x]}
+  col.matrix2 &lt;- colormatrix
+  cn &lt;- unique(colormatrix)
+  
+  for (i in 1:length(col.matrix2)) {
+    ifelse(is.na(col.matrix2[i]),
+           col.matrix2[i] &lt;- 1,
+           col.matrix2[i] &lt;- which(col.matrix2[i] == cn)[1])
+  }
+  
+  cols &lt;- numeric(length(quantr[, 1]))
+  for (i in 1:length(quantr[, 1])) {
+    a &lt;- as.numeric.factor(quantr[i, 1])
+    b &lt;- as.numeric.factor(quantr2[i, 1])
+    cols[i] &lt;- as.numeric(col.matrix2[b, a])
+  }
+  r &lt;- rasterx
+  r[1:length(r)] &lt;- cols
+  return(r)
+}</code></pre>
+<pre class="r"><code>col.matrix &lt;- colmat(nquantiles = 20)
+
+bivmap &lt;- bivariate.map(rasterx = PAM_na$Richness_Raster, rastery = PD$Raster,
+                        colormatrix = col.matrix, nquantiles = 20)</code></pre>
+<pre class="r"><code>plot(bivmap, frame.plot = FALSE, add = FALSE,
+     legend = FALSE, col = as.vector(col.matrix),
+     xlim = c(-150, -50), ylim = c(10, 70))
+map(add = TRUE, fill = F)
+
+par(new=T, fig=c(1.5,3,2.3,4)/10)
+colmat(nquantiles = 20, plot = TRUE)
+mtext(&quot;Richness&quot;, 1, 2, font.lab = 2)
+mtext(&quot;PD&quot;, 2, 2, font.lab = 2)</code></pre>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-17-1.png" width="864" /></p>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://https-rmacroecology-netlify-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-113034513-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+

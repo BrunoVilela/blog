@@ -1,0 +1,15 @@
+base
+DBI
+RPostgreSQL
+BIEN
+sp
+rgdal
+raster
+maps
+letsR
+maptools
+ggplot2
+ape
+classInt
+SparseM
+quantreg
