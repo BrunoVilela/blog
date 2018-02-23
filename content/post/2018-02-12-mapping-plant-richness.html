@@ -24,26 +24,34 @@ slug: mapping-plant-richness
 
 
 
+<p>Retrieving plant species distributions from R has recently become quite easy using the <a href="http://onlinelibrary.wiley.com/getIdentityKey?redirectTo=http%3A%2F%2Fonlinelibrary.wiley.com%2Fdoi%2F10.1111%2F2041-210X.12861%2Ffull%3Fwol1URL%3D%2Fdoi%2F10.1111%2F2041-210X.12861%2Ffull&amp;userIp=128.252.25.55&amp;doi=10.1111%2F2041-210X.12861"><code>BIEN</code> R package</a> that facilitates the access to the <a href="http://bien.nceas.ucsb.edu/bien/">Botanical Information and Ecology Network database</a>. In addition to plant distributions, <code>BIEN</code> allow users to also obtain traits and phylogenetic plant data, making it a resourceful tool for macroecologists. Here I will show how to integrate <code>BIEN</code> and <code>letsR</code> to map phylogenetic diversity, using as an example the Pinus species of North America.</p>
+<div id="maping-species-richness" class="section level2">
+<h2>Maping species richness</h2>
+<p>First, you will need to download and load the following packages:</p>
 <pre class="r"><code>library(BIEN)
 library(rgdal)
 library(letsR)
-require(maptools)    
+library(maptools)    
 library(ggplot2)
 library(ape)
 library(classInt)</code></pre>
-<pre class="r"><code>genus_vector &lt;- c(&quot;Pinus&quot;)
-temp_dir &lt;- file.path(tempdir(), &quot;BIEN_temp&quot;)#Set a working directory</code></pre>
-<pre class="r"><code>sp &lt;- BIEN_ranges_genus(genus_vector, temp_dir)</code></pre>
+<p>To download the spatial distribution data of Pinus species, we have to first set up a directory where the shapefiles will be kept. For this case let’s just create a temporary folder.</p>
+<pre class="r"><code>temp_dir &lt;- file.path(tempdir(), &quot;BIEN_temp&quot;)</code></pre>
+<p>Now you can use the <code>BIEN_ranges_genus</code> function to download the shapefiles for each species of the genus that is available at the Botanical Information and Ecology Network database.</p>
+<pre class="r"><code>sp &lt;- BIEN_ranges_genus(&quot;Pinus&quot;, temp_dir)</code></pre>
+<p>In this case we obtained the range of 84 species.</p>
+<p>The code below can then be used to load every downloaded species shapefiles into a single <code>SpatialPolygonsDataFrame</code> object in R.</p>
 <pre class="r"><code>list_species &lt;- unique(gsub(&quot;\\..*&quot;, &quot;&quot;, list.files(temp_dir)))
 shapes &lt;- list()
 for (i in 1:length(list_species)) {
   shapes[[i]] &lt;- rgdal::readOGR(dsn = temp_dir, layer = list_species[i],
                                 verbose = FALSE)
-}</code></pre>
-<pre class="r"><code>all_shapes &lt;- do.call(rbind, shapes)
-colnames(all_shapes@data) &lt;- &quot;binomial&quot;
-# Plot
-colors &lt;- rainbow(length(unique(all_shapes@data$binomial)),
+}
+all_shapes &lt;- do.call(rbind, shapes)</code></pre>
+<p>Prior to be able use the functions in <code>letsR</code>, it is necessary to change the column name that indicate the species scientific names in the shapefile data. This transformation makes sure that the nomenclature used matches the same used by IUCN spatial data. This is important because IUCN shapefiles determine the standard format accepted by <code>letsR</code> functions. So, the name of the column should be either “binomial” or “sciname” (upper or lowercase).</p>
+<pre class="r"><code>colnames(all_shapes@data) &lt;- &quot;binomial&quot;</code></pre>
+<p>To make a visual inspection of the data we just downloaded, we can plot the species spatial distributions to check the shapefiles.</p>
+<pre class="r"><code>colors &lt;- rainbow(length(unique(all_shapes@data$binomial)),
                   alpha = 0.5)
 position &lt;- match(all_shapes@data$binomial,
                   unique(all_shapes@data$binomial))
@@ -51,40 +59,51 @@ colors &lt;- colors[position]
 plot(all_shapes, col = colors, lty = 0,
      main = &quot;Spatial polygons&quot;)
 map(add = TRUE)</code></pre>
-<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Once we have changed the species column name, we can directly use the function <code>lets.presab</code>. Notice, however, that the options <code>presence</code>, <code>origin</code> and <code>seasonal</code> cannot be used in this case, since this information is not available in the shapefiles.</p>
 <pre class="r"><code>PAM &lt;- lets.presab(all_shapes)</code></pre>
+<p>Since we are only interested in North America for this example, we need to crop the <code>PAM</code> object to limit species distributions only to this continent, and remove species that only occur outside of it.</p>
 <pre class="r"><code>data(wrld_simpl)  # World map
 NoAme &lt;- c(&quot;United States&quot;, &quot;Canada&quot;, &quot;Mexico&quot;)
-na &lt;- wrld_simpl[wrld_simpl$NAME %in% NoAme, ]  # Brazil (polygon)
+na &lt;- wrld_simpl[wrld_simpl$NAME %in% NoAme, ]
 PAM_na &lt;- lets.pamcrop(PAM, na, remove.sp = TRUE)
-plot(PAM_na, xlim = c(-150, -50), ylim = c(10, 70))</code></pre>
-<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+plot(PAM_na, xlim = c(-150, -50), ylim = c(10, 70),
+     main = &quot;Species Richness&quot;)</code></pre>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="maping-phylogenetic-diversity" class="section level2">
+<h2>Maping phylogenetic diversity</h2>
+<p>Next step is to obtain the phylogeny. For this, we can use the function <code>BIEN_phylogeny_complete</code>, which will provide a more complete but less conservative phylogenetic hypothesis. For this example we will only download one unique tree for simplicity, but you may want to consider taking into account <a href="http://onlinelibrary.wiley.com/doi/10.1111/evo.12644/abstract">phylogenetic uncertainty</a> in your own work, which in this case you would need to download several trees.</p>
 <pre class="r"><code>tree &lt;- BIEN_phylogeny_complete(1)</code></pre>
+<p>Let’s use a simple measure of Phylogenetic Diversity (PD), determined as the sum of all co-occurring species branch lengths <a href="https://www.sciencedirect.com/science/article/pii/0006320792912013?via%3Dihub">(Faith 1992)</a>.</p>
+<p><em>Note that there are <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2009.01405.x/full">several metrics of phylogenetic diversity</a>, the decision of which metric you should use will vary depending on the objectives of the research.</em></p>
 <pre class="r"><code>value &lt;- which(tree$tip.label %in% PAM_na$Species_name)
 sps &lt;- tree$tip.label[value]
 names(tree$edge.length) &lt;- tree$edge[, 2]
 branch_length &lt;- tree$edge.length[as.character(value)]
-sps2 &lt;- PAM_na$Species_name[!(PAM_na$Species_name %in% sps)]
-sps2_bran &lt;- rep(mean(branch_length), length(sps2))</code></pre>
-<pre class="r"><code>print(paste(&quot;Proportion of species that are not in the tree:&quot;,
-      length(sps2) / length(c(sps, sps2))))</code></pre>
-<pre><code>## [1] &quot;Proportion of species that are not in the tree: 0.19047619047619&quot;</code></pre>
+sps2 &lt;- PAM_na$Species_name[!(PAM_na$Species_name %in% sps)]</code></pre>
+<p>Note that 16 species are not in the phylogenetic tree. This is very common, and there are several ways to deal with this. To simplify the things here, I will just attribute the average branch length values of the genus to the species not considered in the tree. This is not an optimal method to deal with this (mainly at the genus level), and readers may consider more <a href="http://onlinelibrary.wiley.com/doi/10.1111/evo.12644/abstract">sophisticated approaches</a> that will not be covered here now.</p>
+<pre class="r"><code>sps2_bran &lt;- rep(mean(branch_length), length(sps2))</code></pre>
+<p>Now, we can then use the function <code>lets.maplizer</code> to map Pinus PD…</p>
 <pre class="r"><code>PD &lt;- lets.maplizer(PAM_na, c(branch_length, sps2_bran), 
                     c(sps, sps2),
                     func = sum,
                     ras = TRUE)</code></pre>
+<p>and plot it.</p>
 <pre class="r"><code>colors &lt;- c(&#39;#ffffcc&#39;,&#39;#d9f0a3&#39;,&#39;#addd8e&#39;,&#39;#78c679&#39;,&#39;#31a354&#39;,&#39;#006837&#39;)
 plot(PD$Raster, 
      col = colorRampPalette(colors)(100),
      xlim = c(-150, -50), ylim = c(10, 70),
      main = &quot;Phylogenetic Diversity&quot;)
 map(add = TRUE)</code></pre>
-<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>As you can see in the graph below, species richness and phylogenetic diversity are highly correlated in this metric.</p>
 <pre class="r"><code>rich &lt;- rowSums(PAM_na$Presence_and_Absence_Matrix[, -c(1, 2)])
 data &lt;- data.frame(&quot;Richness&quot; = rich, &quot;PD&quot; = PD$Matrix[, 3])
 g &lt;- ggplot(data, aes(Richness, PD))
-g + geom_quantile() + geom_point()</code></pre>
-<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+g + geom_point() + geom_smooth(method = &#39;lm&#39;,formula = y ~ x)</code></pre>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Based on this, it would be interesting to combine both species richness and phylogenetic diversity map into one unique map. This allow us to identify for example areas of high phylogenetic diversity given a low number of species richness and many other interesting patterns. For this we can use bivariate maps. This functions are not implemented in any package, but luckily <a href="http://rfunctions.blogspot.com/p/about-me.html">Jose Hidasi</a> has a <a href="http://rfunctions.blogspot.com/2015/03/bivariate-maps-bivariatemap-function.html">post</a> showing how to do them. The function below is the same function he provide in his post, with some very few modifications.</p>
 <pre class="r"><code># Load:
 colmat &lt;- function(nquantiles = 10,
                    upperleft = rgb(0,150,235, maxColorValue = 255),
@@ -129,7 +148,9 @@ bivariate.map &lt;- function(rasterx, rastery, colormatrix = col.matrix,
   brks &lt;- with(temp, quantile(temp, na.rm = TRUE,
                               probs = c(seq(0, 1, 1 / nquantiles))))
   while(any(duplicated(brks))) {
-    brks &lt;- ifelse(duplicated(brks), brks + (0.01 * min(brks[brks &gt; 0])), brks)
+    brks &lt;- ifelse(duplicated(brks), 
+                   brks + (0.01 * min(brks[brks &gt; 0])),
+                   brks)
   }
   r1 &lt;- within(temp, quantile &lt;- cut(quanmean, breaks = brks,
                                      labels = 2:length(brks),
@@ -141,7 +162,9 @@ bivariate.map &lt;- function(rasterx, rastery, colormatrix = col.matrix,
   brks &lt;- with(temp, quantile(temp,na.rm = TRUE,
                               probs = c(seq(0, 1, 1 / nquantiles))))
   while(any(duplicated(brks))) {
-    brks &lt;- ifelse(duplicated(brks), brks + (0.01 * min(brks[brks &gt; 0])), brks)
+    brks &lt;- ifelse(duplicated(brks),
+                   brks + (0.01 * min(brks[brks &gt; 0])),
+                   brks)
   }
   r2 &lt;- within(temp, quantile &lt;- cut(quanvar, breaks = brks,
                                      labels = 2:length(brks),
@@ -168,17 +191,31 @@ bivariate.map &lt;- function(rasterx, rastery, colormatrix = col.matrix,
   r[1:length(r)] &lt;- cols
   return(r)
 }</code></pre>
+<p>Once you load the function above, we can use it to generate our maps.</p>
 <pre class="r"><code>col.matrix &lt;- colmat(nquantiles = 20)
 
-bivmap &lt;- bivariate.map(rasterx = PAM_na$Richness_Raster, rastery = PD$Raster,
-                        colormatrix = col.matrix, nquantiles = 20)</code></pre>
+bivmap &lt;- bivariate.map(rasterx = PAM_na$Richness_Raster,
+                        rastery = PD$Raster,
+                        colormatrix = col.matrix,
+                        nquantiles = 20)</code></pre>
 <pre class="r"><code>plot(bivmap, frame.plot = FALSE, add = FALSE,
      legend = FALSE, col = as.vector(col.matrix),
-     xlim = c(-150, -50), ylim = c(10, 70))
+     xlim = c(-150, -50), ylim = c(10, 70), axes = F)
+xat &lt;- seq(-150, -50, 25)
+yat &lt;- seq(-10, 70, 10)
+xlab &lt;- parse(text = degreeLabelsEW(xat))
+ylab &lt;- parse(text = degreeLabelsNS(yat))
+axis(1, at = xat, labels = xlab, cex = .5)
+axis(2, las = TRUE, at = yat, labels = ylab, cex = .5)
+
 map(add = TRUE, fill = F)
 
-par(new=T, fig=c(1.5,3,2.3,4)/10)
+par(new = T, fig = c(1.5, 3 ,2.3, 4) / 10)
 colmat(nquantiles = 20, plot = TRUE)
 mtext(&quot;Richness&quot;, 1, 2, font.lab = 2)
 mtext(&quot;PD&quot;, 2, 2, font.lab = 2)</code></pre>
-<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-17-1.png" width="864" /></p>
+<p><img src="/post/2018-02-12-mapping-plant-richness_files/figure-html/unnamed-chunk-18-1.png" width="864" /></p>
+<p>From the map above we can infer for example that the US west coast has both the highest number of Pinus species richness and phylogenetic diversity values.</p>
+<p>Many other things can be explored by integrating <code>letsR</code> and <code>BIEN</code>, and I hope that this example can be a good starting point for further explorations.</p>
+<p><strong>To cite letsR in publications use:</strong> <em>Bruno Vilela and Fabricio Villalobos (2015). letsR: a new R package for data handling and analysis in macroecology. Methods in Ecology and Evolution. DOI: 10.1111/2041-210X.12401</em></p>
+</div>

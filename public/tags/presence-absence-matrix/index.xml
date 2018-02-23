@@ -17,7 +17,7 @@
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/02/12/mapping-plant-richness/</guid>
-      <description>library(BIEN) library(rgdal) library(letsR) require(maptools) library(ggplot2) library(ape) library(classInt) genus_vector &amp;lt;- c(&amp;quot;Pinus&amp;quot;) temp_dir &amp;lt;- file.path(tempdir(), &amp;quot;BIEN_temp&amp;quot;)#Set a working directory sp &amp;lt;- BIEN_ranges_genus(genus_vector, temp_dir) list_species &amp;lt;- unique(gsub(&amp;quot;\\..*&amp;quot;, &amp;quot;&amp;quot;, list.files(temp_dir))) shapes &amp;lt;- list() for (i in 1:length(list_species)) { shapes[[i]] &amp;lt;- rgdal::readOGR(dsn = temp_dir, layer = list_species[i], verbose = FALSE) } all_shapes &amp;lt;- do.call(rbind, shapes) colnames(all_shapes@data) &amp;lt;- &amp;quot;binomial&amp;quot; # Plot colors &amp;lt;- rainbow(length(unique(all_shapes@data$binomial)), alpha = 0.5) position &amp;lt;- match(all_shapes@data$binomial, unique(all_shapes@data$binomial)) colors &amp;lt;- colors[position] plot(all_shapes, col = colors, lty = 0, main = &amp;quot;Spatial polygons&amp;quot;) map(add = TRUE) PAM &amp;lt;- lets.</description>
+      <description>Retrieving plant species distributions from R has recently become quite easy using the BIEN R package that facilitates the access to the Botanical Information and Ecology Network database. In addition to plant distributions, BIEN allow users to also obtain traits and phylogenetic plant data, making it a resourceful tool for macroecologists. Here I will show how to integrate BIEN and letsR to map phylogenetic diversity, using as an example the Pinus species of North America.</description>
     </item>
     
     <item>
