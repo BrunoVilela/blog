@@ -177,10 +177,10 @@ colmat &lt;- function(nquantiles = 10,
              pch = 15, col = col.temp, cex = 1)
     }
   }
-
-seqs &lt;- seq(0, 100, (100 / nquantiles))
-seqs[1] &lt;- 1
-col.matrix &lt;- col.matrix[c(seqs), c(seqs)]
+  
+  seqs &lt;- seq(0, 100, (100 / nquantiles))
+  seqs[1] &lt;- 1
+  col.matrix &lt;- col.matrix[c(seqs), c(seqs)]
 }</code></pre>
 <pre class="r"><code># Plot bivariate map
 bivariate.map &lt;- function(rasterx, rastery, colormatrix = col.matrix,
@@ -190,7 +190,7 @@ bivariate.map &lt;- function(rasterx, rastery, colormatrix = col.matrix,
   temp &lt;- data.frame(quanmean, quantile = rep(NA, length(quanmean)))
   brks &lt;- with(temp, quantile(temp, na.rm = TRUE,
                               probs = c(seq(0, 1, 1 / nquantiles))))
-  while(any(duplicated(brks))) {
+  while (any(duplicated(brks))) {
     brks &lt;- ifelse(duplicated(brks), 
                    brks + (0.01 * min(brks[brks &gt; 0])),
                    brks)
@@ -204,7 +204,7 @@ bivariate.map &lt;- function(rasterx, rastery, colormatrix = col.matrix,
   temp &lt;- data.frame(quanvar, quantile = rep(NA, length(quanvar)))
   brks &lt;- with(temp, quantile(temp,na.rm = TRUE,
                               probs = c(seq(0, 1, 1 / nquantiles))))
-  while(any(duplicated(brks))) {
+  while (any(duplicated(brks))) {
     brks &lt;- ifelse(duplicated(brks),
                    brks + (0.01 * min(brks[brks &gt; 0])),
                    brks)

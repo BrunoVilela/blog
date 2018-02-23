@@ -184,10 +184,10 @@ colmat <- function(nquantiles = 10,
              pch = 15, col = col.temp, cex = 1)
     }
   }
-
-seqs <- seq(0, 100, (100 / nquantiles))
-seqs[1] <- 1
-col.matrix <- col.matrix[c(seqs), c(seqs)]
+  
+  seqs <- seq(0, 100, (100 / nquantiles))
+  seqs[1] <- 1
+  col.matrix <- col.matrix[c(seqs), c(seqs)]
 }
 ```
 
@@ -200,7 +200,7 @@ bivariate.map <- function(rasterx, rastery, colormatrix = col.matrix,
   temp <- data.frame(quanmean, quantile = rep(NA, length(quanmean)))
   brks <- with(temp, quantile(temp, na.rm = TRUE,
                               probs = c(seq(0, 1, 1 / nquantiles))))
-  while(any(duplicated(brks))) {
+  while (any(duplicated(brks))) {
     brks <- ifelse(duplicated(brks), 
                    brks + (0.01 * min(brks[brks > 0])),
                    brks)
@@ -214,7 +214,7 @@ bivariate.map <- function(rasterx, rastery, colormatrix = col.matrix,
   temp <- data.frame(quanvar, quantile = rep(NA, length(quanvar)))
   brks <- with(temp, quantile(temp,na.rm = TRUE,
                               probs = c(seq(0, 1, 1 / nquantiles))))
-  while(any(duplicated(brks))) {
+  while (any(duplicated(brks))) {
     brks <- ifelse(duplicated(brks),
                    brks + (0.01 * min(brks[brks > 0])),
                    brks)
