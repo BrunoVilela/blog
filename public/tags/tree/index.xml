@@ -17,7 +17,7 @@
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/02/12/mapping-plant-richness/</guid>
-      <description>Retrieving plant species distributions from R has recently become quite easy using the BIEN R package that facilitates the access to the Botanical Information and Ecology Network database. In addition to plant distributions, BIEN allow users to also obtain traits and phylogenetic plant data, making it a resourceful tool for macroecologists. Here I will show how to integrate BIEN and letsR to map phylogenetic diversity, using as an example the Pinus species of North America.</description>
+      <description>Retrieving plant species distributions from R has recently become quite easy using the BIEN R package, which facilitates the access to the Botanical Information and Ecology Network database. In addition to plant distributions, BIEN allow users to also obtain traits and phylogenetic plant data, making it a resourceful tool for macroecologists. Here I will show how to integrate BIEN and letsR to map phylogenetic diversity, using as an example the Pinus species of North America.</description>
     </item>
     
   </channel>

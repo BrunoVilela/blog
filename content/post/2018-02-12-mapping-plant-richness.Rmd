@@ -27,7 +27,7 @@ slug: mapping-plant-richness
 knitr::opts_chunk$set(warning = FALSE, cache = TRUE)
 ```
 
-Retrieving plant species distributions from R has recently become quite easy using the [`BIEN` R package](http://onlinelibrary.wiley.com/getIdentityKey?redirectTo=http%3A%2F%2Fonlinelibrary.wiley.com%2Fdoi%2F10.1111%2F2041-210X.12861%2Ffull%3Fwol1URL%3D%2Fdoi%2F10.1111%2F2041-210X.12861%2Ffull&userIp=128.252.25.55&doi=10.1111%2F2041-210X.12861) that facilitates the access to the [Botanical Information and Ecology Network database](http://bien.nceas.ucsb.edu/bien/). In addition to plant distributions, `BIEN` allow users to also obtain traits and phylogenetic plant data, making it a resourceful tool for macroecologists. Here I will show how to integrate `BIEN` and `letsR` to map phylogenetic diversity, using as an example the Pinus species of North America.
+Retrieving plant species distributions from R has recently become quite easy using the [`BIEN` R package](http://onlinelibrary.wiley.com/getIdentityKey?redirectTo=http%3A%2F%2Fonlinelibrary.wiley.com%2Fdoi%2F10.1111%2F2041-210X.12861%2Ffull%3Fwol1URL%3D%2Fdoi%2F10.1111%2F2041-210X.12861%2Ffull&userIp=128.252.25.55&doi=10.1111%2F2041-210X.12861), which facilitates the access to the [Botanical Information and Ecology Network database](http://bien.nceas.ucsb.edu/bien/). In addition to plant distributions, `BIEN` allow users to also obtain traits and phylogenetic plant data, making it a resourceful tool for macroecologists. Here I will show how to integrate `BIEN` and `letsR` to map phylogenetic diversity, using as an example the Pinus species of North America.
 
 ## Maping species richness
 First, you will need to download and load the following packages:
