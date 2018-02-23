@@ -39,6 +39,7 @@ library(maptools)
 library(ggplot2)
 library(ape)
 library(classInt)
+library(plotly)
 ```
 
 To download the spatial distribution data of Pinus species, we have to first set up a directory where the shapefiles will be kept. For this case let's just create a temporary folder.  
@@ -148,7 +149,8 @@ As you can see in the graph below, species richness and phylogenetic diversity a
 rich <- rowSums(PAM_na$Presence_and_Absence_Matrix[, -c(1, 2)])
 data <- data.frame("Richness" = rich, "PD" = PD$Matrix[, 3])
 g <- ggplot(data, aes(Richness, PD))
-g + geom_point() + geom_smooth(method = 'lm',formula = y ~ x)
+g2 <- g + geom_point() + geom_smooth(method = 'lm',formula = y ~ x)
+ggplotly(g2)
 ```
 
 Based on this, it would be interesting to combine both species richness and phylogenetic diversity map into one unique map. This allow us to identify for example areas of high phylogenetic diversity given a low number of species richness and many other interesting patterns. For this we can use bivariate maps. This functions are not implemented in any package, but luckily [Jose Hidasi](http://rfunctions.blogspot.com/p/about-me.html) has a [post](http://rfunctions.blogspot.com/2015/03/bivariate-maps-bivariatemap-function.html) showing how to do them. The function below is the same function he provide in his post, with some very few modifications.
