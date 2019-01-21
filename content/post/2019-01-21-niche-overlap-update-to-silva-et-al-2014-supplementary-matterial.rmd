@@ -15,7 +15,7 @@ knitr::opts_chunk$set(warning = FALSE, cache = TRUE)
 ```
 
 
-This is an updated version of the code description found in the supplementary matterial of the manuscript "Contextualized niche shifts upon independent invasions by the dung beetle *Onthophagus taurus*" by Daniel Silva, Bruno Vilela, Bruno Buzatto, Armin Moczek and Joaquin Hortal. 
+This is an updated version of the code description found in the supplementary matterial of the manuscript "Contextualized niche shifts upon independent invasions by the dung beetle *Onthophagus taurus*" by Daniel Silva, Bruno Vilela, Bruno Buzatto, Armin Moczek and Joaquin Hortal. Note that due to some packages and analysis updates some values and figures may be different from the original results.  
 
 
 # About
