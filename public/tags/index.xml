@@ -6,10 +6,19 @@
     <description>Recent content in Tags on R tutorials for macroecology</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Autocorrelation</title>
+      <link>/tags/autocorrelation/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/autocorrelation/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bien</title>
@@ -39,6 +48,15 @@
     </item>
     
     <item>
+      <title>Distance Matrix</title>
+      <link>/tags/distance-matrix/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/distance-matrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Grid</title>
       <link>/tags/grid/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
@@ -59,9 +77,18 @@
     <item>
       <title>Letsr</title>
       <link>/tags/letsr/</link>
-      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/letsr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Morans I</title>
+      <link>/tags/morans-i/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/morans-i/</guid>
       <description></description>
     </item>
     
@@ -84,9 +111,18 @@
     </item>
     
     <item>
+      <title>Phylogenetic Signal</title>
+      <link>/tags/phylogenetic-signal/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/phylogenetic-signal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Phylogeny</title>
       <link>/tags/phylogeny/</link>
-      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/phylogeny/</guid>
       <description></description>
@@ -113,7 +149,7 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
@@ -134,6 +170,15 @@
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/shapefiles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spatial Analysis</title>
+      <link>/tags/spatial-analysis/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/spatial-analysis/</guid>
       <description></description>
     </item>
     
