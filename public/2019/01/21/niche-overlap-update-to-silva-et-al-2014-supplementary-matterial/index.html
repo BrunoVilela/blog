@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.49" />
+
+
+<title>Niche overlap: update to Silva et al. 2014 supplementary matterial - R tutorials for macroecology</title>
+<meta property="og:title" content="Niche overlap: update to Silva et al. 2014 supplementary matterial - R tutorials for macroecology">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/bruno_trans.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="http://bvilela.weebly.com">About the author</a></li>
+    
+    <li><a href="https://github.com/BrunoVilela/brunovilela.github.io">GitHub</a></li>
+    
+    <li><a href="https://rmacroecology.netlify.com">Posts</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">14 min read</span>
+    
+
+    <h1 class="article-title">Niche overlap: update to Silva et al. 2014 supplementary matterial</h1>
+
+    
+    <span class="article-date">2019/01/21</span>
+    
+
+    <div class="article-content">
+      <p>This is an updated version of the code description found in the supplementary matterial of the manuscript “Contextualized niche shifts upon independent invasions by the dung beetle <em>Onthophagus taurus</em>” by Daniel Silva, Bruno Vilela, Bruno Buzatto, Armin Moczek and Joaquin Hortal. Note that due to some packages and analysis updates some values and figures may be different from the original results.</p>
+<div id="about" class="section level1">
+<h1>About</h1>
+<p>This document serves as a guide to reproduce the analyzes and results presented in the manuscript: “Contextualized niche shifts upon independent invasions by the dung beetle <em>Onthophagus taurus</em>” by Daniel Silva, Bruno Vilela, Bruno Buzatto, Armin Moczek and Joaquin Hortal.</p>
+<p>The objective of this document is to record the code used to generate the results and allow the readers to better explore the possibilities of the research.</p>
+<p>This document was written in R markdown format, which allows the use of easy-formatting plain text with R code chunks. For more information see the package <code>knitr</code> (<a href="http://yihui.name/knitr/" class="uri">http://yihui.name/knitr/</a>).</p>
+</div>
+<div id="before-starting" class="section level1">
+<h1>Before starting</h1>
+<p>Prior to the analyzes, we recommend all users to check the latest version of R at <a href="http://www.r-project.org/" class="uri">http://www.r-project.org/</a> and to make sure that they are using the updated versions of their installed R packages. Users can automatically update their installed packages with the following code:</p>
+<pre class="r"><code># Update installed packages
+update.packages(checkBuilt = TRUE, ask = FALSE)</code></pre>
+<p>The analysis presented here makes use of the following R packages available at CRAN. Use the following code to install them.</p>
+<pre class="r"><code># Install packages
+install.packages(&quot;knitr&quot;)
+install.packages(&quot;spThin&quot;)
+install.packages(&quot;rgeos&quot;)
+install.packages(&quot;sp&quot;)
+install.packages(&quot;maptools&quot;)
+install.packages(&quot;raster&quot;)
+install.packages(&quot;ecospat&quot;)</code></pre>
+<p>Once installed, load them.</p>
+<pre class="r"><code># Load packages
+library(knitr)
+library(spThin)
+library(rgeos)
+library(sp)
+library(maptools)
+library(raster)
+library(ecospat)</code></pre>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<div id="load-the-occurrence-records" class="section level2">
+<h2>Load the occurrence records</h2>
+<p>Place the file containing the occurrence records (file <code>points.txt</code>) in your work directory (use <code>getwd()</code> to check your work directory). The next step is to load the occurrence records into the R environment.</p>
+<pre class="r"><code>occ.points &lt;- read.table(&quot;points.txt&quot;, sep = &quot;\t&quot;, header = TRUE)</code></pre>
+<p>The loaded table includes 1272 occurrence records.</p>
+</div>
+<div id="thining-occurrence-records" class="section level2">
+<h2>Thining occurrence records</h2>
+<p>The occurrence records gathered (see the methods section of the manuscript, for the description of how we obtained the data) are not free from geographical sample bias. To minimize this problem, we applied a thinning procedure using the <code>spThin</code> package to make sure that all the points have at least a minimum distance of 10km from each other (see Aiello-Lammens et al. 2014 for the algorithm description).</p>
+<pre class="r"><code>occ.points.thin &lt;- thin(occ.points, verbose = FALSE, 
+                        lat.col = &quot;Latitude&quot;,
+                        long.col = &quot;Longitude&quot;,
+                        spec.col = &quot;Scientific.name&quot;,
+                        thin.par = 10,
+                        reps = 1, 
+                        write.files = FALSE,
+                        write.log.file = FALSE,
+                        locs.thinned.list.return = TRUE)</code></pre>
+<p>After the thinning procedure the number of occurrence points is reduced to n = 1059.</p>
+<p>To check the distribution of the occurrence records we map them in a world context.</p>
+<pre class="r"><code>data(wrld_simpl)
+plot(wrld_simpl)
+points(occ.points.thin[[1]], col = &quot;purple&quot;, pch = 20, cex = 0.7)</code></pre>
+<p><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/first_plot-1.png" width="1536" /></p>
+</div>
+<div id="define-the-regions-to-be-tested" class="section level2">
+<h2>Define the regions to be tested</h2>
+<p>The “niche” comparisons can be done between any group of occurrence points defined. For example, the groups can be divided into major regions, e.g. native occurrence (Europe and North Africa), Australia and North America, or each region can be divided into more sub-regions, e.g. Western North America and Eastern North America. We left the option here for the readers to define their own regions and explore the results. In the following analyzes we decided to divide the occurrence records into 5 groups: Native (Europe and North Africa), Western North America, Eastern North America, Western Australia and Eastern Australia. We choose these regions as we believe that their invasion history are different and independent (see details in the manuscript).</p>
+<p>The first step is to define the number of groups (regions) to be tested. In the follow case we choose 5 groups.</p>
+<pre class="r"><code>n.groups &lt;- 5 </code></pre>
+<p>Now, it is necessary to define the longitude limits of the region. In this specific case, only the longitude is needed to separate the groups. Change the object <code>limits</code> to define other groups, note that the object must have the <code>n.groups - 1</code> length.</p>
+<pre class="r"><code>limits &lt;- c(-100, -50, 100, 125)
+begin &lt;- min(occ.points.thin[[1]][, 1]) - 10
+end &lt;- max(occ.points.thin[[1]][, 1]) + 10
+group.long &lt;- c(begin, limits, end)</code></pre>
+<p>Check the limits by plotting them.</p>
+<pre class="r"><code>plot(wrld_simpl)
+points(occ.points.thin[[1]], col = &quot;purple&quot;, pch = 20, cex = 0.7)
+abline(v = group.long, lty = 2, col = &quot;red&quot;, lwd = 2)</code></pre>
+<p><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/second_plot-1.png" width="1536" /></p>
+<p>Now define the name of the groups, in the same geographical order of the groups, starting from the west to east. You can also define the codes to be used in the tables.</p>
+<pre class="r"><code>g.names &lt;- c(&quot;Western North America&quot;,
+             &quot;Eastern North America&quot;,
+             &quot;Native&quot;,
+             &quot;Western Australia&quot;,
+             &quot;Eastern Australia&quot;)
+
+g.codenames &lt;- c(&quot;WestNorAme&quot;, &quot;EastNorAme&quot;, &quot;Native&quot;, &quot;WestAus&quot;, &quot;EastAus&quot;)</code></pre>
+<p>It is also necessary to set what colors will be used in the next plots for each group (using the same order as the names). Change the colors according to your preferences.</p>
+<pre class="r"><code>g.colors &lt;- c(&quot;cyan&quot;, &quot;darkblue&quot;, &quot;red&quot;, &quot;green&quot;, &quot;darkgreen&quot;)</code></pre>
+</div>
+<div id="background-definition" class="section level2">
+<h2>Background definition</h2>
+<p>An important step in the niche analysis is the definition of the background. Here we applied a background based on a minimum convex polygon (MCP) made from the occurrence records of each group. Additionally to the MCP we add a buffer around it. The polygon buffer size for the background (in degrees) can be changed below. We chose 2 degrees based on the published values of dispersion for <em>Onthophagus taurus</em> (Hanski &amp; Cambefort, 2014).</p>
+<pre class="r"><code>buffer.size &lt;- 1</code></pre>
+<p>We define a minimum convex polygon (MCP) function below (this function was obtained from <a href="https://github.com/ndimhypervol/wallace" class="uri">https://github.com/ndimhypervol/wallace</a>).</p>
+<pre class="r"><code>mcp &lt;- function (xy) {
+  xy &lt;- as.data.frame(coordinates(xy))
+  coords.t &lt;- chull(xy[, 1], xy[, 2])
+  xy.bord &lt;- xy[coords.t, ]
+  xy.bord &lt;- rbind(xy.bord[nrow(xy.bord), ], xy.bord)
+  return(SpatialPolygons(list(Polygons(list(Polygon(as.matrix(xy.bord))), 1))))
+}</code></pre>
+</div>
+<div id="enviromnental-variables" class="section level2">
+<h2>Enviromnental variables</h2>
+<p>The environmental variables used are available at the WorldClim website (<a href="http://www.worldclim.org" class="uri">http://www.worldclim.org</a>). Download all the 19 bioclimatic (‘Biolclim’) variables for the current conditions (we used the resolution of 10 arc-min) with the code below. Note you need to have the internet on. The download files are opened directed in the R environment, but they are also saved in your work directory (to see where it is, use <code>getwd()</code>).</p>
+<pre class="r"><code>variables &lt;- getData(&#39;worldclim&#39;, var=&#39;bio&#39;, res=10)</code></pre>
+<p>In the manuscript we used the all the 19 bioclimatic variables as before the analysis we will reduce them to a two-dimensional space with a PCA. However, the readers can choose the number of variables to keep by changing the sequence <code>1:19</code> in the code below for the variable number you want to keep (to see the name sequence of the variables apply <code>names(variables)</code>).</p>
+<pre class="r"><code>variables &lt;- subset(variables, 1:19)</code></pre>
+<p>You can also check the variables, by mapping them.</p>
+<pre class="r"><code>plot(variables)</code></pre>
+<p><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/plot_variables-1.png" width="960" /></p>
+</div>
+<div id="group-assigning" class="section level2">
+<h2>Group assigning</h2>
+<p>Once, we have the occurrence data, the environmental data, the defined groups and their background parameters chosen, we can prepare the data for the analysis. Below we use the occurrence points to generate the MCP plus a buffer defined by the user for the background (see above). Next, the variable values per group are extracted from the species occurrence points and from the background (defined above). Finally we plot the resulting groups with their respective backgrounds.</p>
+<pre class="r"><code># Union of the world map
+lps &lt;- getSpPPolygonsLabptSlots(wrld_simpl)
+IDFourBins &lt;- cut(lps[,1], range(lps[,1]), include.lowest=TRUE)
+world &lt;- unionSpatialPolygons(wrld_simpl, IDFourBins)
+
+# Empty objects
+g.assign &lt;- numeric(nrow(occ.points.thin[[1]]))
+xy.mcp &lt;- list()
+back.env &lt;- list()
+spec.env &lt;- list()
+row.sp &lt;- list()
+
+# Plot map
+plot(wrld_simpl)
+
+# Loop
+for(i in 1:n.groups) {
+  
+  # Define groups
+  cut1 &lt;- occ.points.thin[[1]][, 1] &gt;= group.long[i]
+  cut2 &lt;- occ.points.thin[[1]][, 1] &lt; group.long[i + 1]
+  g.limit &lt;- cut1 &amp; cut2
+  
+  # Save row numbers per species
+  row.sp[[i]] &lt;- which(g.limit)
+  g.assign[g.limit] &lt;- g.names[i]
+  
+  # Background polygon
+  mcp.occ &lt;- mcp(as.matrix(occ.points.thin[[1]][g.limit, ]))
+  xy.mcp.i &lt;- gBuffer(mcp.occ, width = buffer.size)
+  proj4string(xy.mcp.i) &lt;- proj4string(world)
+  xy.mcp[[i]] &lt;- gIntersection(xy.mcp.i, world, byid=TRUE, drop_lower_td=TRUE)
+  # Background environment
+  back.env[[i]] &lt;- na.exclude(do.call(rbind.data.frame, extract(variables, xy.mcp[[i]])))
+  # Species environment
+  spec.env[[i]] &lt;- na.exclude(extract(variables, occ.points.thin[[1]][g.limit, ]))
+  
+  # Plot
+  points(occ.points.thin[[1]][g.limit, ], col = g.colors[i],
+         pch = 20, cex = 0.7)
+  plot(xy.mcp[[i]], add = TRUE, border = g.colors[i], lwd = 2)
+  
+}</code></pre>
+<p><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/group_assinging-1.png" width="1536" /></p>
+<p>Now we organize the final tables to be used.</p>
+<pre class="r"><code># Occurrence points per group
+g.occ.points &lt;- cbind(&quot;Groups&quot; = g.assign, occ.points.thin[[1]])
+# Environmental values for the background 
+all.back.env &lt;- do.call(rbind.data.frame, back.env)
+# Environmental values for the species occurrence points 
+all.spec.env &lt;- do.call(rbind.data.frame, spec.env)
+# Environmental values all together
+data.env &lt;- rbind(all.spec.env, all.back.env) </code></pre>
+<p>Check the number of occurrence records per region.</p>
+<pre class="r"><code>table(g.occ.points[, 1])</code></pre>
+<pre><code>Eastern Australia Eastern North America                Native 
+              164                    29                   786 
+Western Australia Western North America 
+               69                    11 </code></pre>
+</div>
+</div>
+<div id="niche-comparissons" class="section level1">
+<h1>Niche comparissons</h1>
+<p>The niche analyzes and comparisons follow the framework developed by Broennimann et al. (2012) and its derivations (see methods section in the manuscript).</p>
+<div id="pca" class="section level2">
+<h2>PCA</h2>
+<p>We chose to apply a PCA (Principal Component Analysis) considering all the environments together, as it presented the best performance when comparing the niches (Broennimann et al., 2012).</p>
+<pre class="r"><code># Weight matrix
+w &lt;- c(rep(0, nrow(all.spec.env)), rep(1, nrow(all.back.env)))
+# PCA of all environment
+pca.cal &lt;- dudi.pca(data.env, row.w = w, center = TRUE, 
+                    scale = TRUE, scannf = FALSE, nf = 2)</code></pre>
+<p>Once we have the pca results, we need the first and second eigenvector values for the background and for the occurrence records per group.</p>
+<pre class="r"><code># Rows in data corresponding to sp1
+adtion &lt;- cumsum(c(0, sapply(back.env, nrow)))
+begnd &lt;- nrow(all.spec.env)
+# Empty list to save the results
+scores.back &lt;- list()
+scores.spec &lt;- list()
+
+# Assigning the values 
+for (i in 1:n.groups) {
+  scores.spec[[i]] &lt;- pca.cal$li[row.sp[[i]], ]
+  pos &lt;- (begnd[1] + adtion[i] + 1) : (begnd[1] + adtion[i + 1])
+  scores.back[[i]] &lt;- pca.cal$li[pos, ]  
+}
+
+total.scores.back &lt;- do.call(rbind.data.frame, scores.back)</code></pre>
+</div>
+<div id="environmental-space" class="section level2">
+<h2>Environmental space</h2>
+<p>An environmental space is generated based on the pca values calculated for the background and the occurrence records. We defined the resolution of this two-dimensional space grid below.</p>
+<pre class="r"><code>R &lt;- 100</code></pre>
+<p>Next, we modeled the species density in the environmental grid, considering the observed occurrence density and the availability of the conditions in the background.</p>
+<pre class="r"><code>z &lt;- list()
+
+for (i in 1:n.groups) {
+  z[[i]] &lt;- ecospat.grid.clim.dyn(total.scores.back,
+                                  scores.back[[i]],
+                                  scores.spec[[i]],
+                                  R = R)
+}</code></pre>
+</div>
+<div id="niche-overlap" class="section level2">
+<h2>Niche overlap</h2>
+<p>For the niche overlap, we calculate the D metric and its significance, using a similarity test. We define the number of interactions for the similarity test below (see the methods section in the manuscript for details).</p>
+<pre class="r"><code>rep &lt;- 100</code></pre>
+<p>Once the number of interactions is defined, we can generate the values. Additionally, we calculate the partition of the non-overlapped niche, among niche unfilling, expansion and stability (see methods in the manuscript).</p>
+<pre class="r"><code># Empty matrices
+D &lt;- matrix(nrow = n.groups, ncol = n.groups)
+rownames(D) &lt;- colnames(D) &lt;- g.codenames
+unfilling &lt;- stability &lt;- expansion &lt;- sim &lt;- D
+
+for (i in 2:n.groups) {
+  
+  for (j in 1:(i - 1)) {
+    
+    x1 &lt;- z[[i]]
+    x2 &lt;- z[[j]]
+    
+    # Niche overlap
+    D[i, j] &lt;- ecospat.niche.overlap (x1, x2, cor = TRUE)$D
+    
+    # Niche similarity 
+    sim[i, j] &lt;- ecospat.niche.similarity.test (x1, x2, rep,
+                                                alternative = &quot;greater&quot;)$p.D
+    sim[j, i] &lt;- ecospat.niche.similarity.test (x2, x1, rep,
+                                                alternative = &quot;greater&quot;)$p.D
+    
+    # Niche Expansion, Stability, and Unfilling
+    index1 &lt;- ecospat.niche.dyn.index (x1, x2, 
+                                       intersection = NA)$dynamic.index.w
+    index2 &lt;- ecospat.niche.dyn.index (x2, x1,
+                                       intersection = NA)$dynamic.index.w
+    expansion[i, j] &lt;- index1[1]
+    stability[i, j] &lt;- index1[2]
+    unfilling[i, j] &lt;- index1[3]
+    expansion[j, i] &lt;- index2[1]
+    stability[j, i] &lt;- index2[2]
+    unfilling[j, i] &lt;- index2[3]
+  }
+}</code></pre>
+</div>
+<div id="numeric-results" class="section level2">
+<h2>Numeric results</h2>
+<p>Below we present the results for each metric, among all the groups.</p>
+<p>D value:</p>
+<pre class="r"><code>kable(D, digits = 3, format = &quot;markdown&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">WestNorAme</th>
+<th align="right">EastNorAme</th>
+<th align="right">Native</th>
+<th align="right">WestAus</th>
+<th align="right">EastAus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">WestNorAme</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">EastNorAme</td>
+<td align="right">0.156</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Native</td>
+<td align="right">0.386</td>
+<td align="right">0.160</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">WestAus</td>
+<td align="right">0.241</td>
+<td align="right">0.167</td>
+<td align="right">0.182</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">EastAus</td>
+<td align="right">0.221</td>
+<td align="right">0.231</td>
+<td align="right">0.279</td>
+<td align="right">0.236</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+<p>Niche similarity null model (p-values):</p>
+<pre class="r"><code>kable(sim, digits = 3, format = &quot;markdown&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">WestNorAme</th>
+<th align="right">EastNorAme</th>
+<th align="right">Native</th>
+<th align="right">WestAus</th>
+<th align="right">EastAus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">WestNorAme</td>
+<td align="right">NA</td>
+<td align="right">0.069</td>
+<td align="right">0.059</td>
+<td align="right">0.040</td>
+<td align="right">0.228</td>
+</tr>
+<tr class="even">
+<td align="left">EastNorAme</td>
+<td align="right">0.089</td>
+<td align="right">NA</td>
+<td align="right">0.178</td>
+<td align="right">0.010</td>
+<td align="right">0.059</td>
+</tr>
+<tr class="odd">
+<td align="left">Native</td>
+<td align="right">0.030</td>
+<td align="right">0.139</td>
+<td align="right">NA</td>
+<td align="right">0.069</td>
+<td align="right">0.030</td>
+</tr>
+<tr class="even">
+<td align="left">WestAus</td>
+<td align="right">0.020</td>
+<td align="right">0.010</td>
+<td align="right">0.030</td>
+<td align="right">NA</td>
+<td align="right">0.010</td>
+</tr>
+<tr class="odd">
+<td align="left">EastAus</td>
+<td align="right">0.168</td>
+<td align="right">0.030</td>
+<td align="right">0.030</td>
+<td align="right">0.010</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+<p>Niche Unfilling:</p>
+<pre class="r"><code>kable(unfilling, digits = 3,  format = &quot;markdown&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">WestNorAme</th>
+<th align="right">EastNorAme</th>
+<th align="right">Native</th>
+<th align="right">WestAus</th>
+<th align="right">EastAus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">WestNorAme</td>
+<td align="right">NA</td>
+<td align="right">0.541</td>
+<td align="right">0.260</td>
+<td align="right">0.486</td>
+<td align="right">0.224</td>
+</tr>
+<tr class="even">
+<td align="left">EastNorAme</td>
+<td align="right">0.363</td>
+<td align="right">NA</td>
+<td align="right">0.291</td>
+<td align="right">0.888</td>
+<td align="right">0.342</td>
+</tr>
+<tr class="odd">
+<td align="left">Native</td>
+<td align="right">0.641</td>
+<td align="right">0.716</td>
+<td align="right">NA</td>
+<td align="right">0.845</td>
+<td align="right">0.334</td>
+</tr>
+<tr class="even">
+<td align="left">WestAus</td>
+<td align="right">0.218</td>
+<td align="right">0.804</td>
+<td align="right">0.363</td>
+<td align="right">NA</td>
+<td align="right">0.326</td>
+</tr>
+<tr class="odd">
+<td align="left">EastAus</td>
+<td align="right">0.142</td>
+<td align="right">0.666</td>
+<td align="right">0.044</td>
+<td align="right">0.567</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+<p>Niche Expansion:</p>
+<pre class="r"><code>kable(expansion, digits = 3,  format = &quot;markdown&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">WestNorAme</th>
+<th align="right">EastNorAme</th>
+<th align="right">Native</th>
+<th align="right">WestAus</th>
+<th align="right">EastAus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">WestNorAme</td>
+<td align="right">NA</td>
+<td align="right">0.363</td>
+<td align="right">0.641</td>
+<td align="right">0.218</td>
+<td align="right">0.142</td>
+</tr>
+<tr class="even">
+<td align="left">EastNorAme</td>
+<td align="right">0.541</td>
+<td align="right">NA</td>
+<td align="right">0.716</td>
+<td align="right">0.804</td>
+<td align="right">0.666</td>
+</tr>
+<tr class="odd">
+<td align="left">Native</td>
+<td align="right">0.260</td>
+<td align="right">0.291</td>
+<td align="right">NA</td>
+<td align="right">0.363</td>
+<td align="right">0.044</td>
+</tr>
+<tr class="even">
+<td align="left">WestAus</td>
+<td align="right">0.486</td>
+<td align="right">0.888</td>
+<td align="right">0.845</td>
+<td align="right">NA</td>
+<td align="right">0.567</td>
+</tr>
+<tr class="odd">
+<td align="left">EastAus</td>
+<td align="right">0.224</td>
+<td align="right">0.342</td>
+<td align="right">0.334</td>
+<td align="right">0.326</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+<p>Niche Stability:</p>
+<pre class="r"><code>kable(stability, digits = 3,  format = &quot;markdown&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">WestNorAme</th>
+<th align="right">EastNorAme</th>
+<th align="right">Native</th>
+<th align="right">WestAus</th>
+<th align="right">EastAus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">WestNorAme</td>
+<td align="right">NA</td>
+<td align="right">0.637</td>
+<td align="right">0.359</td>
+<td align="right">0.782</td>
+<td align="right">0.858</td>
+</tr>
+<tr class="even">
+<td align="left">EastNorAme</td>
+<td align="right">0.459</td>
+<td align="right">NA</td>
+<td align="right">0.284</td>
+<td align="right">0.196</td>
+<td align="right">0.334</td>
+</tr>
+<tr class="odd">
+<td align="left">Native</td>
+<td align="right">0.740</td>
+<td align="right">0.709</td>
+<td align="right">NA</td>
+<td align="right">0.637</td>
+<td align="right">0.956</td>
+</tr>
+<tr class="even">
+<td align="left">WestAus</td>
+<td align="right">0.514</td>
+<td align="right">0.112</td>
+<td align="right">0.155</td>
+<td align="right">NA</td>
+<td align="right">0.433</td>
+</tr>
+<tr class="odd">
+<td align="left">EastAus</td>
+<td align="right">0.776</td>
+<td align="right">0.658</td>
+<td align="right">0.666</td>
+<td align="right">0.674</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="figure-results" class="section level2">
+<h2>Figure results</h2>
+<div id="individual-niche-plots" class="section level3">
+<h3>Individual niche plots</h3>
+<p>We developed some modifications in the plot.niche function available at Broennimann et al 2012. The modifications include more options and flexibility to the plot.</p>
+<pre class="r"><code>plot.niche.mod &lt;- function(z, name.axis1 = &quot;PC1&quot;, name.axis2 = &quot;PC2&quot;,
+                           cor = F, corte,  contornar = TRUE, 
+                           densidade = TRUE, quantis = 10, 
+                           back = TRUE, x = &quot;red&quot;, title = &quot;&quot;,
+                           i) {  
+  
+  
+  cor1 &lt;- function(cores.i, n) {
+    al &lt;- seq(0,1,(1/n))
+    cores &lt;- numeric(length(n))
+    for(i in 1:n) {    
+      corespar &lt;- col2rgb(cores.i)/255
+      cores[i] &lt;- rgb(corespar[1, ], corespar[2, ],
+                      corespar[3, ], alpha = al[i])
+    }
+    return(cores)
+  }
+  
+  
+  a1 &lt;- colorRampPalette(c(&quot;transparent&quot;,cor1(x, quantis)), alpha = TRUE)  
+  
+  xlim &lt;- c(min(sapply(z, function(x){min(x$x)})),
+            max(sapply(z, function(x){max(x$x)})))
+  
+  ylim &lt;- c(min(sapply(z, function(x){min(x$y)})),
+            max(sapply(z, function(x){max(x$y)})))
+  
+  graphics::image(z[[1]]$x, z[[1]]$y, as.matrix(z[[1]]$z.uncor), col = &quot;white&quot;, 
+                  ylim = ylim, xlim = xlim,
+                  zlim = c(0.000001, max(as.matrix(z[[1]]$z.uncor), na.rm = T)), 
+                  xlab = &quot;PC1&quot;, ylab = &quot;PC2&quot;, cex.lab = 1.5,
+                  cex.axis = 1.4)
+  
+  abline(h = 0, v = 0, lty = 2)
+  
+  if (back) {
+    contour(z[[i]]$x, z[[i]]$y, as.matrix(z[[i]]$Z),
+            add = TRUE, levels = quantile(z[[i]]$Z[z[[i]]$Z &gt; 0],
+                                          c(0, 0.5)), drawlabels = FALSE,
+            lty = c(1, 2), col = x, lwd = 1)
+  }
+  
+  if (densidade) {
+    image(z[[i]]$x, z[[i]]$y, as.matrix(z[[i]]$z.uncor), col = a1(100), add = TRUE)
+  }
+  
+  
+  if(contornar){
+    contour(z[[i]]$x, z[[i]]$y, as.matrix(z[[i]]$z.uncor), 
+            add = TRUE, levels = quantile(z[[i]]$z.uncor[z[[i]]$z.uncor &gt; 0],
+                                          seq(0, 1, (1 / quantis))),
+            drawlabels = FALSE, lty = c(rep(2,(quantis - 1)), 1), 
+            col = cor1(x, quantis), lwd = c(rep(1, (quantis - 1)), 2))
+  }
+  
+  title(title)
+  box()
+}</code></pre>
+<p>We applied this function here to plot all individual results per group. The continuous line represent the 100% of the available environmental background and the dashed line represents the 50% most common conditions.</p>
+<pre class="r"><code>for(i in 1:n.groups) {
+  plot.niche.mod(z, name.axis1 = &quot;PC1&quot;, name.axis2 = &quot;PC2&quot;,
+                 cor = F, corte,  contornar = FALSE, 
+                 densidade = TRUE, quantis = 3, 
+                 back = TRUE, x = g.colors[i], title = g.names[i], i)
+}</code></pre>
+<p><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/plots_individual-1.png" width="768" /><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/plots_individual-2.png" width="768" /><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/plots_individual-3.png" width="768" /><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/plots_individual-4.png" width="768" /><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/plots_individual-5.png" width="768" /></p>
+</div>
+<div id="multiple-niche-plots" class="section level3">
+<h3>Multiple niche plots</h3>
+<p>We also modified the same function to allow multiple regions/species plots.</p>
+<pre class="r"><code>plot.niche.all &lt;- function(z, n.groups, g.names,
+                           contornar = TRUE, 
+                           densidade = TRUE,
+                           quantis = 10,
+                           back = TRUE, title = &quot;&quot;,
+                           g.colors, n = 5,
+                           cor1) {  
+  
+  # Color func
+  cor1 &lt;- function(cores.i, n) {
+    al &lt;- seq(0,1,(1/n))
+    cores &lt;- numeric(length(n))
+    for(i in 1:n) {    
+      corespar &lt;- col2rgb(cores.i)/255
+      cores[i] &lt;- rgb(corespar[1, ], corespar[2, ],
+                      corespar[3, ], alpha = al[i])
+    }
+    return(cores)
+  }
+  
+  
+  a &lt;- list() 
+  for(i in 1:n.groups) {
+    a[[i]] &lt;- colorRampPalette(c(&quot;transparent&quot;, cor1(g.colors[i], n)),
+                               alpha = TRUE)  
+  }
+  
+  xlim &lt;- c(min(sapply(z, function(x){min(x$x)})),
+            max(sapply(z, function(x){max(x$x)})))
+  
+  ylim &lt;- c(min(sapply(z, function(x){min(x$y)})),
+            max(sapply(z, function(x){max(x$y)})))
+  
+  image(z[[1]]$x, z[[1]]$y, as.matrix(z[[1]]$z.uncor), col = &quot;white&quot;, 
+        ylim = ylim, xlim = xlim,
+        zlim = c(0.000001, max(as.matrix(z[[1]]$Z), na.rm = T)), 
+        xlab = &quot;PC1&quot;, ylab = &quot;PC2&quot;, cex.lab = 1.5,
+        cex.axis = 1.4)
+  abline(h = 0, v = 0, lty = 2)
+  box()
+  
+  if (back) {
+    for(i in 1:n.groups) {
+      contour(z[[i]]$x, z[[i]]$y, as.matrix(z[[i]]$Z), add = TRUE,
+              levels = quantile(z[[i]]$Z[z[[i]]$Z &gt; 0], c(0, 1)),
+              drawlabels = FALSE,lty = c(1, 2),
+              col = g.colors[i], lwd = 1)
+    }
+  }
+  
+  if (densidade) {
+    for(i in 1:n.groups) {
+      image(z[[i]]$x, z[[i]]$y, as.matrix(z[[i]]$z.uncor),
+            col = a[[i]](100), add = TRUE)
+    }
+  }
+  
+  
+  if(contornar){
+    for(i in 1:n.groups) {
+      contour(z[[i]]$x, z[[i]]$y, as.matrix(z[[i]]$z.uncor), add = TRUE,
+              levels = quantile(z[[i]]$z.uncor[z[[i]]$z.uncor &gt; 0],
+                                seq(0, 1, (1/quantis)))[quantis],
+              drawlabels = FALSE, lty = rev(c(rep(2,(quantis - 1)), 1)),
+              col = rev(cor1(g.colors[i], quantis)),
+              lwd = rev(c(rep(1, (quantis - 1)), 2)))
+    }
+  }
+  
+}</code></pre>
+<p>The results can be seen here. The strong contours represent the 5% highest values of density, and the thin lines represent 100% of the background available in each region.</p>
+<pre class="r"><code>plot.niche.all(z, n.groups, g.names,
+               contornar = TRUE, 
+               densidade = TRUE,
+               quantis = 10,
+               back = FALSE, title = &quot;&quot;,
+               g.colors, n = 2,
+               cor1)
+
+plot.niche.all(z, n.groups, g.names,
+               contornar = TRUE, 
+               densidade = TRUE,
+               quantis = 10,
+               back = TRUE, title = &quot;&quot;,
+               g.colors, n = 2,
+               cor1)</code></pre>
+<p><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/plot_all_niches-1.png" width="768" /><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/plot_all_niches-2.png" width="768" /></p>
+<p>Below the loadings plot (contribution of the variables for each axis). Check the variable codes at <a href="http://www.worldclim.org/bioclim" class="uri">http://www.worldclim.org/bioclim</a>.</p>
+<pre class="r"><code>loadings &lt;- cbind(cor(data.env, pca.cal$tab[,1]), cor(data.env, pca.cal$tab[,2]))
+colnames(loadings) &lt;- c(&quot;axis1&quot;, &quot;axis2&quot;)
+loadings &lt;- loadings[c(1, 12:19, 2:11), ]
+
+barplot(loadings[,1], las=2, main=&quot;PC1&quot;)
+
+barplot(loadings[,2], las=2, main=&quot;PC2&quot;)</code></pre>
+<p><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/unnamed-chunk-7-1.png" width="768" /><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/unnamed-chunk-7-2.png" width="768" /></p>
+<p>The arrows representing the contribution of each variable, directly on the environmental space.</p>
+<pre class="r"><code>contrib &lt;- pca.cal$co
+eigen &lt;- pca.cal$eig
+nomes &lt;- numeric(19)
+for(i in 1:19){
+  nomes[i] &lt;- paste(&#39;bio&#39;,i, sep=&quot;&quot;)
+}
+s.corcircle(contrib[, 1:2] / max(abs(contrib[, 1:2])), 
+            grid = F,  label = nomes, clabel = 1.2)
+text(0, -1.1, paste(&quot;PC1 (&quot;, round(eigen[1]/sum(eigen)*100,2),&quot;%)&quot;,
+                    sep = &quot;&quot;))
+text(1.1, 0, paste(&quot;PC2 (&quot;, round(eigen[2]/sum(eigen)*100,2),&quot;%)&quot;,
+                   sep = &quot;&quot;), srt = 90)</code></pre>
+<p><img src="/post/2019-01-21-niche-overlap-update-to-silva-et-al-2014-supplementary-matterial_files/figure-html/unnamed-chunk-8-1.png" width="768" /></p>
+</div>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<p>Aiello‐Lammens, M. E., Boria, R. A., Radosavljevic, A., Vilela, B., &amp; Anderson, R. P. (2015). spThin: an R package for spatial thinning of species occurrence records for use in ecological niche models. Ecography, 38(5), 541-545.</p>
+<p>Broennimann, O., Fitzpatrick, M. C., Pearman, P. B., Petitpierre, B., Pellissier, L., Yoccoz, N. G., &amp; Guisan, A. (2012). Measuring ecological niche overlap from occurrence and spatial environmental data. Global Ecology and Biogeography, 21(4), 481-497.</p>
+<p>Hanski, I., &amp; Cambefort, Y. (Eds.). (2014). Dung beetle ecology. Princeton University Press.</p>
+</div>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://https-rmacroecology-netlify-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-113034513-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+

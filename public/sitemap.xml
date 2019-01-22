@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2018/03/07/phylogenetic-and-spatial-autocorrelogram/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <loc>/2019/01/21/niche-overlap-update-to-silva-et-al-2014-supplementary-matterial/</loc>
+    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,12 +43,6 @@
   </url>
   
   <url>
-    <loc>/tags/autocorrelation/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/bien/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -72,12 +66,6 @@
   </url>
   
   <url>
-    <loc>/tags/distance-matrix/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/grid/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -91,25 +79,25 @@
   
   <url>
     <loc>/tags/letsr/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/macroecology/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/macroevolution/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/morans-i/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <loc>/tags/niche-overlap/</loc>
+    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -126,14 +114,8 @@
   </url>
   
   <url>
-    <loc>/tags/phylogenetic-signal/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/phylogeny/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -145,7 +127,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -157,31 +139,25 @@
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/rasters/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/shapefiles/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/spatial-analysis/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -193,7 +169,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

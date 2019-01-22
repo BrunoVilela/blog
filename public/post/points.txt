@@ -1,0 +1,1273 @@
+Fonte	Region	Class	Country .interpreted.	County	Scientific name	Longitude	Latitude
+GBIF	America	AMERICAN	United States	Santa Barbara	Onthophagus taurus	-120.042	34.677
+GBIF	America	AMERICAN	United States	Santa Barbara	Onthophagus taurus	-120.140	34.486
+GBIF	America	AMERICAN	United States	Marion	Onthophagus taurus	-81.800	29.180
+GBIF	America	AMERICAN	United States	Santa Barbara	Onthophagus taurus	-120.042	34.720
+GBIF	America	AMERICAN	United States	Santa Barbara	Onthophagus taurus	-120.097	34.617
+GBIF	America	AMERICAN	United States	Alachua	Onthophagus taurus	-82.300	29.650
+Price, DL 2004	America	AMERICAN	United States	Somerset Country, Franklin Township, New Jersey	Onthophagus taurus	-74.850	40.280
+GBIF	America	AMERICAN	United States	Santa Barbara	Onthophagus taurus	-120.141	34.478
+GBIF	America	AMERICAN	United States	Tift	Onthophagus taurus	-83.500	31.470
+Moczek 2003	America	AMERICAN	United States	Florence, South Carolina	Onthophagus taurus	-79.760	34.200
+BugGuide.net	America	AMERICAN	United States	Macon County, North Carolina	Onthophagus taurus	-78.080	36.440
+Moczek 2003	America	AMERICAN	United States	Durham, North Carolina	Onthophagus taurus	-121.800	39.650
+GBIF	America	AMERICAN	United States	Riverside	Onthophagus taurus	-116.806	33.724
+GBIF	America	AMERICAN	United States	Harris	Onthophagus taurus	-84.700	32.840
+GBIF	America	AMERICAN	United States	San Diego	Onthophagus taurus	-116.973	32.833
+MacRae & Penn 2001	America	AMERICAN	United States	Sacramento, California	Onthophagus taurus	-121.490	40.630
+Moczek 2003	America	AMERICAN	United States	Brunswick, Georgia	Onthophagus taurus	-81.490	31.150
+GBIF	America	AMERICAN	United States	Thomas	Onthophagus taurus	-83.900	30.700
+Price, DL 2004	America	AMERICAN	United States	Middlesex County, New Brunswick	Onthophagus taurus	-74.450	40.490
+Moczek 2003	America	AMERICAN	United States	Sylvania, Georgia	Onthophagus taurus	-81.636	32.750
+BugGuide.net	America	AMERICAN	United States	Lancaster County, Pennsylvania	Onthophagus taurus	-76.310	40.040
+MacRae & Penn 2001	America	AMERICAN	United States	Auburn, California	Onthophagus taurus	-121.080	38.900
+Moczek 2003	America	AMERICAN	United States	Knoxville, Tennesee	Onthophagus taurus	-84.580	35.450
+Moczek 2003	America	AMERICAN	United States	Maxville, Florida	Onthophagus taurus	-82.010	30.200
+Bertone et al. 2005	America	AMERICAN	United States	Goldsboro	Onthophagus taurus	-78.090	35.440
+GBIF	America	AMERICAN	United States	Clarke	Onthophagus taurus	-83.300	33.960
+Moczek 2003	America	AMERICAN	United States	Asheville, North Carolina	Onthophagus taurus	-82.550	35.600
+Kaufman & Wood, 2012	America	AMERICAN	United States	Gainesville, Florida	Onthophagus taurus	-82.320	29.650
+Vulinec & Eudy 1993	America	AMERICAN	United States	Santa Rosa, Florida	Onthophagus taurus	-86.230	30.400
+Moczek 2003	America	AMERICAN	United States	Statesville, North Carolina	Onthophagus taurus	-80.890	35.780
+GBIF	America	AMERICAN	United States	San Luis Obispo	Onthophagus taurus	-120.922	35.566
+BugGuide.net	America	AMERICAN	United States	Hudson, Hillsborough County, New Hampshire	Onthophagus taurus	-71.900	43.110
+Moczek unpublished	America	AMERICAN	United States	Bloomington, Indiana	Onthophagus taurus	-86.530	39.170
+Vulinec & Eudy 1993	America	AMERICAN	United States	Highlands County, Florida	Onthophagus taurus	-81.680	30.430
+GBIF	America	AMERICAN	United States	Levy	Onthophagus taurus	-83.000	29.130
+GBIF	America	AMERICAN	United States	Marshall	Onthophagus taurus	-86.600	35.580
+http://dungbeetles.biz/	America	AMERICAN	United States	High Springs, Florida	Onthophagus taurus	-82.600	29.830
+Fiene et al. 2011	America	AMERICAN	United States	Jonesboro	Onthophagus taurus	-92.730	32.200
+Bertone et al. 2005	America	AMERICAN	United States	Salisbury	Onthophagus taurus	-80.620	35.700
+GBIF	America	AMERICAN	United States	Santa Rosa	Onthophagus taurus	-86.800	30.700
+MacRae & Penn 2001	America	AMERICAN	United States	Orange, California	Onthophagus taurus	-117.850	33.790
+Moczek 2003	America	AMERICAN	United States	Bahama, North Carolina	Onthophagus taurus	-78.880	36.170
+GBIF	America	AMERICAN	United States	Shasta	Onthophagus taurus	-122.000	40.380
+GBIF	Europa	NATIVE	Austria	Fluh (Gem. Bregenz)	Onthophagus taurus	9.770	47.490
+GBIF	Europa	NATIVE	Spain	Saucelle	Onthophagus taurus	-6.750	41.050
+GBIF	Europa	NATIVE	Slovakia	Slovenský kras, Silická planina, Fabiánka env.	Onthophagus taurus	20.544	48.567
+GBIF	Europa	NATIVE	Spain	Pereda de Ancares	Onthophagus taurus	-6.738	42.833
+GBIF	Europa	NATIVE	Spain	Candín	Onthophagus taurus	-6.727	42.818
+GBIF	Europa	NATIVE	France	Etang de Canet	Onthophagus taurus	3.017	42.667
+GBIF	Europa	NATIVE	Spain	Berzocana	Onthophagus taurus	-5.460	39.438
+GBIF	Europa	NATIVE	Austria	Donnerskirchen	Onthophagus taurus	16.640	47.890
+GBIF	Europa	NATIVE	Italy	Ritten = Renon	Onthophagus taurus	11.420	46.550
+GBIF	Europa	NATIVE	Austria	Linz, Stadtgewässer	Onthophagus taurus	14.290	48.300
+GBIF	Europa	NATIVE	Austria	Rodaun (Wien-S)	Onthophagus taurus	16.260	48.130
+GBIF	Europa	NATIVE	Spain	Pego	Onthophagus taurus	-0.063	38.855
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	8.733	42.070
+GBIF	Europa	NATIVE	Spain	Font Roja, Alcoy	Onthophagus taurus	-0.525	38.664
+GBIF	Europa	NATIVE	Austria	Pleschinger Sandgrube	Onthophagus taurus	14.330	48.320
+GBIF	Europa	NATIVE	Spain	Biar	Onthophagus taurus	-0.762	38.600
+GBIF	Europa	NATIVE	Austria	Apetlon	Onthophagus taurus	16.840	47.740
+GBIF	Europa	NATIVE	Spain	Cremenes	Onthophagus taurus	-5.143	42.903
+GBIF	Europa	NATIVE	Spain	Cañameros	Onthophagus taurus	-5.382	39.408
+GBIF	Europa	NATIVE	Spain	Alpera	Onthophagus taurus	-1.212	38.968
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.380	43.161
+GBIF	Europa	NATIVE	Spain	El Port	Onthophagus taurus	2.707	39.793
+GBIF	Europa	NATIVE	Spain	Alayor	Onthophagus taurus	4.111	39.968
+GBIF	Europa	NATIVE	Spain	Artá	Onthophagus taurus	3.407	39.702
+GBIF	Europa	NATIVE	Italy	Virgl = Virgolo (Bozen)	Onthophagus taurus	11.360	46.480
+GBIF	Europa	NATIVE	Austria	Wilhering-Donauau	Onthophagus taurus	14.250	48.350
+GBIF	Europa	NATIVE	Slovakia	Slovenský kras, Silická planina	Onthophagus taurus	20.537	48.573
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.667	48.434
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.818	48.608
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.532	48.439
+GBIF	Europa	NATIVE	Poland	Sycze	Onthophagus taurus	23.005	52.430
+GBIF	Europa	NATIVE	Spain	Arés	Onthophagus taurus	-8.199	43.393
+GBIF	Europa	NATIVE	Spain	Saucedilla	Onthophagus taurus	-5.675	39.854
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.648	43.513
+GBIF	Europa	NATIVE	Austria	Pfarrergraben b. Purbach	Onthophagus taurus	16.750	47.950
+GBIF	Europa	NATIVE	Portugal	Sandinha	Onthophagus taurus	-8.050	40.150
+GBIF	Europa	NATIVE	Austria	Bruck a.d. Leitha	Onthophagus taurus	16.770	48.020
+GBIF	Europa	NATIVE	Austria	Weiden am See	Onthophagus taurus	16.860	47.920
+GBIF	Europa	NATIVE	Portugal	Lisboa	Onthophagus taurus	-9.174	38.712
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.185	43.304
+GBIF	Europa	NATIVE	Croatia	Croatia, Istarska, Pula	Onthophagus taurus	13.841	44.870
+GBIF	Europa	NATIVE	Spain	Montuiri	Onthophagus taurus	2.941	39.523
+GBIF	Europa	NATIVE	Spain	Aumedrá	Onthophagus taurus	2.824	39.793
+GBIF	Europa	NATIVE	Spain	Binisequer	Onthophagus taurus	4.227	39.877
+GBIF	Europa	NATIVE	Austria	Mühllacken	Onthophagus taurus	14.070	48.360
+GBIF	Europa	NATIVE	Austria	Ebelsberg	Onthophagus taurus	14.340	48.240
+GBIF	Europa	NATIVE	Italy	Brixen = Bressanone	Onthophagus taurus	11.660	46.720
+GBIF	Europa	NATIVE	Italy	Leifers = Laives	Onthophagus taurus	11.340	46.430
+GBIF	Europa	NATIVE	Austria	Wienerberg (Wien 10.)	Onthophagus taurus	16.360	48.160
+GBIF	Europa	NATIVE	Poland	Mie?	Onthophagus taurus	22.697	52.772
+GBIF	Europa	NATIVE	Spain	Cadalso	Onthophagus taurus	-6.475	40.216
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.113	42.229
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.160	42.677
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.281	42.670
+GBIF	Europa	NATIVE	Spain	Sobradillo	Onthophagus taurus	-6.800	40.920
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.262	42.491
+GBIF	Europa	NATIVE	Austria	Kennelbach	Onthophagus taurus	9.760	47.480
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	8.777	42.518
+GBIF	Europa	NATIVE	Spain	Viniegras de Abajo	Onthophagus taurus	-2.880	42.150
+GBIF	Europa	NATIVE	Austria	Perchtoldsdorf (Wien-S)	Onthophagus taurus	16.260	48.120
+GBIF	Europa	NATIVE	Austria	Zurndorf	Onthophagus taurus	17.000	47.980
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.827	48.697
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	8.751	42.249
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	8.742	42.160
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	8.760	42.339
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.103	42.140
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.271	42.581
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.835	48.787
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.498	43.301
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	8.768	42.429
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.540	48.529
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.404	48.534
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.654	43.603
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.136	45.158
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.154	43.528
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.385	43.251
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	8.928	41.609
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.775	43.359
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.889	43.176
+GBIF	Europa	NATIVE	Spain	Barbadillo	Onthophagus taurus	-5.911	40.928
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.405	43.367
+GBIF	Europa	NATIVE	Spain	Riego de Ambros	Onthophagus taurus	-6.504	42.558
+GBIF	Europa	NATIVE	Spain	Morille	Onthophagus taurus	-5.670	40.843
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.770	43.269
+GBIF	Europa	NATIVE	Spain	Zafra	Onthophagus taurus	-6.424	38.413
+GBIF	Europa	NATIVE	Spain	El Cabaco	Onthophagus taurus	-6.107	40.568
+GBIF	Europa	NATIVE	Spain	Hervás	Onthophagus taurus	-5.884	40.298
+GBIF	Europa	NATIVE	Spain	El Pino de Tormes	Onthophagus taurus	-5.796	41.020
+GBIF	Europa	NATIVE	Spain	Candelario	Onthophagus taurus	-5.766	40.301
+GBIF	Europa	NATIVE	Spain	Garcibuey	Onthophagus taurus	-6.111	40.478
+GBIF	Europa	NATIVE	Spain	Cepeda	Onthophagus taurus	-5.888	40.388
+GBIF	Europa	NATIVE	Spain	Cabrerizas	Onthophagus taurus	-5.555	40.936
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.537	44.717
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.006	49.318
+GBIF	Europa	NATIVE	Spain	Oliva de Plasencia	Onthophagus taurus	-6.229	40.481
+GBIF	Europa	NATIVE	Spain	Cabezabellosa	Onthophagus taurus	-6.126	40.118
+GBIF	Europa	NATIVE	Spain	Pelilla	Onthophagus taurus	-6.080	41.197
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.453	44.735
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.579	44.733
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.730	45.541
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.855	45.449
+GBIF	Europa	NATIVE	Spain	Eljas	Onthophagus taurus	-6.827	40.223
+GBIF	Europa	NATIVE	Spain	Segura de Toro	Onthophagus taurus	-6.123	40.208
+GBIF	Europa	NATIVE	Spain	Malpartida de Plasencia	Onthophagus taurus	-5.869	39.938
+GBIF	Europa	NATIVE	Spain	Huergas de Gordón	Onthophagus taurus	-5.632	42.825
+GBIF	Europa	NATIVE	Spain	San Cristobal de la Cuesta	Onthophagus taurus	-5.559	41.026
+GBIF	Europa	NATIVE	Spain	La Parra	Onthophagus taurus	-5.058	40.225
+GBIF	Europa	NATIVE	Spain	Almanza	Onthophagus taurus	-5.014	42.658
+GBIF	Europa	NATIVE	Spain	Puerto del Pico	Onthophagus taurus	-4.943	40.317
+GBIF	Europa	NATIVE	Spain	Navaluenga	Onthophagus taurus	-4.710	40.411
+GBIF	Europa	NATIVE	Spain	Selva de Oza	Onthophagus taurus	-0.738	42.833
+GBIF	Europa	NATIVE	Spain	Bermellar	Onthophagus taurus	-6.682	41.031
+GBIF	Europa	NATIVE	Spain	Sequeros	Onthophagus taurus	-5.892	40.478
+GBIF	Europa	NATIVE	Spain	Ciudad Rodrigo	Onthophagus taurus	-6.579	40.579
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.727	45.451
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.918	43.557
+GBIF	Europa	NATIVE	Spain	Navasfrías	Onthophagus taurus	-6.824	40.313
+GBIF	Europa	NATIVE	Spain	Cerezal de Peñahorcada	Onthophagus taurus	-6.679	41.121
+GBIF	Europa	NATIVE	Spain	Jerte	Onthophagus taurus	-5.763	40.211
+GBIF	Europa	NATIVE	Spain	Alcala de los Gazules	Onthophagus taurus	-5.734	36.427
+GBIF	Europa	NATIVE	Spain	Aldeacipreste	Onthophagus taurus	-5.552	40.846
+GBIF	Europa	NATIVE	Spain	Cantalpino	Onthophagus taurus	-5.321	41.031
+GBIF	Europa	NATIVE	Spain	Candeleda	Onthophagus taurus	-5.293	40.221
+GBIF	Europa	NATIVE	Spain	La Güelga	Onthophagus taurus	-4.912	43.290
+GBIF	Europa	NATIVE	Spain	San Fernando	Onthophagus taurus	-6.157	36.425
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.054	43.659
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.057	43.839
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.179	43.748
+GBIF	Europa	NATIVE	Spain	Fornells	Onthophagus taurus	4.113	40.058
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.688	44.106
+GBIF	Europa	NATIVE	Spain	Los Yesares	Onthophagus taurus	-1.786	39.156
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	1.846	42.310
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.176	43.568
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.196	44.558
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.305	43.836
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.314	44.196
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.322	44.556
+GBIF	Europa	NATIVE	Portugal	Guarda	Onthophagus taurus	-7.290	40.501
+GBIF	Europa	NATIVE	Spain	La Jarosa	Onthophagus taurus	-4.878	37.886
+GBIF	Europa	NATIVE	Spain	Las Navas del Marques	Onthophagus taurus	-4.597	40.593
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.697	42.405
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.818	42.585
+GBIF	Europa	NATIVE	Spain	Alicante	Onthophagus taurus	-0.542	38.326
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.198	44.648
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.320	44.466
+GBIF	Europa	NATIVE	Spain	Avila	Onthophagus taurus	-4.717	40.681
+GBIF	Europa	NATIVE	Spain	El Barraco	Onthophagus taurus	-4.595	40.503
+GBIF	Europa	NATIVE	Spain	Aldeavieja	Onthophagus taurus	-4.483	40.775
+GBIF	Europa	NATIVE	Spain	Navacerrada	Onthophagus taurus	-4.007	40.690
+GBIF	Europa	NATIVE	Spain	Prat de Llobregat	Onthophagus taurus	2.103	41.321
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.690	44.016
+GBIF	Europa	NATIVE	Spain	Huercal	Onthophagus taurus	-1.927	37.445
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.181	43.838
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.303	43.746
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.450	44.645
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.556	43.923
+GBIF	Europa	NATIVE	Spain	Badajoz	Onthophagus taurus	-6.982	38.965
+GBIF	Europa	NATIVE	Spain	Córdoba	Onthophagus taurus	-5.227	38.150
+GBIF	Europa	NATIVE	Spain	Piedralaves	Onthophagus taurus	-4.708	40.321
+GBIF	Europa	NATIVE	Spain	Piasca	Onthophagus taurus	-4.538	43.116
+GBIF	Europa	NATIVE	Spain	Santa María del Tietar	Onthophagus taurus	-4.473	40.324
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-4.301	37.443
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-4.303	37.533
+GBIF	Europa	NATIVE	Spain	Munguía	Onthophagus taurus	-2.816	43.306
+GBIF	Europa	NATIVE	Spain	Balenyá	Onthophagus taurus	2.216	41.862
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.576	42.404
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.804	43.571
+GBIF	Europa	NATIVE	Spain	Griñón	Onthophagus taurus	-3.883	40.240
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-3.761	39.881
+GBIF	Europa	NATIVE	Spain	Madrid	Onthophagus taurus	-3.649	40.332
+GBIF	Europa	NATIVE	Spain	Cenes de la Vega	Onthophagus taurus	-3.508	37.179
+GBIF	Europa	NATIVE	Spain	Tíjola	Onthophagus taurus	-2.380	37.358
+GBIF	Europa	NATIVE	Spain	Huercal Overa	Onthophagus taurus	-1.929	37.355
+GBIF	Europa	NATIVE	Spain	Alcarleta	Onthophagus taurus	3.995	40.059
+GBIF	Europa	NATIVE	Spain	Cercedilla	Onthophagus taurus	-4.009	40.780
+GBIF	Europa	NATIVE	Spain	Collado Villalba	Onthophagus taurus	-4.006	40.600
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.939	42.765
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.061	42.854
+GBIF	Europa	NATIVE	Portugal	Serra do Bussaco	Onthophagus taurus	-8.354	40.332
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.575	42.494
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.559	43.753
+GBIF	Europa	NATIVE	Spain	Montoro	Onthophagus taurus	-4.425	37.982
+GBIF	Europa	NATIVE	Spain	Miraflores de la Sierra	Onthophagus taurus	-3.772	40.782
+GBIF	Europa	NATIVE	Spain	Madrid	Onthophagus taurus	-3.768	40.421
+GBIF	Europa	NATIVE	Spain	Tres Cantos	Onthophagus taurus	-3.651	40.602
+GBIF	Europa	NATIVE	Spain	Iruzubieta	Onthophagus taurus	-2.570	43.215
+GBIF	Europa	NATIVE	Spain	Riópar	Onthophagus taurus	-2.485	38.530
+GBIF	Europa	NATIVE	Spain	Yeste	Onthophagus taurus	-2.372	38.350
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.524	48.794
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.560	43.843
+GBIF	Europa	NATIVE	Spain	Montejo de la Sierra	Onthophagus taurus	-3.537	41.053
+GBIF	Europa	NATIVE	Spain	Huércal de Almería	Onthophagus taurus	-2.496	36.908
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-2.258	38.259
+GBIF	Europa	NATIVE	Spain	Barcelona	Onthophagus taurus	2.221	41.412
+GBIF	Europa	NATIVE	Spain	San Segimont de Montseny	Onthophagus taurus	2.336	41.863
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.055	43.749
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.058	43.929
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.177	43.658
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-8.323	43.304
+GBIF	Europa	NATIVE	Spain	Colmenar Viejo	Onthophagus taurus	-3.771	40.691
+GBIF	Europa	NATIVE	Austria	Podersdorf	Onthophagus taurus	16.840	47.850
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.574	42.584
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.939	42.585
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.437	44.113
+GBIF	Europa	NATIVE	Spain	Sodupe	Onthophagus taurus	-3.063	43.216
+GBIF	Europa	NATIVE	Spain	Cazorla	Onthophagus taurus	-2.944	37.991
+GBIF	Europa	NATIVE	Spain	Bilbao	Onthophagus taurus	-2.940	43.306
+GBIF	Europa	NATIVE	Spain	Santimamiñe	Onthophagus taurus	-2.570	43.305
+GBIF	Europa	NATIVE	Spain	Riópar	Onthophagus taurus	-2.486	38.440
+GBIF	Europa	NATIVE	Spain	Santa Eugenia	Onthophagus taurus	2.824	39.703
+GBIF	Europa	NATIVE	Spain	Lluchmayor	Onthophagus taurus	2.941	39.343
+GBIF	Europa	NATIVE	Spain	Felanitx	Onthophagus taurus	3.173	39.433
+GBIF	Europa	NATIVE	Austria	Laussa b. Losenstein	Onthophagus taurus	14.450	47.950
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.817	42.674
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.818	42.495
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.939	43.034
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.939	42.675
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.061	42.765
+GBIF	Europa	NATIVE	Spain	Vigo	Onthophagus taurus	-8.699	42.225
+GBIF	Europa	NATIVE	Spain	Lluchmayor	Onthophagus taurus	2.941	39.433
+GBIF	Europa	NATIVE	Spain	Monachil	Onthophagus taurus	-3.508	37.088
+GBIF	Europa	NATIVE	Spain	La Graya	Onthophagus taurus	-2.373	38.260
+GBIF	Europa	NATIVE	Portugal	Miranda do Douro	Onthophagus taurus	-6.307	41.473
+GBIF	Europa	NATIVE	Spain	Casar de Palomero	Onthophagus taurus	-6.236	40.301
+GBIF	Europa	NATIVE	Austria	Münchendorf O Baden	Onthophagus taurus	16.380	48.030
+GBIF	Europa	NATIVE	Italy	Bozen = Bolzano	Onthophagus taurus	11.340	46.500
+GBIF	Europa	NATIVE	Austria	Königswarte SO Hainburg	Onthophagus taurus	17.020	48.110
+GBIF	Europa	NATIVE	Spain	Ampolla	Onthophagus taurus	0.685	40.851
+GBIF	Europa	NATIVE	Spain	Ferrerias	Onthophagus taurus	3.994	39.969
+GBIF	Europa	NATIVE	Spain	Hospitalet de Llobregat	Onthophagus taurus	2.101	41.411
+GBIF	Europa	NATIVE	Spain	Llanes	Onthophagus taurus	-4.750	43.420
+GBIF	Europa	NATIVE	Spain	Vinuesa	Onthophagus taurus	-2.770	41.920
+GBIF	Europa	NATIVE	Austria	Steyr	Onthophagus taurus	14.410	48.030
+GBIF	Europa	NATIVE	Spain	Gondomar	Onthophagus taurus	-8.699	42.135
+GBIF	Europa	NATIVE	Spain	Cabezuela del Valle	Onthophagus taurus	-5.806	40.194
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.378	45.710
+GBIF	Europa	NATIVE	United Kingdom	No site name available	Onthophagus taurus	-1.510	50.856
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.953	47.159
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.061	42.495
+GBIF	Europa	NATIVE	France	France, Var, Bormes-les-Mimosas	Onthophagus taurus	6.338	43.142
+GBIF	Europa	NATIVE	Spain	Pétrola	Onthophagus taurus	-1.562	38.793
+GBIF	Europa	NATIVE	Spain	Vada	Onthophagus taurus	-4.670	43.080
+GBIF	Europa	NATIVE	Austria	Telfs	Onthophagus taurus	11.060	47.300
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.131	42.408
+GBIF	Europa	NATIVE	Spain	Benasque	Onthophagus taurus	0.502	42.558
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.361	43.126
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.047	45.662
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.508	43.247
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.907	43.684
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.519	43.427
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.209	44.517
+GBIF	Europa	NATIVE	Austria	Weissenbachtal b. Reichraming	Onthophagus taurus	14.430	47.840
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.267	43.345
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.401	43.521
+GBIF	Europa	NATIVE	Spain	Villasrubias	Onthophagus taurus	-6.630	40.330
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.783	43.538
+GBIF	Europa	NATIVE	Spain	Sando	Onthophagus taurus	-6.088	41.017
+GBIF	Europa	NATIVE	Spain	Espadaña	Onthophagus taurus	-6.325	41.023
+GBIF	Europa	NATIVE	Spain	Las Mestas	Onthophagus taurus	-6.115	40.388
+GBIF	Europa	NATIVE	Spain	Vecinos	Onthophagus taurus	-5.903	40.748
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.142	46.255
+GBIF	Europa	NATIVE	Spain	Benisa	Onthophagus taurus	-0.185	38.678
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.412	43.547
+GBIF	Europa	NATIVE	Spain	Tombrío de Abajo	Onthophagus taurus	-6.497	42.738
+GBIF	Europa	NATIVE	Spain	Aldehuela de Yeltes	Onthophagus taurus	-6.222	40.661
+GBIF	Europa	NATIVE	Spain	Trujillo	Onthophagus taurus	-5.839	39.218
+GBIF	Europa	NATIVE	Spain	Puerto Real	Onthophagus taurus	-5.737	36.517
+GBIF	Europa	NATIVE	Spain	San Cristóbal de Valdueza	Onthophagus taurus	-6.508	42.468
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.719	45.181
+GBIF	Europa	NATIVE	Spain	Barco de Avila	Onthophagus taurus	-5.535	40.396
+GBIF	Europa	NATIVE	Spain	Collado de Panderruedas	Onthophagus taurus	-5.029	43.108
+GBIF	Europa	NATIVE	Spain	Prioro	Onthophagus taurus	-5.023	42.928
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.156	48.961
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.736	45.721
+GBIF	Europa	NATIVE	Spain	Villasrubias	Onthophagus taurus	-6.589	40.308
+GBIF	Europa	NATIVE	Spain	Mogrovejo	Onthophagus taurus	-5.017	42.748
+GBIF	Europa	NATIVE	Spain	Fuenteguinaldo	Onthophagus taurus	-6.704	40.401
+GBIF	Europa	NATIVE	Spain	El Rocio	Onthophagus taurus	-6.462	37.333
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.448	44.555
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.678	43.831
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.724	45.361
+GBIF	Europa	NATIVE	Spain	Fuente De	Onthophagus taurus	-4.784	43.112
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.741	45.901
+GBIF	Europa	NATIVE	Spain	Badajoz	Onthophagus taurus	-6.984	38.875
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.062	44.109
+GBIF	Europa	NATIVE	Spain	Fernán-Núñez	Onthophagus taurus	-4.760	37.707
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.132	47.620
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.218	45.548
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.318	44.376
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.326	44.736
+GBIF	Europa	NATIVE	Spain	Navalmoral de la Sierra	Onthophagus taurus	-4.713	40.501
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.807	43.751
+GBIF	Europa	NATIVE	Spain	Iznájar	Onthophagus taurus	-4.298	37.263
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.454	42.404
+GBIF	Europa	NATIVE	Spain	Alceda	Onthophagus taurus	-3.925	43.212
+GBIF	Europa	NATIVE	Spain	Rala	Onthophagus taurus	-2.256	38.439
+GBIF	Europa	NATIVE	Spain	La Salud	Onthophagus taurus	2.455	42.044
+GBIF	Europa	NATIVE	Spain	El Pardo	Onthophagus taurus	-3.769	40.511
+GBIF	Europa	NATIVE	Spain	Venta de Dimas	Onthophagus taurus	-2.370	38.530
+GBIF	Europa	NATIVE	Spain	El Escorial	Onthophagus taurus	-4.124	40.598
+GBIF	Europa	NATIVE	Spain	Quijorna	Onthophagus taurus	-4.003	40.419
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-1.794	38.706
+GBIF	Europa	NATIVE	Spain	Padul	Onthophagus taurus	-3.627	37.899
+GBIF	Europa	NATIVE	Spain	Palma de Mallorca	Onthophagus taurus	2.708	39.613
+GBIF	Europa	NATIVE	Spain	Madrid	Onthophagus taurus	-3.650	40.422
+GBIF	Europa	NATIVE	Spain	Colmenar de la Sierra	Onthophagus taurus	-3.418	41.054
+GBIF	Europa	NATIVE	Spain	Pórtugos	Onthophagus taurus	-3.282	36.909
+GBIF	Europa	NATIVE	Spain	Urberuaga	Onthophagus taurus	-2.447	43.305
+GBIF	Europa	NATIVE	Spain	Peñascosa	Onthophagus taurus	-2.369	38.710
+GBIF	Europa	NATIVE	Spain	Petra	Onthophagus taurus	3.174	39.613
+GBIF	Europa	NATIVE	Portugal	Vouzela	Onthophagus taurus	-8.114	40.691
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.939	42.854
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.061	42.675
+GBIF	Europa	NATIVE	Portugal	Azambuja	Onthophagus taurus	-8.828	39.072
+GBIF	Europa	NATIVE	Spain	Laujar	Onthophagus taurus	-2.833	36.999
+GBIF	Europa	NATIVE	Spain	Abla	Onthophagus taurus	-2.720	37.179
+GBIF	Europa	NATIVE	Spain	Mere	Onthophagus taurus	-4.920	43.370
+GBIF	Europa	NATIVE	Austria	Neusiedl am See	Onthophagus taurus	16.840	47.940
+GBIF	Europa	NATIVE	Spain	Ciudadela	Onthophagus taurus	3.877	39.970
+GBIF	Europa	NATIVE	Spain	Cañameros	Onthophagus taurus	-5.388	39.381
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-2.085	47.154
+GBIF	Europa	NATIVE	Spain	Pobla de Segur	Onthophagus taurus	0.997	42.298
+GBIF	Europa	NATIVE	Austria	Illmitz	Onthophagus taurus	16.800	47.760
+GBIF	Europa	NATIVE	France	UK, Channel Islands, Jersey, Jersey	Onthophagus taurus	2.129	49.221
+GBIF	Europa	NATIVE	Spain	Santañy	Onthophagus taurus	3.173	39.343
+GBIF	Europa	NATIVE	Spain	Cubillas de Rueda	Onthophagus taurus	-5.136	42.656
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.691	48.703
+GBIF	Europa	NATIVE	Portugal	Tomar	Onthophagus taurus	-8.362	39.521
+GBIF	Europa	NATIVE	Portugal	Palmela	Onthophagus taurus	-8.829	38.621
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.149	43.438
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.169	43.798
+GBIF	Europa	NATIVE	Spain	Pereda de Ancares, Candín	Onthophagus taurus	-6.743	42.825
+GBIF	Europa	NATIVE	Spain	Tamames	Onthophagus taurus	-6.068	41.467
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.549	44.447
+GBIF	Europa	NATIVE	Spain	Cespedosa de Tormes	Onthophagus taurus	-5.541	40.576
+GBIF	Europa	NATIVE	Spain	Guadramiro	Onthophagus taurus	-6.444	41.026
+GBIF	Europa	NATIVE	Spain	Guijuelo	Onthophagus taurus	-5.659	40.573
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.779	47.072
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.814	44.189
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.133	45.809
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.607	45.723
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.805	43.919
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.432	43.925
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.312	44.106
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.460	45.005
+GBIF	Europa	NATIVE	Spain	Puente Genil	Onthophagus taurus	-4.753	37.437
+GBIF	Europa	NATIVE	Spain	Sotillo de la Adrada	Onthophagus taurus	-4.588	40.233
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.715	42.937
+GBIF	Europa	NATIVE	Spain	Puente de Piedra	Onthophagus taurus	-4.747	37.167
+GBIF	Europa	NATIVE	Spain	Santa Olalla	Onthophagus taurus	-4.467	40.054
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.236	46.358
+GBIF	Europa	NATIVE	Spain	Lucena	Onthophagus taurus	-4.527	37.440
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.955	43.209
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.950	43.479
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.960	42.939
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.194	44.468
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.251	48.793
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.811	44.021
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.932	43.840
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.327	42.942
+GBIF	Europa	NATIVE	Spain	Aranjuez	Onthophagus taurus	-3.646	40.062
+GBIF	Europa	NATIVE	Spain	Redueña	Onthophagus taurus	-3.535	40.783
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	2.457	41.774
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.817	42.764
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.939	43.124
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.816	43.034
+GBIF	Europa	NATIVE	Spain	La Sagra	Onthophagus taurus	-2.603	37.990
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.938	43.664
+GBIF	Europa	NATIVE	Portugal	Samora Correira	Onthophagus taurus	-8.828	38.892
+GBIF	Europa	NATIVE	Spain	Pelarrodríguez	Onthophagus taurus	-6.200	40.880
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.938	43.394
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.061	43.124
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.936	45.554
+GBIF	Europa	NATIVE	Spain	Vide	Onthophagus taurus	-8.336	42.133
+GBIF	Europa	NATIVE	Spain	Els Hostalets	Onthophagus taurus	1.741	41.498
+GBIF	Europa	NATIVE	Italy	Antholz = Anterselva	Onthophagus taurus	12.100	46.870
+GBIF	Europa	NATIVE	Spain	Unquera	Onthophagus taurus	-4.520	43.380
+GBIF	Europa	NATIVE	Austria	Siegendorf i. Bgld. SW Rust	Onthophagus taurus	16.540	47.780
+GBIF	Europa	NATIVE	Spain	Hervás	Onthophagus taurus	-5.860	40.274
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.928	43.570
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.801	43.898
+GBIF	Europa	NATIVE	Spain	Villafáfila	Onthophagus taurus	-5.591	41.836
+GBIF	Europa	NATIVE	Spain	Alcoy	Onthophagus taurus	-0.529	38.686
+GBIF	Europa	NATIVE	Spain	Crémenes	Onthophagus taurus	-5.146	42.926
+GBIF	Europa	NATIVE	Spain	Onil	Onthophagus taurus	-0.647	38.598
+GBIF	Europa	NATIVE	Spain	Cortijo San Rafael	Onthophagus taurus	-5.115	38.242
+GBIF	Europa	NATIVE	Spain	Puerto del Pando	Onthophagus taurus	-4.901	42.930
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.554	43.833
+GBIF	Europa	NATIVE	Austria	Arzl b. Innsbruck	Onthophagus taurus	11.430	47.280
+GBIF	Europa	NATIVE	Spain	Carcelén	Onthophagus taurus	-1.325	39.060
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.189	44.198
+GBIF	Europa	NATIVE	Spain	El Tiemblo	Onthophagus taurus	-4.475	40.414
+GBIF	Europa	NATIVE	Portugal	Espinho	Onthophagus taurus	-7.760	40.597
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.075	43.390
+GBIF	Europa	NATIVE	Spain	Tinajeros	Onthophagus taurus	-1.788	39.066
+GBIF	Europa	NATIVE	Portugal	Tondela	Onthophagus taurus	-8.116	40.510
+GBIF	Europa	NATIVE	Portugal	Amarante	Onthophagus taurus	-7.986	41.320
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.331	42.583
+GBIF	Europa	NATIVE	Spain	Santa Coloma de Gramanet	Onthophagus taurus	2.220	41.502
+GBIF	Europa	NATIVE	Spain	Vilanova de Sau	Onthophagus taurus	2.335	41.953
+GBIF	Europa	NATIVE	Spain	Mongat	Onthophagus taurus	2.340	41.503
+GBIF	Europa	NATIVE	Spain	Mejorada del Campo	Onthophagus taurus	-3.532	40.423
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.696	42.494
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.325	46.274
+GBIF	Europa	NATIVE	Spain	Elorriaga	Onthophagus taurus	-2.695	42.855
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.311	43.934
+GBIF	Europa	NATIVE	Spain	Baza	Onthophagus taurus	-2.718	37.540
+GBIF	Europa	NATIVE	Spain	Puebla Larga	Onthophagus taurus	-0.517	39.046
+GBIF	Europa	NATIVE	Spain	Plasencia	Onthophagus taurus	-6.130	40.028
+GBIF	Europa	NATIVE	Spain	Baiona	Onthophagus taurus	-8.820	42.135
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.912	46.710
+GBIF	Europa	NATIVE	Spain	Elche	Onthophagus taurus	-0.659	38.238
+GBIF	Europa	NATIVE	Spain	Bueres	Onthophagus taurus	-5.250	43.500
+GBIF	Europa	NATIVE	Spain	Nerpio	Onthophagus taurus	-2.259	38.169
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.933	44.007
+GBIF	Europa	NATIVE	Spain	Antella	Onthophagus taurus	-0.632	39.048
+GBIF	Europa	NATIVE	Spain	Aracena	Onthophagus taurus	-6.557	37.875
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.471	45.455
+GBIF	Europa	NATIVE	Portugal	Serra da Estrella	Onthophagus taurus	-7.528	40.414
+GBIF	Europa	NATIVE	Spain	Orihuela	Onthophagus taurus	-0.893	38.062
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.817	43.928
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-3.762	39.971
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.564	44.293
+GBIF	Europa	NATIVE	Spain	Jarandilla	Onthophagus taurus	-5.658	40.126
+GBIF	Europa	NATIVE	Spain	Ontígola	Onthophagus taurus	-3.528	39.972
+GBIF	Europa	NATIVE	Spain	Tetica de Bacares	Onthophagus taurus	-2.381	37.268
+GBIF	Europa	NATIVE	Spain	Venta de Cárdenas	Onthophagus taurus	-3.517	38.440
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.186	43.754
+GBIF	Europa	NATIVE	Austria	Prutz	Onthophagus taurus	10.660	47.060
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.279	43.670
+GBIF	Europa	NATIVE	Spain	Deleitosa	Onthophagus taurus	-5.644	39.645
+GBIF	Europa	NATIVE	Spain	Aldeanueva de la Vera	Onthophagus taurus	-5.642	40.123
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.094	42.050
+GBIF	Europa	NATIVE	Spain	Béjar	Onthophagus taurus	-5.770	40.391
+GBIF	Europa	NATIVE	Spain	Moià	Onthophagus taurus	2.100	41.820
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.220	44.697
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.043	47.067
+GBIF	Europa	NATIVE	Spain	Vic	Onthophagus taurus	2.215	41.952
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.135	46.075
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.945	43.749
+GBIF	Europa	NATIVE	Spain	Lumbrales	Onthophagus taurus	-6.685	40.941
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-5.302	40.491
+GBIF	Europa	NATIVE	Spain	El Pla	Onthophagus taurus	-0.498	39.586
+GBIF	Europa	NATIVE	Spain	Mérida	Onthophagus taurus	-6.405	38.953
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.852	45.359
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.230	46.088
+GBIF	Europa	NATIVE	Spain	Aguilar de la Frontera	Onthophagus taurus	-4.642	37.529
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.941	44.380
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.491	50.322
+GBIF	Europa	NATIVE	Spain	Villaviciosa de Odón	Onthophagus taurus	-3.884	40.330
+GBIF	Europa	NATIVE	Spain	Plasencia	Onthophagus taurus	-6.098	40.024
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.314	44.474
+GBIF	Europa	NATIVE	Spain	Vado de Tús	Onthophagus taurus	-2.486	38.350
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.252	42.401
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.803	43.481
+GBIF	Europa	NATIVE	Austria	Hinterstoder	Onthophagus taurus	14.150	47.690
+GBIF	Europa	NATIVE	Austria	Wilhering	Onthophagus taurus	14.190	48.320
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.079	44.431
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.168	44.528
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.533	44.807
+GBIF	Europa	NATIVE	Spain	Olot	Onthophagus taurus	2.453	42.224
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.834	44.819
+GBIF	Europa	NATIVE	Spain	Villena	Onthophagus taurus	-0.874	38.692
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.250	46.988
+GBIF	Europa	NATIVE	Portugal	Cafede	Onthophagus taurus	-7.538	39.964
+GBIF	Europa	NATIVE	Austria	Hütteldorf (Wien 14.)	Onthophagus taurus	16.260	48.200
+GBIF	Europa	NATIVE	Spain	Alcaraz	Onthophagus taurus	-2.599	38.621
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.694	42.854
+GBIF	Europa	NATIVE	Spain	Villarrobledo	Onthophagus taurus	-2.596	39.252
+GBIF	Europa	NATIVE	Portugal	Leiria	Onthophagus taurus	-8.826	39.703
+GBIF	Europa	NATIVE	Austria	Geschriebenstein	Onthophagus taurus	16.430	47.350
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-2.402	47.681
+GBIF	Europa	NATIVE	Spain	Baños de Montemayor	Onthophagus taurus	-5.857	40.318
+GBIF	Europa	NATIVE	Portugal	Ponte da Mucela	Onthophagus taurus	-8.200	40.250
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	8.827	41.795
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.284	48.718
+GBIF	Europa	NATIVE	Spain	Negrilla de Palencia	Onthophagus taurus	-5.562	41.116
+GBIF	Europa	NATIVE	Spain	La Orden	Onthophagus taurus	-6.638	38.868
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.345	43.022
+GBIF	Europa	NATIVE	Spain	Puente Río Almonte, Torrecilla de Tiesa	Onthophagus taurus	-6.345	39.594
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.576	44.643
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.599	45.453
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.069	43.750
+GBIF	Europa	NATIVE	Portugal	Castro D’aire	Onthophagus taurus	-7.991	40.960
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.808	44.378
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.214	45.368
+GBIF	Europa	NATIVE	Spain	Málaga airport	Onthophagus taurus	-4.513	36.719
+GBIF	Europa	NATIVE	Portugal	Coimbra	Onthophagus taurus	-8.355	40.242
+GBIF	Europa	NATIVE	Spain	Monasterio de Santes Creus	Onthophagus taurus	1.267	41.312
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.189	44.474
+GBIF	Europa	NATIVE	Spain	Trujillo	Onthophagus taurus	-5.846	39.398
+GBIF	Europa	NATIVE	Spain	Spain, Avila, El Raso, 30 km E of Arenas	Onthophagus taurus	-5.330	40.170
+GBIF	Europa	NATIVE	Spain	Santa Pola	Onthophagus taurus	-0.545	38.235
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.766	43.179
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.884	43.086
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.563	48.798
+GBIF	Europa	NATIVE	Spain	Cabezabellosa	Onthophagus taurus	-5.880	40.208
+GBIF	Europa	NATIVE	Spain	Barcelona	Onthophagus taurus	1.982	41.410
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.686	44.196
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.681	43.991
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.174	47.065
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.309	43.574
+GBIF	Europa	NATIVE	Spain	Tortosa	Onthophagus taurus	0.567	40.849
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.815	43.304
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.022	46.527
+GBIF	Europa	NATIVE	Spain	Benidorm	Onthophagus taurus	-0.192	38.498
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.961	44.817
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.444	43.483
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.346	45.546
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.709	43.206
+GBIF	Europa	NATIVE	Spain	Camprodón	Onthophagus taurus	2.331	42.313
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.834	43.118
+GBIF	Europa	NATIVE	Spain	Puigcerdá	Onthophagus taurus	1.844	42.400
+GBIF	Europa	NATIVE	Spain	Sierra Salinas	Onthophagus taurus	-0.912	38.521
+GBIF	Europa	NATIVE	Spain	Dílar	Onthophagus taurus	-3.620	37.088
+GBIF	Europa	NATIVE	Spain	Pedro Andrés	Onthophagus taurus	-2.373	38.169
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.552	45.464
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.020	42.505
+GBIF	Europa	NATIVE	Austria	Schildbach b. Hartberg	Onthophagus taurus	15.950	47.270
+GBIF	Europa	NATIVE	Spain	Trujillo	Onthophagus taurus	-5.850	39.488
+GBIF	Europa	NATIVE	Portugal	Bragança	Onthophagus taurus	-6.773	41.843
+GBIF	Europa	NATIVE	Spain	Trujillo	Onthophagus taurus	-5.881	39.460
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.319	44.244
+GBIF	Europa	NATIVE	Spain	Aldehuela de la Bóveda	Onthophagus taurus	-6.000	41.000
+GBIF	Europa	NATIVE	Spain	Montagut	Onthophagus taurus	0.537	41.659
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.770	46.802
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.496	46.355
+GBIF	Europa	NATIVE	Spain	Monsalupe	Onthophagus taurus	-4.719	40.771
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.186	41.774
+GBIF	Europa	NATIVE	Spain	Carballino	Onthophagus taurus	-8.090	42.402
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.453	42.583
+GBIF	Europa	NATIVE	Spain	Huescar	Onthophagus taurus	-2.490	37.809
+GBIF	Europa	NATIVE	Spain	Mazarrón	Onthophagus taurus	-1.358	37.619
+GBIF	Europa	NATIVE	Spain	Oliva de Plasencia	Onthophagus taurus	-6.085	40.113
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.919	44.635
+GBIF	Europa	NATIVE	Spain	Forfoleda	Onthophagus taurus	-5.800	41.110
+GBIF	Europa	NATIVE	Spain	Las Mestas	Onthophagus taurus	-6.145	40.427
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.228	44.663
+GBIF	Europa	NATIVE	Spain	Fuente de Isso	Onthophagus taurus	-1.797	38.525
+GBIF	Europa	NATIVE	Spain	Cadalso	Onthophagus taurus	-6.539	40.239
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.403	42.663
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.039	41.513
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.148	41.416
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.189	44.021
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-3.412	40.063
+GBIF	Europa	NATIVE	Spain	Gejuelo del Barro	Onthophagus taurus	-6.084	41.107
+GBIF	Europa	NATIVE	Spain	Marjal de Pego-Oliva, Sª Mustalla	Onthophagus taurus	-0.072	38.879
+GBIF	Europa	NATIVE	Spain	Nava de Francia	Onthophagus taurus	-6.120	40.530
+GBIF	Europa	NATIVE	Spain	Candelario	Onthophagus taurus	-6.000	40.000
+GBIF	Europa	NATIVE	Spain	Lebeña	Onthophagus taurus	-4.580	43.220
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.060	45.842
+GBIF	Europa	NATIVE	United Kingdom	 	Onthophagus taurus	0.153	51.505
+GBIF	Europa	NATIVE	Spain	Redueña	Onthophagus taurus	-3.600	40.820
+GBIF	Europa	NATIVE	Spain	Villanueva del Fresno	Onthophagus taurus	-7.113	38.336
+GBIF	Europa	NATIVE	Portugal	Crato	Onthophagus taurus	-7.551	39.333
+GBIF	Europa	NATIVE	Portugal	Setubal	Onthophagus taurus	-8.715	38.531
+GBIF	Europa	NATIVE	Portugal	Gerez	Onthophagus taurus	-8.099	41.771
+GBIF	Europa	NATIVE	Spain	Abegondo	Onthophagus taurus	-8.324	43.214
+GBIF	Europa	NATIVE	Spain	Granátula de Calatrava	Onthophagus taurus	-3.750	38.800
+GBIF	Europa	NATIVE	Spain	La Guardia	Onthophagus taurus	-3.739	37.718
+GBIF	Europa	NATIVE	Spain	Oliva	Onthophagus taurus	-3.520	38.891
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.286	41.588
+GBIF	Europa	NATIVE	Spain	Salamanca	Onthophagus taurus	-5.674	40.933
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.831	43.642
+GBIF	Europa	NATIVE	Spain	La Garganta	Onthophagus taurus	-5.822	40.331
+GBIF	Europa	NATIVE	Spain	Toril	Onthophagus taurus	-5.779	39.899
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.647	48.142
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.463	44.717
+GBIF	Europa	NATIVE	Spain	Torneros de la Cabrera	Onthophagus taurus	-6.277	42.193
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.713	45.001
+GBIF	Europa	NATIVE	Portugal	Pontao	Onthophagus taurus	-8.475	39.882
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.463	43.203
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.643	48.164
+GBIF	Europa	NATIVE	Portugal	Vela	Onthophagus taurus	-7.292	40.411
+GBIF	Europa	NATIVE	Spain	Lobeira	Onthophagus taurus	-8.073	43.572
+GBIF	Europa	NATIVE	Spain	Alfaguara	Onthophagus taurus	-3.509	37.269
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	9.150	42.588
+GBIF	Europa	NATIVE	Austria	Hohe Dirn	Onthophagus taurus	14.400	47.900
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.373	45.143
+GBIF	Europa	NATIVE	Poland	Czekanów	Onthophagus taurus	22.438	52.436
+GBIF	Europa	NATIVE	Spain	Almaraz	Onthophagus taurus	-5.675	39.816
+GBIF	Europa	NATIVE	Spain	Villareal de los Infantes	Onthophagus taurus	-0.134	39.938
+GBIF	Europa	NATIVE	Portugal	Serra do Açor	Onthophagus taurus	-7.767	40.237
+GBIF	Europa	NATIVE	Spain	Villaseca de los Gamitos	Onthophagus taurus	-6.100	41.030
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.377	46.807
+GBIF	Europa	NATIVE	Spain	Cubo de Don Sancho	Onthophagus taurus	-6.333	40.843
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.206	43.559
+GBIF	Europa	NATIVE	Spain	Los Cortijos	Onthophagus taurus	-4.104	39.337
+GBIF	Europa	NATIVE	Portugal	Pegoes	Onthophagus taurus	-8.599	38.621
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.431	44.373
+GBIF	Europa	NATIVE	Spain	Ribadeo	Onthophagus taurus	-7.825	43.570
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.282	48.338
+GBIF	Europa	NATIVE	Portugal	Chaves	Onthophagus taurus	-7.498	41.765
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.964	45.730
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.486	49.783
+GBIF	Europa	NATIVE	Portugal	Caldelas	Onthophagus taurus	-8.341	41.683
+GBIF	Europa	NATIVE	Spain	Vergara	Onthophagus taurus	-2.448	43.125
+GBIF	Europa	NATIVE	Spain	Celanova	Onthophagus taurus	-7.973	42.131
+GBIF	Europa	NATIVE	Spain	Jubiles	Onthophagus taurus	-3.170	36.909
+GBIF	Europa	NATIVE	Spain	Cartagena	Onthophagus taurus	-1.019	37.614
+GBIF	Europa	NATIVE	Spain	Castañar de Ibor	Onthophagus taurus	-5.415	39.629
+GBIF	Europa	NATIVE	Spain	Santillán	Onthophagus taurus	-4.420	43.380
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.524	43.275
+GBIF	Europa	NATIVE	Spain	Revilla de Pomar	Onthophagus taurus	-4.150	42.770
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.324	43.212
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.323	45.914
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.635	49.606
+GBIF	Europa	NATIVE	Spain	La Granja	Onthophagus taurus	-4.010	40.870
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.653	47.478
+GBIF	Europa	NATIVE	Spain	Malpartida de Plasencia	Onthophagus taurus	-6.045	39.981
+GBIF	Europa	NATIVE	Spain	Posada del Bierzo	Onthophagus taurus	-6.748	42.563
+GBIF	Europa	NATIVE	Spain	Morgovejo	Onthophagus taurus	-4.958	42.844
+GBIF	Europa	NATIVE	Spain	Pujaire	Onthophagus taurus	-2.160	36.816
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.250	45.712
+GBIF	Europa	NATIVE	Spain	Badajoz	Onthophagus taurus	-7.215	38.878
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.978	43.015
+GBIF	Europa	NATIVE	Spain	Arabayona	Onthophagus taurus	-5.440	41.029
+GBIF	Europa	NATIVE	Austria	Maria-Saaler-Berg	Onthophagus taurus	14.340	46.660
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.093	45.729
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.938	43.934
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	0.864	42.656
+GBIF	Europa	NATIVE	Austria	Lambach	Onthophagus taurus	13.870	48.090
+GBIF	Europa	NATIVE	Spain	Cantalpino	Onthophagus taurus	-5.000	41.000
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.914	47.159
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.128	47.440
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.114	45.535
+GBIF	Europa	NATIVE	Spain	Beberinos	Onthophagus taurus	-5.678	42.866
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.131	45.248
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.055	46.687
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.023	44.884
+GBIF	Europa	NATIVE	Italy	Castelfeder	Onthophagus taurus	11.290	46.340
+GBIF	Europa	NATIVE	Spain	Siguenza	Onthophagus taurus	-2.585	41.054
+GBIF	Europa	NATIVE	Spain	Aldeaseca de la Armuña	Onthophagus taurus	-5.677	41.023
+GBIF	Europa	NATIVE	Spain	Villavelayo	Onthophagus taurus	-2.980	42.130
+GBIF	Europa	NATIVE	Spain	El Tiemblo	Onthophagus taurus	-4.355	40.326
+GBIF	Europa	NATIVE	Spain	Somosierra	Onthophagus taurus	-3.538	41.143
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.336	48.165
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-2.828	38.892
+GBIF	Europa	NATIVE	Spain	Arroyo Arenosillo	Onthophagus taurus	-4.426	38.072
+GBIF	Europa	NATIVE	Spain	Los Molinos	Onthophagus taurus	-4.127	40.779
+GBIF	Europa	NATIVE	Portugal	Goes	Onthophagus taurus	-8.121	40.150
+GBIF	Europa	NATIVE	Spain	Linares	Onthophagus taurus	-3.628	38.079
+GBIF	Europa	NATIVE	Spain	Bermeo	Onthophagus taurus	-2.697	42.495
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.618	45.344
+GBIF	Europa	NATIVE	Spain	Corao	Onthophagus taurus	-5.000	43.000
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.673	43.651
+GBIF	Europa	NATIVE	Spain	Talavera de la Reina	Onthophagus taurus	-4.816	39.959
+GBIF	Europa	NATIVE	Spain	Mombeltran	Onthophagus taurus	-5.061	40.315
+GBIF	Europa	NATIVE	Spain	Fuente el Corcho	Onthophagus taurus	-5.229	38.240
+GBIF	Europa	NATIVE	Spain	Corporales	Onthophagus taurus	-6.515	42.288
+GBIF	Europa	NATIVE	Spain	Atxondo	Onthophagus taurus	-2.571	43.125
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.391	43.341
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.052	43.569
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.792	45.098
+GBIF	Europa	NATIVE	Spain	Sanlúcar de Barrameda	Onthophagus taurus	-6.368	36.790
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.643	43.182
+GBIF	Europa	NATIVE	Spain	Capdellá	Onthophagus taurus	2.475	39.612
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.614	42.974
+GBIF	Europa	NATIVE	Spain	Cabañaquinta, Misiegos	Onthophagus taurus	-5.630	43.170
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.389	45.413
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.251	45.237
+GBIF	Europa	NATIVE	Spain	Puente de Orbigo	Onthophagus taurus	-5.859	42.460
+GBIF	Europa	NATIVE	Spain	Covaleda	Onthophagus taurus	-2.880	41.930
+GBIF	Europa	NATIVE	Spain	Olivenza	Onthophagus taurus	-6.989	38.694
+GBIF	Europa	NATIVE	Spain	El Paular	Onthophagus taurus	-3.891	40.871
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.627	45.135
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.113	45.061
+GBIF	Europa	NATIVE	Portugal	Estremoz	Onthophagus taurus	-7.906	38.887
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.541	43.786
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.401	43.277
+GBIF	Europa	NATIVE	Spain	Puigpuñent	Onthophagus taurus	2.591	39.702
+GBIF	Europa	NATIVE	Spain	Descargamaria	Onthophagus taurus	-6.485	40.305
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	2.575	42.135
+GBIF	Europa	NATIVE	Spain	Puerto del Pico	Onthophagus taurus	-4.946	40.407
+GBIF	Europa	NATIVE	Spain	Canencia	Onthophagus taurus	-3.773	40.872
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.546	46.274
+GBIF	Europa	NATIVE	Spain	Camposagrado	Onthophagus taurus	-5.750	42.733
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.987	43.050
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.756	49.421
+GBIF	Europa	NATIVE	Spain	Sevilla	Onthophagus taurus	-6.033	37.413
+GBIF	Europa	NATIVE	Spain	El Payo	Onthophagus taurus	-6.710	40.221
+GBIF	Europa	NATIVE	Spain	San Lorenzo	Onthophagus taurus	3.290	39.613
+GBIF	Europa	NATIVE	Spain	El Castillo	Onthophagus taurus	-6.354	40.303
+GBIF	Europa	NATIVE	Spain	Eljas	Onthophagus taurus	-6.845	40.218
+GBIF	Europa	NATIVE	Spain	La Vía	Onthophagus taurus	-5.897	43.269
+GBIF	Europa	NATIVE	Spain	Oviedo	Onthophagus taurus	-5.901	43.359
+GBIF	Europa	NATIVE	Spain	Aldehuela de la Bóveda	Onthophagus taurus	-6.096	40.838
+Palestrini & Rolando 2001	Europa	NATIVE	Italy	Turin	Onthophagus taurus	7.670	45.050
+GBIF	Europa	NATIVE	Spain	Volcaprau, Covaleda	Onthophagus taurus	-2.880	41.930
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.925	45.756
+GBIF	Europa	NATIVE	Spain	Molino de los Balcones	Onthophagus taurus	-4.304	37.623
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.285	47.324
+GBIF	Europa	NATIVE	Spain	Jerte	Onthophagus taurus	-5.750	40.223
+GBIF	Europa	NATIVE	Spain	Zafra	Onthophagus taurus	-6.428	38.323
+GBIF	Europa	NATIVE	Spain	Rosas	Onthophagus taurus	3.181	42.315
+GBIF	Europa	NATIVE	Spain	Plasencia	Onthophagus taurus	-5.872	40.028
+GBIF	Europa	NATIVE	Spain	Trujillo	Onthophagus taurus	-6.153	39.488
+GBIF	Europa	NATIVE	Spain	Linares de Riofrío	Onthophagus taurus	-5.895	40.568
+GBIF	Europa	NATIVE	Spain	Narros de Matalayegua	Onthophagus taurus	-5.899	40.658
+GBIF	Europa	NATIVE	Spain	Vada	Onthophagus taurus	-4.661	43.114
+GBIF	Europa	NATIVE	Spain	Vitigudino	Onthophagus taurus	-6.430	41.020
+GBIF	Europa	NATIVE	Spain	Guijo de Coria	Onthophagus taurus	-6.595	40.128
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.574	42.674
+GBIF	Europa	NATIVE	Spain	Mozoncillo	Onthophagus taurus	-5.324	41.121
+GBIF	Europa	NATIVE	Spain	Valdeteja	Onthophagus taurus	-5.391	42.921
+GBIF	Europa	NATIVE	Portugal	Vila do Conde	Onthophagus taurus	-8.703	41.324
+GBIF	Europa	NATIVE	Spain	Vega de Gordón	Onthophagus taurus	-5.635	42.915
+GBIF	Europa	NATIVE	Spain	Geras	Onthophagus taurus	-5.758	42.913
+GBIF	Europa	NATIVE	Spain	Castrocontrigo	Onthophagus taurus	-6.156	42.190
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.117	47.404
+GBIF	Europa	NATIVE	Spain	Benamahoma	Onthophagus taurus	-5.411	36.795
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.544	43.473
+GBIF	Europa	NATIVE	Spain	Bermellar	Onthophagus taurus	-7.000	41.000
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.993	45.717
+GBIF	Europa	NATIVE	Spain	Güejar-Sierra	Onthophagus taurus	-3.396	37.179
+GBIF	Europa	NATIVE	Spain	Balboa	Onthophagus taurus	-6.863	42.746
+GBIF	Europa	NATIVE	Spain	Torrecilla de la Tiesa	Onthophagus taurus	-5.857	39.668
+GBIF	Europa	NATIVE	Spain	Dos Hermanas	Onthophagus taurus	-5.879	37.325
+GBIF	Europa	NATIVE	Portugal	Montemor-o-Novo	Onthophagus taurus	-8.254	38.709
+GBIF	Europa	NATIVE	Spain	San Agustín de Guadalix	Onthophagus taurus	-3.652	40.692
+GBIF	Europa	NATIVE	Spain	Piélagos	Onthophagus taurus	-3.927	43.392
+GBIF	Europa	NATIVE	Spain	Soria	Onthophagus taurus	-1.498	41.765
+GBIF	Europa	NATIVE	Spain	Cabezabellosa	Onthophagus taurus	-6.002	40.138
+GBIF	Europa	NATIVE	Spain	Lebeña	Onthophagus taurus	-4.540	43.206
+GBIF	Europa	NATIVE	Spain	Tolosa	Onthophagus taurus	-2.079	43.122
+GBIF	Europa	NATIVE	Spain	Barbastro	Onthophagus taurus	0.161	42.010
+GBIF	Europa	NATIVE	Spain	Fregenal de la Sierra	Onthophagus taurus	-6.662	38.148
+GBIF	Europa	NATIVE	Spain	Sacedón	Onthophagus taurus	-2.706	40.513
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.186	44.092
+GBIF	Europa	NATIVE	Spain	Almaraz	Onthophagus taurus	-5.631	39.853
+GBIF	Europa	NATIVE	Spain	León	Onthophagus taurus	-5.624	42.646
+GBIF	Europa	NATIVE	Spain	Medina Sidonia	Onthophagus taurus	-5.849	36.515
+GBIF	Europa	NATIVE	Spain	Torremocha	Onthophagus taurus	-6.156	39.398
+GBIF	Europa	NATIVE	Spain	Pilas	Onthophagus taurus	-6.236	37.328
+GBIF	Europa	NATIVE	Spain	Piornal	Onthophagus taurus	-5.759	40.121
+GBIF	Europa	NATIVE	Spain	Milagro	Onthophagus taurus	-1.729	42.218
+GBIF	Europa	NATIVE	Portugal	Serra do Gerês	Onthophagus taurus	-8.219	41.772
+GBIF	Europa	NATIVE	Spain	Llanes	Onthophagus taurus	-4.915	43.380
+GBIF	Europa	NATIVE	Spain	Vega de Orandi	Onthophagus taurus	-5.035	43.288
+GBIF	Europa	NATIVE	Spain	Villarejo de Salvanes	Onthophagus taurus	-3.295	40.153
+GBIF	Europa	NATIVE	Spain	Horcajo Trevelez	Onthophagus taurus	-3.283	37.089
+GBIF	Europa	NATIVE	Spain	El Bodón	Onthophagus taurus	-6.583	40.488
+GBIF	Europa	NATIVE	Spain	Deleitosa	Onthophagus taurus	-5.625	39.673
+GBIF	Europa	NATIVE	Spain	Nuñomoral	Onthophagus taurus	-6.233	40.391
+GBIF	Europa	NATIVE	Spain	Utrera	Onthophagus taurus	-5.760	37.147
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-3.804	43.393
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.425	43.655
+GBIF	Europa	NATIVE	Spain	Avila	Onthophagus taurus	-4.599	40.683
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.124	46.079
+GBIF	Europa	NATIVE	Spain	Mazagón	Onthophagus taurus	-6.805	37.159
+GBIF	Europa	NATIVE	Spain	Alaejos	Onthophagus taurus	-5.211	41.303
+GBIF	Europa	NATIVE	Spain	Denia	Onthophagus taurus	0.175	38.858
+GBIF	Europa	NATIVE	Spain	Navalmoral de la Mata	Onthophagus taurus	-5.518	39.946
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-6.468	37.152
+GBIF	Europa	NATIVE	Spain	Castrillón	Onthophagus taurus	-6.841	43.376
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.255	47.490
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.098	43.445
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.569	46.219
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.936	45.825
+GBIF	Europa	NATIVE	Spain	Garray	Onthophagus taurus	-2.460	41.774
+GBIF	Europa	NATIVE	Spain	Cilleros	Onthophagus taurus	-6.830	40.133
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.051	43.825
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.656	44.899
+GBIF	Europa	NATIVE	Spain	Berzocana	Onthophagus taurus	-5.498	39.406
+GBIF	Europa	NATIVE	Spain	La Palma del Condado	Onthophagus taurus	-6.572	37.425
+GBIF	Europa	NATIVE	Spain	Ribadeo	Onthophagus taurus	-6.587	43.551
+GBIF	Europa	NATIVE	Spain	El Algar	Onthophagus taurus	-5.629	36.610
+GBIF	Europa	NATIVE	Spain	Valduvieco	Onthophagus taurus	-5.380	42.651
+GBIF	Europa	NATIVE	Spain	Arenas de San Pedro	Onthophagus taurus	-5.407	40.128
+GBIF	Europa	NATIVE	Spain	Doñana	Onthophagus taurus	-6.474	36.972
+GBIF	Europa	NATIVE	Spain	Cuenca	Onthophagus taurus	-2.121	40.150
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.319	43.991
+GBIF	Europa	NATIVE	Spain	Tielve	Onthophagus taurus	-4.789	43.292
+GBIF	Europa	NATIVE	Spain	Castañar de Ibor	Onthophagus taurus	-5.388	39.588
+GBIF	Europa	NATIVE	Spain	Descargamaría	Onthophagus taurus	-6.471	40.306
+GBIF	Europa	NATIVE	Spain	Almonte	Onthophagus taurus	-6.577	37.245
+GBIF	Europa	NATIVE	Spain	Masueco	Onthophagus taurus	-6.556	41.209
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.045	43.802
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.106	47.224
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.797	43.649
+GBIF	Europa	NATIVE	Spain	Sancti Spiritus	Onthophagus taurus	-6.455	40.756
+GBIF	Europa	NATIVE	Spain	Castillejo de Martín Viejo	Onthophagus taurus	-6.576	40.669
+GBIF	Europa	NATIVE	Spain	Pravia	Onthophagus taurus	-6.097	43.449
+GBIF	Europa	NATIVE	Spain	Medina del Campo	Onthophagus taurus	-4.972	41.308
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.143	49.320
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.053	47.337
+GBIF	Europa	NATIVE	Portugal	Odivelas	Onthophagus taurus	-8.145	38.168
+GBIF	Europa	NATIVE	Spain	El Bosque	Onthophagus taurus	-5.523	36.792
+GBIF	Europa	NATIVE	Spain	Alburquerque	Onthophagus taurus	-6.861	39.143
+GBIF	Europa	NATIVE	Spain	Piornal	Onthophagus taurus	-5.847	40.118
+GBIF	Europa	NATIVE	Spain	Hoyos del Espino	Onthophagus taurus	-5.296	40.311
+GBIF	Europa	NATIVE	Spain	Hellín	Onthophagus taurus	-1.682	38.524
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.915	43.467
+GBIF	Europa	NATIVE	Spain	Xantes	Onthophagus taurus	-6.860	42.836
+GBIF	Europa	NATIVE	Spain	Moguer	Onthophagus taurus	-6.803	37.249
+GBIF	Europa	NATIVE	Spain	Bielsa	Onthophagus taurus	0.254	42.643
+GBIF	Europa	NATIVE	Spain	Vejer de la Frontera	Onthophagus taurus	-5.949	36.242
+GBIF	Europa	NATIVE	Spain	Spain, Valencia, Altea	Onthophagus taurus	-0.050	38.600
+GBIF	Europa	NATIVE	Spain	Sa Cabaneta	Onthophagus taurus	2.750	39.620
+GBIF	Europa	NATIVE	Spain	Algeciras	Onthophagus taurus	-5.503	36.162
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.967	48.599
+GBIF	Europa	NATIVE	Spain	Benaoján Montejaque	Onthophagus taurus	-5.296	36.707
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.150	49.141
+GBIF	Europa	NATIVE	Spain	Saucelle	Onthophagus taurus	-6.801	41.033
+GBIF	Europa	NATIVE	Spain	Piedras Albas	Onthophagus taurus	-6.958	39.775
+GBIF	Europa	NATIVE	Spain	Sobradillo	Onthophagus taurus	-6.804	40.943
+GBIF	Europa	NATIVE	Spain	Nuñomoral	Onthophagus taurus	-6.245	40.408
+GBIF	Europa	NATIVE	Portugal	Serra de Monchique	Onthophagus taurus	-8.606	37.359
+GBIF	Europa	NATIVE	Netherlands	Netherlands, Limburg, Meerssen	Onthophagus taurus	5.750	50.880
+GBIF	Europa	NATIVE	Spain	Totana	Onthophagus taurus	-1.468	37.801
+GBIF	Europa	NATIVE	Spain	 	Onthophagus taurus	-1.099	43.020
+GBIF	Europa	NATIVE	Spain	Montealegre del Castillo	Onthophagus taurus	-1.334	38.700
+GBIF	Europa	NATIVE	Poland	Kra?nik Fabryczny	Onthophagus taurus	22.163	50.961
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.148	45.359
+GBIF	Europa	NATIVE	Spain	Ayora	Onthophagus taurus	-1.094	39.057
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	5.974	47.227
+GBIF	Europa	NATIVE	Spain	Puente de las Herrerias	Onthophagus taurus	-2.944	37.901
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.134	43.169
+GBIF	Europa	NATIVE	Spain	Peramola	Onthophagus taurus	1.270	42.050
+GBIF	Europa	NATIVE	Spain	Alto de Aralla	Onthophagus taurus	-6.625	42.920
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.437	44.023
+GBIF	Europa	NATIVE	Spain	San Roque	Onthophagus taurus	-5.280	36.166
+GBIF	Europa	NATIVE	Spain	Aº Malagón	Onthophagus taurus	-5.126	38.602
+GBIF	Europa	NATIVE	Spain	Riaza	Onthophagus taurus	-3.419	41.234
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.306	44.652
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.174	43.478
+GBIF	Europa	NATIVE	Spain	Sierra de Onil	Onthophagus taurus	-0.664	38.652
+GBIF	Europa	NATIVE	France	France, Dordogne, Cénac-et-Saint-Julien	Onthophagus taurus	1.204	44.799
+GBIF	Europa	NATIVE	Spain	Muñopedro	Onthophagus taurus	-4.485	40.865
+GBIF	Europa	NATIVE	Spain	Hecho	Onthophagus taurus	-0.741	42.743
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.175	45.011
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.078	47.825
+GBIF	Europa	NATIVE	Spain	Canales de la Sierra	Onthophagus taurus	-3.020	42.150
+GBIF	Europa	NATIVE	Spain	Cabo Roche	Onthophagus taurus	-6.160	36.334
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.473	48.434
+GBIF	Europa	NATIVE	Spain	La Granjuela	Onthophagus taurus	-5.346	38.328
+GBIF	Europa	NATIVE	Spain	Lemona	Onthophagus taurus	-2.817	43.216
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.830	48.103
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.252	43.075
+GBIF	Europa	NATIVE	Spain	Vilaxe	Onthophagus taurus	-7.214	43.292
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.397	48.444
+GBIF	Europa	NATIVE	Spain	Ontur	Onthophagus taurus	-1.451	38.611
+GBIF	Europa	NATIVE	Spain	La Flecha	Onthophagus taurus	-4.743	41.672
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.895	43.504
+GBIF	Europa	NATIVE	Spain	Tapia de Casariego	Onthophagus taurus	-6.959	43.558
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.443	44.375
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.077	49.025
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.301	43.656
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.992	48.458
+GBIF	Europa	NATIVE	Spain	Villanueva de Córdoba	Onthophagus taurus	-4.620	38.330
+GBIF	Europa	NATIVE	Spain	Golpejas	Onthophagus taurus	-5.915	41.017
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	0.594	49.311
+GBIF	Europa	NATIVE	Spain	Estepona	Onthophagus taurus	-5.177	36.439
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.025	43.590
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	7.292	43.850
+GBIF	Europa	NATIVE	Spain	Calzada de Valdunciel	Onthophagus taurus	-5.681	41.113
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.691	43.484
+GBIF	Europa	NATIVE	Spain	Arroyo Bejarano	Onthophagus taurus	-4.880	37.976
+GBIF	Europa	NATIVE	Spain	Santiesteban del Puerto	Onthophagus taurus	-3.173	38.261
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.247	49.063
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.203	48.842
+GBIF	Europa	NATIVE	Spain	Pantano de Guadalmellato	Onthophagus taurus	-4.654	38.069
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	4.434	48.966
+GBIF	Europa	NATIVE	Spain	Lumbier	Onthophagus taurus	-1.354	42.664
+GBIF	Europa	NATIVE	Spain	Galera	Onthophagus taurus	-2.604	37.720
+GBIF	Europa	NATIVE	Spain	Devesa	Onthophagus taurus	-7.082	43.560
+GBIF	Europa	NATIVE	Spain	Almodóvar del Río	Onthophagus taurus	-4.989	37.794
+GBIF	Europa	NATIVE	Spain	Río Guadalquivir	Onthophagus taurus	-4.764	37.887
+GBIF	Europa	NATIVE	Spain	Arroletza	Onthophagus taurus	-2.940	43.216
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.412	48.623
+GBIF	Europa	NATIVE	Spain	Quintanar de la Sierra	Onthophagus taurus	-3.039	41.983
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.375	43.306
+GBIF	Europa	NATIVE	Spain	Baztán	Onthophagus taurus	-1.465	43.116
+GBIF	Europa	NATIVE	Spain	Badajoz	Onthophagus taurus	-7.004	38.154
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-1.505	43.390
+GBIF	Europa	NATIVE	Spain	Revilla de Pomar	Onthophagus taurus	-4.162	42.760
+GBIF	Europa	NATIVE	Spain	Espejo	Onthophagus taurus	-4.533	37.710
+GBIF	Europa	NATIVE	Spain	San Vicente de la Barquera	Onthophagus taurus	-4.421	43.387
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.324	43.741
+GBIF	Europa	NATIVE	Spain	Piña de Campos	Onthophagus taurus	-4.395	42.217
+GBIF	Europa	NATIVE	Spain	Salinas de Pisuerga	Onthophagus taurus	-4.409	42.847
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.112	48.972
+GBIF	Europa	NATIVE	Spain	Puerto de Santa María	Onthophagus taurus	-6.262	36.607
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.284	49.232
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	6.257	43.165
+GBIF	Europa	NATIVE	Spain	Torrestío	Onthophagus taurus	-6.028	43.087
+GBIF	Europa	NATIVE	Spain	Arcos de la Frontera	Onthophagus taurus	-5.859	36.785
+GBIF	Europa	NATIVE	Spain	Comasema	Onthophagus taurus	-8.750	42.200
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	8.621	42.166
+GBIF	Europa	NATIVE	Spain	Valdefuentes del Páramo	Onthophagus taurus	-5.730	42.283
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-0.007	43.082
+GBIF	Europa	NATIVE	Spain	Medina del Pomar	Onthophagus taurus	-3.554	43.034
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.662	48.435
+GBIF	Europa	NATIVE	Spain	Isla Cristina	Onthophagus taurus	-7.368	37.168
+GBIF	Europa	NATIVE	Spain	Villaverde de Trucios	Onthophagus taurus	-3.309	43.215
+GBIF	Europa	NATIVE	Spain	Cartaya	Onthophagus taurus	-7.141	37.255
+GBIF	Europa	NATIVE	Spain	Cuevas de Almanzora	Onthophagus taurus	-1.930	37.265
+GBIF	Europa	NATIVE	Spain	Villamañán	Onthophagus taurus	-5.609	42.286
+GBIF	Europa	NATIVE	Spain	Arroyo Campo de Aras	Onthophagus taurus	-4.413	37.351
+GBIF	Europa	NATIVE	Spain	Jerez de la Frontera	Onthophagus taurus	-5.744	36.697
+GBIF	Europa	NATIVE	Spain	Málaga	Onthophagus taurus	-4.401	36.721
+GBIF	Europa	NATIVE	Spain	Facinas	Onthophagus taurus	-5.725	36.157
+GBIF	Europa	NATIVE	Spain	Villablino	Onthophagus taurus	-6.367	42.915
+GBIF	Europa	NATIVE	Spain	Las Negras	Onthophagus taurus	-2.047	36.905
+GBIF	Europa	NATIVE	Spain	Canjayar	Onthophagus taurus	-2.720	36.999
+GBIF	Europa	NATIVE	Spain	Valmaseda	Onthophagus taurus	-3.186	43.216
+GBIF	Europa	NATIVE	Spain	Laguna de Negrillos	Onthophagus taurus	-5.605	42.196
+GBIF	Europa	NATIVE	Spain	Somorrostro	Onthophagus taurus	-3.063	43.306
+GBIF	Europa	NATIVE	Spain	San Sebastián	Onthophagus taurus	-1.953	43.301
+GBIF	Europa	NATIVE	Spain	Tarifa	Onthophagus taurus	-5.608	35.979
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	1.002	49.408
+GBIF	Europa	NATIVE	Spain	Berja	Onthophagus taurus	-2.833	36.819
+GBIF	Europa	NATIVE	Spain	Conil	Onthophagus taurus	-5.617	36.250
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	2.523	48.884
+GBIF	Europa	NATIVE	Spain	Almería	Onthophagus taurus	-2.497	36.818
+GBIF	Europa	NATIVE	Spain	La Cañada de S. Urbano	Onthophagus taurus	-2.385	36.817
+GBIF	Europa	NATIVE	Spain	Adra	Onthophagus taurus	-3.057	36.729
+GBIF	Europa	NATIVE	Spain	Cabranes	Onthophagus taurus	-5.408	43.371
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	3.558	43.663
+GBIF	Europa	NATIVE	Spain	Santillan	Onthophagus taurus	-5.158	43.286
+GBIF	Europa	NATIVE	United Kingdom	No site name available	Onthophagus taurus	-1.638	50.857
+GBIF	Europa	NATIVE	Spain	Alcaracejos	Onthophagus taurus	-4.970	38.380
+GBIF	Europa	NATIVE	Spain	Santibáñez de la Sierra	Onthophagus taurus	-5.920	40.500
+GBIF	Europa	NATIVE	Poland	Warta, Rogalin	Onthophagus taurus	16.935	52.234
+GBIF	Europa	NATIVE	Spain	Muros	Onthophagus taurus	-9.063	42.766
+GBIF	Europa	NATIVE	Spain	Barcelona	Onthophagus taurus	2.080	41.300
+GBIF	Europa	NATIVE	France	 	Onthophagus taurus	-3.067	47.648
+GBIF	Europa	NATIVE	Slovakia	Slovenský kras, Ke?ovské škrapy	Onthophagus taurus	20.489	48.495
+GBIF	Europa	NATIVE	Portugal	Sintra	Onthophagus taurus	-9.405	38.891
+GBIF	Europa	NATIVE	Austria	Feldkirch	Onthophagus taurus	9.590	47.230
+GBIF	Europa	NATIVE	Russian Federation	Dagestanskaya, Derbent	Onthophagus taurus	40.020	44.380
+GBIF	Australia and New Zealand	OCEANIC	Australia	Flinders Island, N.E. Tasmania	Onthophagus taurus	148.000	-40.000
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.731	-32.762
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.637	-36.490
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.155	-36.638
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.446	-31.756
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.324	-36.465
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.037	-33.891
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.739	-36.226
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.723	-31.279
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.654	-36.461
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.382	-36.516
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.493	-36.202
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.280	-35.809
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.852	-36.596
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.839	-32.178
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.842	-31.948
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.481	-31.738
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.795	-32.536
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.537	-36.261
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.344	-36.366
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.763	-36.210
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.125	-34.026
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.661	-36.432
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.255	-36.652
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.626	-36.443
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.002	-35.256
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.816	-35.044
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.519	-35.944
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.765	-36.967
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.592	-36.532
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.716	-37.856
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.507	-37.677
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	143.892	-38.271
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.715	-30.786
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.719	-36.281
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.953	-31.650
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.934	-36.423
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.729	-32.995
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.870	-30.425
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.794	-32.322
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.931	-33.101
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.723	-36.281
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	138.714	-34.930
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.508	-36.308
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.409	-32.403
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.969	-37.565
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.178	-36.658
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.686	-42.588
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	144.504	-36.122
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.313	-35.334
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.790	-36.204
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.410	-36.479
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.501	-36.594
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.408	-37.124
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.592	-36.151
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.076	-36.330
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.099	-33.995
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.817	-32.436
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.143	-32.942
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.658	-34.755
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.408	-36.556
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.825	-34.980
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.586	-36.567
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	141.339	-36.817
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	143.624	-38.570
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.779	-36.281
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.971	-33.780
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.329	-33.666
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.004	-31.062
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.446	-36.330
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.460	-36.148
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	151.582	-31.392
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.709	-31.764
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.881	-36.335
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.019	-32.834
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.854	-33.589
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.239	-37.543
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.468	-36.614
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.069	-36.833
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.703	-33.056
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	138.456	-35.331
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.820	-33.090
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.940	-36.558
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.240	-35.829
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.740	-33.379
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.350	-33.750
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.723	-34.575
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.501	-36.470
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.539	-33.567
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.340	-36.898
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.091	-30.794
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.204	-32.756
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	139.077	-34.852
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.624	-31.751
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.776	-30.977
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.276	-32.544
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	151.427	-32.017
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.956	-31.688
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.887	-36.414
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.845	-36.068
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.080	-36.483
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.967	-37.376
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.149	-33.851
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.919	-32.041
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.724	-34.426
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.521	-30.434
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.499	-36.306
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.302	-36.304
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.889	-36.151
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.164	-41.483
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.101	-36.540
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.130	-33.374
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.424	-36.066
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	138.624	-35.190
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.652	-32.715
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.643	-33.489
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	152.382	-30.602
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.089	-39.991
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	139.183	-34.501
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.317	-36.058
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.273	-35.831
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.021	-34.241
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.186	-36.709
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.806	-33.811
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.952	-33.387
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	150.448	-34.871
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.448	-37.409
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.090	-33.960
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.965	-36.811
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.922	-37.316
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.841	-36.570
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	138.792	-34.340
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.707	-32.788
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	138.564	-35.489
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.417	-35.749
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.149	-42.827
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.851	-42.797
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	150.940	-33.916
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.298	-40.379
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.890	-36.308
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.667	-30.802
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.934	-36.769
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.434	-36.454
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.735	-33.260
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.059	-42.483
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.080	-33.460
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.590	-34.844
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.619	-31.120
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.191	-38.032
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.448	-41.021
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.761	-34.072
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.717	-32.762
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.818	-36.988
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.609	-38.122
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.880	-35.304
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	144.952	-36.226
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.812	-35.602
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.261	-37.159
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.428	-31.770
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	143.310	-38.316
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.910	-35.379
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.461	-36.055
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.180	-31.666
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.753	-37.053
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.358	-34.453
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.552	-37.035
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	144.355	-38.197
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	138.876	-35.306
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.438	-36.490
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.552	-41.274
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.537	-42.259
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.671	-41.812
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.931	-33.777
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.880	-34.916
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	137.314	-35.826
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.313	-31.142
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.756	-32.703
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.958	-32.449
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.851	-33.304
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.839	-32.655
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.343	-34.856
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.326	-34.121
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.301	-31.700
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.775	-31.668
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	118.463	-34.615
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	144.865	-41.110
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.281	-31.668
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.349	-32.671
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	151.922	-30.885
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.966	-31.673
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.910	-34.274
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.835	-32.114
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.041	-32.262
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	142.686	-37.665
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	141.708	-38.124
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	139.430	-35.331
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.892	-37.883
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.448	-33.364
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.135	-35.869
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	142.307	-36.737
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.955	-35.931
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.195	-36.035
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	137.877	-35.826
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	151.746	-30.673
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	150.433	-34.289
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.059	-36.081
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.873	-38.117
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.772	-31.238
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.567	-37.438
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	141.628	-37.515
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.865	-34.946
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	141.892	-37.301
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.448	-38.618
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	150.701	-34.826
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	137.566	-35.809
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.804	-33.197
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.154	-33.804
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.011	-33.555
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.791	-41.274
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.157	-33.157
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.401	-36.956
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	151.090	-31.956
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	138.704	-33.843
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	149.213	-34.192
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.730	-32.939
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.194	-35.468
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	142.877	-37.406
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.313	-33.627
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	142.907	-38.361
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.269	-33.691
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	141.922	-37.973
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	150.896	-30.354
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	144.310	-35.883
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	143.385	-36.657
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.228	-36.507
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.534	-37.615
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	142.716	-38.394
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	144.000	-39.886
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.026	-35.704
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.951	-35.815
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	148.907	-36.068
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.670	-31.340
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.821	-41.558
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	151.462	-33.127
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	116.791	-34.885
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.907	-35.898
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	136.869	-35.835
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	144.833	-37.391
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.069	-36.848
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.882	-36.448
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.874	-34.710
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	140.841	-34.357
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	117.600	-34.641
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.161	-38.331
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	139.961	-35.719
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	144.325	-35.361
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	145.926	-38.756
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	147.985	-40.961
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	150.418	-33.125
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	150.932	-32.371
+GBIF	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	151.013	-31.986
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	135.350	-32.804
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	137.796	-33.942
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.804	-30.617
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	146.404	-36.825
+Ridsdill-Smith	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.104	-34.026
+House et al. 2011	Australia and New Zealand	OCEANIC	Australia	Margaret River	Onthophagus taurus	115.100	-33.930
+Edwards 2007	Australia and New Zealand	OCEANIC	Australia	 	Onthophagus taurus	115.610	-30.189
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-7.399	33.716
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-2.025	34.009
+Biogeografia.org	Europa	NATIVE	Espanha		Onthophagus taurus	-5.308	35.890
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-6.103	34.982
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-6.150	35.190
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-2.395	35.024
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-2.379	34.824
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-5.156	35.090
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-6.139	35.218
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-6.280	34.850
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-5.617	34.950
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-5.617	34.950
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-5.505	35.781
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-2.361	35.111
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-6.014	35.348
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-5.617	34.950
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-10.160	29.050
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-10.160	29.380
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-7.410	33.690
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-5.813	35.785
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-6.670	34.220
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-7.810	33.200
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-8.340	33.270
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-8.480	33.070
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-8.120	31.770
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-6.210	32.580
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-5.840	32.750
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-5.730	32.870
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-5.670	32.930
+Biogeografia.org	Africa	NATIVE	Marrocos		Onthophagus taurus	-7.247	31.283
