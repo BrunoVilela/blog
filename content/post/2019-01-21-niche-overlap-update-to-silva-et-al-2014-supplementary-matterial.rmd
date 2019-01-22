@@ -1,11 +1,16 @@
 ---
 title: 'Niche overlap: update to Silva et al. 2014 supplementary matterial'
-author: null
+author: Bruno Vilela
 date: '2019-01-21'
+categories:
+  - macroecology
+tags:
+  - Niche overlap
+  - R
+  - Rasters
+  - Shapefiles
 slug: niche-overlap-update-to-silva-et-al-2014-supplementary-matterial
-categories: []
-tags: []
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
