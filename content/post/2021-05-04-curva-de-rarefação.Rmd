@@ -1,0 +1,127 @@
+---
+title: 'Curva de rarefação'
+author: Bruno Vilela
+date: '2021-05-04'
+categories:
+  - biodiversity
+tags:
+  - R
+slug: curva-de-rarefação
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE)
+```
+
+## Pacotes necessários
+
+Precisaremos dos seguintes pacotes antes das análises.
+Se não os tiver instalado, use o seguinte código antes. Note que é necessário que a internet esteja ligada.
+```{r, eval = FALSE}
+install.packages("vegan")
+install.packages("ggplot2")
+```
+
+Depois de isntalado, carregue os pacotes no seu computador.
+```{r, message = FALSE}
+library(vegan)
+library(ggplot2)
+```
+
+```{r, echo = FALSE}
+library(knitr)
+```
+
+
+## Carregar os dados
+Carregue os seus dados de comunidades (locais nas linhas e espécies nas colunas) usando o seguinte comando (se estiver em usando windows provavelmente precisará trocar o read.csv por read.csv2).
+
+```{r, echo = FALSE}
+comunidade <- structure(list(Sp1 = c(3L, 3L, 1L, 1L, 1L, 0L), Sp2 = c(1L, 0L, 
+0L, 1L, 1L, 0L), Sp3 = c(0L, 1L, 1L, 1L, 1L, 1L), Sp4 = c(0L, 
+0L, 1L, 0L, 0L, 0L), Sp5 = c(0L, 0L, 1L, 0L, 0L, 1L), Sp6 = c(0L, 
+0L, 0L, 1L, 0L, 0L)), class = "data.frame", row.names = c(NA, 
+-6L))
+```
+
+
+```{r, eval = FALSE}
+# Carregar os dados
+comunidade <- read.csv("comunidade.csv")
+```
+
+Veja como se a tabela está correta.
+```{r, eval = FALSE}
+comunidade
+```
+
+```{r, echo = FALSE}
+kable(comunidade)
+```
+
+
+## Rarefação
+
+Agora podemos calcular a curva de rarefação de espécies.
+```{r}
+# Calcular a rarefação
+acumula <- specaccum(comunidade, method = "rarefaction")
+```
+
+Para vizualizar podemos utilizar o gráfico do pacote vegan. Mas não fica tão legal...
+
+```{r}
+# Plot
+plot(acumula)
+```
+
+Ao invés disso podemos gerar um gráfico utilizando o pacote ggplot2. 
+```{r}
+# Plot mais legal
+plot_data <- data.frame("Locais" = c(0, acumula$sites),
+           "Riqueza" = c(0, acumula$richness),
+           "lower" = c(0, acumula$richness - acumula$sd),
+           "upper" = c(0, acumula$richness + acumula$sd))
+g <- ggplot(plot_data, aes(x = Locais, y = Riqueza)) +
+  geom_point(color = "blue", size = 4) +
+  geom_line(color = "blue", lwd = 2) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), 
+              linetype=2, alpha=0.3, fill = "yellow") +
+  ylab("Riqueza acumulada") +
+  theme_classic() +
+  theme(text = element_text(size = 16))
+g
+```
+
+
+Para salvar seu gráfico use a seguinte função.
+```{r, eval = FALSE}
+# altere os argumentos conforme necessário
+ggsave("Rare.png") 
+```
+
+Também podemos verificar os resultados da rarefação baseada em inidvíduos.
+```{r}
+# Plot indivíduos
+plot_data <- data.frame("Individuals" = c(0, acumula$individuals),
+                        "Riqueza" = c(0, acumula$richness),
+                        "lower" = c(0, acumula$richness - acumula$sd),
+                        "upper" = c(0, acumula$richness + acumula$sd))
+g <- ggplot(plot_data, aes(x = Individuals, y = Riqueza)) +
+  geom_point(color = "blue", size = 4) +
+  geom_line(color = "blue", lwd = 2) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), 
+              linetype=2, alpha=0.3, fill = "yellow") +
+  ylab("Riqueza acumulada") +
+  theme_classic() +
+  theme(text = element_text(size = 16))
+g
+```
+
+E para salvar usamos o mesmo códgio.
+```{r, eval = FALSE}
+ggsave("Rare_ind.png")
+```
+
